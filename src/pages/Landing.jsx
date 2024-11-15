@@ -5,14 +5,8 @@ import { getOptimizedUrl } from "../utils/cloudinary.js";
 const Landing = () => {
     const { t } = useTranslation();
 
-    const imageUrl = getOptimizedUrl("Web_Petroshore/trainings_index", {
-      width: 1280,
-      height: 720,
-      crop: 'fill',
-    });
-
     return (
-        <>
+        <div className="flex flex-col justify-center items-center">
             <Helmet>
                 <title>{t('landing_title')}</title>
                 <meta name="description" content={t('landing_description')} />
@@ -20,9 +14,23 @@ const Landing = () => {
 
             <h1>{t('welcome')}</h1>
             <p>{t('description')}</p>
+            <p>lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
+                lorem inpsuminpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
+                inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum</p>
 
-            <img className="w-full h-auto rounded-3xl" src={imageUrl} alt="Imagen de entrenamiento" loading="lazy" />
-        </>
+            <img className="rounded-3xl" src={getOptimizedUrl("Web_Petroshore/trainings_index")} alt="Imagen de entrenamiento" loading="lazy" width="1280" height="720"/>
+        </div>
     );
 };
 

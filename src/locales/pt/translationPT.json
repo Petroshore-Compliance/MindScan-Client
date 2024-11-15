@@ -1,0 +1,25 @@
+{
+    "nav_bar": {
+        "product": "Produto",
+        "price": "Preço",
+        "about": "Sobre nós",
+        "register": "Registre-se",
+        "login": "Entrar"
+    },
+    "language_selector": {
+        "english": "Inglês",
+        "spanish": "Espanhol",
+        "portuguese": "Português"
+    },
+    "theme_switch": {
+        "light": "Claro",
+        "dark": "Escuro"
+    },
+    "landing": {
+        "title": "Landing",
+        "description": "This is a sample description in English.",
+        "welcome": "Welcome to my website",
+        "parraf": "This is a sample description in English.",
+        "change_language": "Change language"
+    }
+}  

@@ -7,9 +7,9 @@ import HttpApi from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
 // Importa tus archivos de traducción si los tienes localmente
-import translationEN from './locales/en/translations.json';
-import translationES from './locales/es/translations.json';
-import translationPT from './locales/pt/translations.json';
+import translationEN from './locales/en/translationEN.json';
+import translationEs from './locales/es/translationES.json';
+import translationPT from './locales/pt/translationPT.json';
 
 i18n
   // Usar backend HTTP para cargar archivos JSON de traducciones
@@ -22,7 +22,7 @@ i18n
     // Recursos si usas importación local
     resources: {
         en: { translation: translationEN },
-        es: { translation: translationES },
+        es: { translation: translationEs },
         pt: { translation: translationPT },
     },
     fallbackLng: 'en',
