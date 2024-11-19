@@ -8,12 +8,10 @@ const Landing = () => {
     return (
         <div className="flex flex-col justify-center items-center">
             <Helmet>
-                <title>{t('landing_title')}</title>
-                <meta name="description" content={t('landing_description')} />
+                <title>{t('landing.title')}</title>
+                <meta name="description" content={t('landing.description')} />
             </Helmet>
 
-            <h1>{t('welcome')}</h1>
-            <p>{t('description')}</p>
             <p>lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
                 lorem inpsuminpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
                 inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
@@ -29,7 +27,40 @@ const Landing = () => {
                 lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
                 lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum</p>
 
+            <h1>{t('landing.welcome')}</h1>
+            <p>{t('landing.parraf')}</p>
+
             <img className="rounded-3xl" src={getOptimizedUrl("Web_Petroshore/trainings_index")} alt="Imagen de entrenamiento" loading="lazy" width="1280" height="720"/>
+
+            <p>lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
+                lorem inpsuminpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
+                inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum</p>
+
+                <p>lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
+                lorem inpsuminpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem 
+                inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum
+                lorem inpsumlorem inpsumlorem inpsumlorem inpsumlorem inpsum</p>
         </div>
     );
 };
