@@ -15,6 +15,15 @@
         "light": "Claro",
         "dark": "Oscuro"
     },
+    "footer": {
+        "product": "Producto",
+        "price": "Precio",
+        "about": "Sobre nosotros",
+        "terms-of-use": "Términos de uso",
+        "privacy-policy": "Política de privacidad",
+        "sitemap": "Mapa del sitio",
+        "rights": "2025 Petroshore. Todos los derechos resevados."
+    },
     "landing": {
         "title": "Landing",
         "description": "This is a sample description in English.",

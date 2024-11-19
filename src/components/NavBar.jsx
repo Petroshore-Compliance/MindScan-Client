@@ -19,8 +19,6 @@ const NavBar = () => {
   // Seleccionar el logo según el tema
   const logo = theme === 'light' ? logoLight : logoDark;
 
-  console.log('Tema actual en NavBar:', theme); // Para verificar que el tema cambia
-
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
@@ -55,7 +53,7 @@ const NavBar = () => {
   };
 
   return (
-    <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 border-b-[1px] border-slate-300 border-opacity-20 shadow-2xl" ref={ref}>
+    <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 border-b-[1px] border-slate-300 dark:border-opacity-20 shadow-2xl" ref={ref}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Sección izquierda: Logo y enlaces de navegación */}
@@ -67,7 +65,7 @@ const NavBar = () => {
                   key={logo}
                   className="h-8 w-auto"
                   src={logo}
-                  alt="Logo-Petroshore"
+                  alt="Petroshore Logo"
                 />
               </a>
             </div>
