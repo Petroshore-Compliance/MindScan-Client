@@ -12,12 +12,8 @@ const NavBar = () => {
   const ref = useRef();
   const [theme] = useTheme();
 
-  // Definir los logos para ambos temas
-  const logoLight = getOptimizedUrl("MindScan/Petroshore-Logo");
-  const logoDark = getOptimizedUrl("MindScan/Petroshore-White-Logo");
-
   // Seleccionar el logo según el tema
-  const logo = theme === 'light' ? logoLight : logoDark;
+  const logo = theme === 'light' ? getOptimizedUrl("MindScan/Petroshore-Logo") : getOptimizedUrl("MindScan/Petroshore-White-Logo");
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -54,12 +50,12 @@ const NavBar = () => {
 
   return (
     <nav className="fixed top-0 left-0 w-full z-50 bg-white dark:bg-gray-900 border-b-[1px] border-slate-300 dark:border-opacity-20 shadow-2xl" ref={ref}>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 xl:px-8">
         <div className="flex items-center justify-between h-16">
           {/* Sección izquierda: Logo y enlaces de navegación */}
           <div className="flex items-center">
             {/* Logo */}
-            <div className="flex-shrink-0 lg:hover:bg-slate-300 lg:hover:bg-opacity-20 py-1 px-3 rounded-3xl transition-colors duration-500">
+            <div className="flex-shrink-0 xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
               <a href="/">
                 <img
                   key={logo}
@@ -70,25 +66,25 @@ const NavBar = () => {
               </a>
             </div>
             {/* Enlaces de navegación en escritorio */}
-            <div className="hidden lg:flex lg:ml-6 lg:space-x-2 font-semibold">
-              <a href="/product" className="lg:hover:bg-slate-300 lg:hover:bg-opacity-20 py-1 px-3 rounded-3xl transition-colors duration-500">
+            <div className="hidden xl:flex xl:ml-6 xl:space-x-2 font-semibold">
+              <a href="/product" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
                 {t('nav_bar.product')}
               </a>
-              <a href="/price" className="lg:hover:bg-slate-300 lg:hover:bg-opacity-20 py-1 px-3 rounded-3xl transition-colors duration-500">
+              <a href="/price" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
                 {t('nav_bar.price')}
               </a>
-              <a href="/about" className="lg:hover:bg-slate-300 lg:hover:bg-opacity-20 py-1 px-3 rounded-3xl transition-colors duration-500">
+              <a href="/about" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
                 {t('nav_bar.about')}
               </a>
             </div>
           </div>
 
           {/* Sección derecha */}
-          <div className="hidden lg:flex lg:items-center lg:space-x-2 font-semibold">
-            <a href="/register" className="lg:hover:bg-slate-300 lg:hover:bg-opacity-20 py-1 px-3 rounded-3xl transition-colors duration-500">
+          <div className="hidden xl:flex xl:items-center xl:space-x-2 font-semibold">
+            <a href="/register" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
               {t('nav_bar.register')}
             </a>
-            <a href="/login" className="lg:hover:bg-slate-300 lg:hover:bg-opacity-20 py-1 px-3 rounded-3xl transition-colors duration-500">
+            <a href="/login" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
               {t('nav_bar.login')}
             </a>
             <LanguageSelector />
@@ -96,7 +92,7 @@ const NavBar = () => {
           </div>
 
           {/* Botón del menú hamburguesa para móviles */}
-          <div className="lg:hidden">
+          <div className="xl:hidden">
             <button
               onClick={toggleMenu}
               type="button"
@@ -147,7 +143,7 @@ const NavBar = () => {
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden border-y-[1px] border-slate-300 border-opacity-20"
+            className="xl:hidden border-y-[1px] border-slate-300 border-opacity-20"
           >
             <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
               <a href="/product" className="block text-gray-800 dark:text-white">
