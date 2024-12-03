@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from 'framer-motion';
 import { getOptimizedUrl } from "../utils/cloudinary.js";
@@ -56,37 +57,37 @@ const NavBar = () => {
           <div className="flex items-center">
             {/* Logo */}
             <div className="flex-shrink-0 xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
-              <a href="/">
+              <Link to="/">
                 <img
                   key={logo}
                   className="h-8 w-auto"
                   src={logo}
                   alt="Petroshore Logo"
                 />
-              </a>
+              </Link>
             </div>
             {/* Enlaces de navegación en escritorio */}
             <div className="hidden xl:flex xl:ml-6 xl:space-x-2 font-semibold">
-              <a href="/product" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
+              <Link to="/product" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
                 {t('nav_bar.product')}
-              </a>
-              <a href="/price" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
+              </Link>
+              <Link to="/price" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
                 {t('nav_bar.price')}
-              </a>
-              <a href="/about" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
+              </Link>
+              <Link to="/about" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
                 {t('nav_bar.about')}
-              </a>
+              </Link>
             </div>
           </div>
 
           {/* Sección derecha */}
           <div className="hidden xl:flex xl:items-center xl:space-x-2 font-semibold">
-            <a href="/register" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
+            <Link to="/register" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
               {t('nav_bar.register')}
-            </a>
-            <a href="/login" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
+            </Link>
+            <Link to="/login" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
               {t('nav_bar.login')}
-            </a>
+            </Link>
             <LanguageSelector />
             <ThemeSwitch />
           </div>
@@ -146,21 +147,21 @@ const NavBar = () => {
             className="xl:hidden border-y-[1px] border-slate-300 border-opacity-20"
           >
             <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
-              <a href="/product" className="block text-gray-800 dark:text-white">
+              <Link to="/product" className="block text-gray-800 dark:text-white">
                 {t('nav_bar.product')}
-              </a>
-              <a href="/price" className="block text-gray-800 dark:text-white">
+              </Link>
+              <Link to="/price" className="block text-gray-800 dark:text-white">
                 {t('nav_bar.price')}
-              </a>
-              <a href="/about" className="block text-gray-800 dark:text-white">
+              </Link>
+              <Link to="/about" className="block text-gray-800 dark:text-white">
                 {t('nav_bar.about')}
-              </a>
-              <a href="/register" className="block text-gray-800 dark:text-white">
+              </Link>
+              <Link to="/register" className="block text-gray-800 dark:text-white">
                 {t('nav_bar.register')}
-              </a>
-              <a href="/login" className="block text-gray-800 dark:text-white">
+              </Link>
+              <Link to="/login" className="block text-gray-800 dark:text-white">
                 {t('nav_bar.login')}
-              </a>
+              </Link>
               <LanguageSelector />
               <ThemeSwitch />
             </div>

@@ -72,7 +72,7 @@ const About = () => {
             <div className='flex flex-wrap gap-4 m-2 items-center justify-center'>
                 {team.map((member, index) => (
                     <div key={index}>
-                        <a className='flex flex-row w-[355px] h-24 items-center justify-between xl:hover:scale-105 transition-all duration-500 bg-zinc-100 dark:bg-zinc-800 border-2 border-indigo-600 rounded-3xl shadow-sm space-x-10 p-2 pr-6' href="https://www.linkedin.com/in/bogdan-andrei-faur/" target='_blank'>
+                        <a className='flex flex-row w-[355px] h-24 items-center justify-between xl:hover:scale-105 transition-all duration-500 bg-zinc-100 dark:bg-zinc-800 border-2 border-indigo-600 rounded-3xl shadow-sm space-x-10 p-2 pr-6' href="https://www.linkedin.com/in/bogdan-andrei-faur/" target='_blank' rel="noopener noreferrer">
                             <img className='rounded-full w-20' src={getOptimizedUrl(member.photo)} alt="Andrei" />
                             
                             <div>
