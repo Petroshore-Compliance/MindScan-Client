@@ -1,4 +1,5 @@
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const MindMap = () => {
@@ -97,12 +98,12 @@ const MindMap = () => {
           <p className="text-base sm:text-xl text-zinc-700 dark:text-zinc-300">
             {finalSection.text}
           </p>
-          <a
-            href="/register"
+          <Link
+            to="/register"
             className="inline-block mt-4 bg-indigo-600 bg-opacity-70 hover:bg-opacity-100 text-white py-2 px-6 text-lg sm:text-xl font-semibold rounded-full transition-colors duration-500"
           >
             {finalSection.cta}
-          </a>
+          </Link>
         </div>
       </motion.div>
     </div>
