@@ -1,4 +1,5 @@
 {
+    "meta_description": "Descubre MindScan, la herramienta que transforma tu bienestar mental. Realiza diagnósticos psicológicos completos, obtén análisis detallados y accede a recomendaciones personalizadas para mejorar tu salud emocional y mental. Comienza hoy mismo.",
     "nav_bar": {
         "product": "Producto",
         "price": "Precio",
@@ -25,10 +26,71 @@
         "rights": "2025 Petroshore. Todos los derechos resevados."
     },
     "landing": {
-        "title": "Landing",
-        "description": "This is a sample description in English.",
-        "welcome": "Welcome to my website",
-        "parraf": "This is a sample description in English.",
-        "change_language": "Change language"
+        "meta_title": "Landing - MindScan",
+        "title": "Tu bienestar mental, donde y cuando quieras",
+        "description": "Un lugar para explorar tu mente. Realiza diagnósticos psicológicos y analiza tus resultados en todo momento y lugar.",
+        "get_started": "Comenzar",
+
+        "mind_map": {
+            "header": {
+                "title": "Explora tu mente",
+                "subtitle": "Sigue estos pasos para descubrir todo lo que MindScan puede ofrecerte."
+            },
+            "steps": [
+                {
+                    "title": "Regístrate",
+                    "description": "Crea rápidamente tu cuenta proporcionando solo la información necesaria. ¿Eres particular o representas a una empresa? Elige tu perfil y comienza tu experiencia con MindScan."
+                },
+                {
+                    "title": "Inicia sesión",
+                    "description": "Accede a tu cuenta y verifica tus datos para garantizar una experiencia personalizada y segura."
+                },
+                {
+                    "title": "Explora tus opciones",
+                    "description": "Acceso gratuito: Prueba algunos de nuestros diagnósticos más populares y descubre cómo funcionan. Planes de pago: Elige un plan para desbloquear diagnósticos avanzados y funciones exclusivas como la gestión de equipos."
+                },
+                {
+                    "title": "Gestiona tu equipo",
+                    "description": "Si representas a una empresa o deseas trabajar en equipo, crea un grupo, invita a tus compañeros y dales acceso a los diagnósticos."
+                },
+                {
+                    "title": "Realiza tu diagnóstico",
+                    "description": "Responde a las preguntas con sinceridad. Nuestros diagnósticos están diseñados para ayudarte a explorar tus características psicológicas y emocionales."
+                },
+                {
+                    "title": "Obtén tus resultados",
+                    "description": "Recibe un informe detallado con información sobre aspectos como neuroticismo, estabilidad emocional, extraversión, apertura a nuevas experiencias, amabilidad y responsabilidad. Si gestionas un equipo, también podrás ver los resultados de tus compañeros."
+                }
+            ],
+            "final_section": {
+                "text": "Comienza hoy tu camino hacia un mejor bienestar mental. Estamos aquí para apoyarte en cada paso del camino.",
+                "cta": "Comenzar"
+            }
+        }
+    },
+    "about": {
+        "meta_title": "Sobre - MindScan",
+        "title": "Sobre nosotros",
+        "text_0": "MindScan es una herramienta desarrollada por PetroShore Compliance, una empresa internacionalmente reconocida por su especialización en cumplimiento normativo, gobierno corporativo y gestión de riesgos. Con presencia en 18 países y más de 12.500 casos exitosos, PetroShore ha consolidado su reputación global en la prevención de delitos corporativos y fraudes ocupacionales.",
+        "text_1": "MindScan refleja el compromiso de PetroShore con la excelencia y la innovación, ofreciendo una solución avanzada para el análisis y comprensión de características psicológicas y emocionales. Esta herramienta está diseñada para ayudar a individuos y organizaciones a explorar aspectos como el neuroticismo, la estabilidad emocional, la extraversión, la apertura a nuevas experiencias, la amabilidad y la responsabilidad.",
+        "text_2": "Al integrar MindScan en su portafolio de servicios, PetroShore amplía su misión de fortalecer las competencias individuales y grupales, promoviendo una cultura de cumplimiento corporativo eficaz y una mejor comprensión del comportamiento humano en entornos profesionales.",
+        "text_3": "PetroShore combina consultoría y formación para ofrecer experiencias de excelencia a sus clientes, asegurando la aplicación efectiva de programas de cumplimiento y la protección contra fraudes y otros delitos corporativos.",
+        "text_4": "La creación de MindScan es un testimonio del compromiso de PetroShore con la innovación y la excelencia en el desarrollo de soluciones tecnológicas que apoyan la gestión de programas de cumplimiento y antifraude, incluyendo la gestión de canales de denuncia, la elaboración de perfiles de comportamiento y la evaluación de fraudes.",
+        "text_5": "En resumen, MindScan es una herramienta que encarna la experiencia y dedicación de PetroShore Compliance en el desarrollo de soluciones integrales para la prevención y tratamiento de actos ilegales dentro de las organizaciones, contribuyendo al fortalecimiento de una cultura corporativa sólida y ética.",
+        "team": {
+            "title": "Nuestro equipo",
+            "members": [
+                {
+                    "photo": "MindScan/collaborator-andrei",
+                    "name": "Andrei Faur",
+                    "role": "Desarrollador Front-end"
+                },
+                {
+                    "photo": "MindScan/collaborator-roman",
+                    "name": "Román De Las Heras",
+                    "role": "Desarrollador Back-end"
+                }
+            ]
+        }
     }
 }  
