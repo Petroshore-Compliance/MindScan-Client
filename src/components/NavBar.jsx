@@ -66,34 +66,25 @@ const NavBar = () => {
                 />
               </Link>
             </div>
-            {/* Enlaces de navegación en escritorio */}
-            <div className="hidden xl:flex xl:ml-6 xl:space-x-2 font-semibold">
-              <Link to="/product" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
-                {t('nav_bar.product')}
-              </Link>
-              <Link to="/price" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
-                {t('nav_bar.price')}
-              </Link>
-              <Link to="/about" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
-                {t('nav_bar.about')}
-              </Link>
-            </div>
           </div>
 
           {/* Sección derecha */}
           <div className="hidden xl:flex xl:items-center xl:space-x-2 font-semibold">
-            <Link to="/register" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
-              {t('nav_bar.register')}
-            </Link>
-            <Link to="/login" className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
+            <Link to="/login" className="flex items-center xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
               {t('nav_bar.login')}
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-login-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M3 12h13l-3 -3" /><path d="M13 15l3 -3" /></svg>
             </Link>
             <LanguageSelector />
             <ThemeSwitch />
           </div>
 
           {/* Botón del menú hamburguesa para móviles */}
-          <div className="xl:hidden">
+          <div className="flex items-center space-x-2 xl:hidden">
+            <Link to="/login" className="flex items-center text-gray-800 dark:text-white">
+              {t('nav_bar.login')}
+              <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-login-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M3 12h13l-3 -3" /><path d="M13 15l3 -3" /></svg>
+            </Link>
+
             <button
               onClick={toggleMenu}
               type="button"
@@ -147,21 +138,6 @@ const NavBar = () => {
             className="xl:hidden border-y-[1px] border-slate-300 border-opacity-20"
           >
             <div className="px-4 pt-2 pb-3 space-y-1 sm:px-3">
-              <Link to="/product" className="block text-gray-800 dark:text-white">
-                {t('nav_bar.product')}
-              </Link>
-              <Link to="/price" className="block text-gray-800 dark:text-white">
-                {t('nav_bar.price')}
-              </Link>
-              <Link to="/about" className="block text-gray-800 dark:text-white">
-                {t('nav_bar.about')}
-              </Link>
-              <Link to="/register" className="block text-gray-800 dark:text-white">
-                {t('nav_bar.register')}
-              </Link>
-              <Link to="/login" className="block text-gray-800 dark:text-white">
-                {t('nav_bar.login')}
-              </Link>
               <LanguageSelector />
               <ThemeSwitch />
             </div>
