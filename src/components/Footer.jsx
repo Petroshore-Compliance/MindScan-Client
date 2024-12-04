@@ -39,15 +39,13 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col underline font-semibold">
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/product">{t('footer.product')}</Link>
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/price">{t('footer.price')}</Link>
                     <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/about">{t('footer.about')}</Link>
+                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/sitemap">{t('footer.sitemap')}</Link>
                 </div>
 
                 <div className="flex flex-col underline font-semibold">
                     <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/terms-of-use">{t('footer.terms-of-use')}</Link>
                     <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/privacy-policy">{t('footer.privacy-policy')}</Link>
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/sitemap">{t('footer.sitemap')}</Link>
                 </div>
             </div>
 

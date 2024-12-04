@@ -1,10 +1,6 @@
 {
     "meta_description": "Descubra o MindScan, a ferramenta que transforma o seu bem-estar mental. Realize diagnósticos psicológicos completos, obtenha análises detalhadas e acesse recomendações personalizadas para melhorar sua saúde emocional e mental. Comece hoje mesmo.",
     "nav_bar": {
-        "product": "Produto",
-        "price": "Preço",
-        "about": "Sobre nós",
-        "register": "Registre-se",
         "login": "Entrar"
     },
     "language_selector": {
@@ -17,8 +13,6 @@
         "dark": "Escuro"
     },
     "footer": {
-        "product": "Produto",
-        "price": "Preço",
         "about": "Sobre nós",
         "terms-of-use": "Termos de uso",
         "privacy-policy": "Política de privacidade",
@@ -29,42 +23,42 @@
         "meta_title": "Landing - MindScan",
         "title": "Seu bem-estar mental, onde e quando você precisar",
         "description": "Um lugar para explorar sua mente. Realize diagnósticos psicológicos e analise seus resultados a qualquer hora, em qualquer lugar.",
-        "get_started": "Começar",
+        "get_started": "Entre em contato",
 
         "mind_map": {
             "header": {
-                "title": "Explore sua mente",
-                "subtitle": "Siga estes passos para descobrir tudo o que o MindScan pode oferecer."
+                "title": "Descubra como o MindScan funciona",
+                "subtitle": "Siga estas etapas para entender como sua organização pode se beneficiar de nossa ferramenta."
             },
             "steps": [
                 {
-                    "title": "Registe-se",
-                    "description": "Crie sua conta rapidamente fornecendo apenas as informações necessárias. Você é uma pessoa física ou representa uma empresa? Escolha seu perfil e comece sua experiência com o MindScan."
+                    "title": "Entre em contato",
+                    "description": "Preencha nosso formulário para solicitar uma demonstração e saber mais sobre como o MindScan funciona."
                 },
                 {
-                    "title": "Conecte-se",
-                    "description": "Acesse sua conta e verifique seus dados para garantir uma experiência personalizada e segura."
+                    "title": "Demonstração e compra de licenças",
+                    "description": "Experimente a ferramenta e adquira licenças para começar."
                 },
                 {
-                    "title": "Explore suas opções",
-                    "description": "Acesso gratuito: Experimente alguns dos nossos diagnósticos mais populares e veja como funcionam. Planos pagos: Escolha um plano para desbloquear diagnósticos avançados e recursos exclusivos, como a gestão de equipes."
+                    "title": "Configuração de conta e empresa",
+                    "description": "Criamos sua conta de administrador e configuramos sua empresa na plataforma."
                 },
                 {
-                    "title": "Gerencie sua equipe",
-                    "description": "Se você representa uma empresa ou deseja trabalhar em equipe, crie um grupo, convide seus colegas e conceda-lhes acesso aos diagnósticos."
+                    "title": "Convidar usuários",
+                    "description": "O administrador pode convidar membros da equipe para se juntarem à empresa e acessarem os diagnósticos."
                 },
                 {
-                    "title": "Realize seu diagnóstico",
-                    "description": "Responda às perguntas com honestidade. Nossos diagnósticos foram projetados para ajudá-lo a explorar suas características psicológicas e emocionais."
+                    "title": "Complete diagnósticos",
+                    "description": "Cada usuário completa seu diagnóstico, consumindo uma licença por sessão."
                 },
                 {
-                    "title": "Obtenha seus resultados",
-                    "description": "Receba um relatório detalhado com insights sobre aspectos como neuroticismo, estabilidade emocional, extroversão, abertura a novas experiências, cordialidade e responsabilidade. Se você gerencia uma equipe, também poderá ver os resultados dos seus colegas."
+                    "title": "Acesse os resultados",
+                    "description": "Tanto os usuários quanto os administradores podem acessar relatórios detalhados gerados após cada diagnóstico."
                 }
             ],
             "final_section": {
-                "text": "Comece hoje sua jornada para um melhor bem-estar mental. Estamos aqui para apoiá-lo em cada etapa do caminho.",
-                "cta": "Começar"
+                "text": "Empodere sua organização com o MindScan hoje. Entre em contato para começar.",
+                "cta": "Entre em contato"
             }
         }
     },
@@ -72,7 +66,7 @@
         "meta_title": "Sobre - MindScan",
         "title": "Sobre nós",
         "text_0": "MindScan é uma ferramenta desenvolvida pela PetroShore Compliance, uma empresa reconhecida internacionalmente por sua especialização em conformidade normativa, governança corporativa e gestão de riscos. Com presença em 18 países e mais de 12.500 casos bem-sucedidos, a PetroShore consolidou sua reputação global na prevenção de crimes corporativos e fraudes ocupacionais.",
-        "text_1": "MindScan reflete o compromisso da PetroShore com a excelência e a inovação, oferecendo uma solução avançada para a análise e compreensão de características psicológicas e emocionais. Esta ferramenta foi projetada para ajudar indivíduos e organizações a explorar aspectos como neuroticismo, estabilidade emocional, extroversão, abertura a novas experiências, amabilidade e responsabilidade.",
+        "text_1": "O MindScan reflete o compromisso da PetroShore com a excelência e a inovação, oferecendo uma solução avançada para a análise e compreensão de características psicológicas e emocionais. Esta ferramenta foi projetada para ajudar organizações a explorar aspectos como neuroticismo, estabilidade emocional, extroversão, abertura a novas experiências, amabilidade e responsabilidade.",
         "text_2": "Ao integrar o MindScan em seu portfólio de serviços, a PetroShore amplia sua missão de fortalecer as competências individuais e coletivas, promovendo uma cultura de conformidade corporativa eficaz e uma melhor compreensão do comportamento humano em ambientes profissionais.",
         "text_3": "A PetroShore combina consultoria e treinamento para oferecer excelência aos seus clientes, garantindo a aplicação efetiva de programas de conformidade e a proteção contra fraudes e outros crimes corporativos.",
         "text_4": "A criação do MindScan é um testemunho do compromisso da PetroShore com a inovação e a excelência no desenvolvimento de soluções tecnológicas que apoiam a gestão de programas de conformidade e antifraude, incluindo a gestão de canais de denúncia, a elaboração de perfis comportamentais e a avaliação de fraudes.",

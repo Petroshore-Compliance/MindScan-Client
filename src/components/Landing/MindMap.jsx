@@ -27,19 +27,14 @@ const MindMap = () => {
 
       {/* Desktop View */}
       <div className="hidden sm:block relative">
-        {/* Vertical Line */}
         <div className="absolute left-1/2 top-0 h-full w-0.5 bg-indigo-200 dark:bg-indigo-800 -translate-x-1/2 -z-10" />
-
-        {/* Steps */}
         <div className="space-y-16">
           {steps.map((step, index) => (
             <motion.div
-              key={[index]}
+              key={index}
               initial={{ opacity: 0, x: index % 2 === 0 ? -50 : 50 }}
               animate={{ opacity: 1, x: 0 }}
-              className={`flex items-center gap-8 ${
-                index % 2 === 0 ? "flex-row-reverse" : ""
-              }`}
+              className={`flex items-center gap-8 ${index % 2 === 0 ? "flex-row-reverse" : ""}`}
             >
               <div className="w-1/2">
                 <div className="p-6 bg-zinc-100 dark:bg-zinc-800 border-2 border-indigo-300 dark:border-indigo-900 rounded-3xl shadow-sm">
@@ -61,14 +56,11 @@ const MindMap = () => {
       {/* Mobile View */}
       <div className="sm:hidden">
         <div className="relative flex flex-col items-center">
-          {/* Vertical Line */}
           <div className="absolute left-1/2 top-0 h-full w-0.5 bg-indigo-200 dark:bg-indigo-800 -translate-x-1/2 -z-10" />
-
-          {/* Steps */}
           <div className="space-y-8 w-full max-w-sm">
             {steps.map((step, index) => (
               <motion.div
-                key={[index]}
+                key={index}
                 initial={{ opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
                 className="flex flex-col items-center"
@@ -99,7 +91,7 @@ const MindMap = () => {
             {finalSection.text}
           </p>
           <Link
-            to="/register"
+            to="/contact"
             className="inline-block mt-4 bg-indigo-600 bg-opacity-70 hover:bg-opacity-100 text-white py-2 px-6 text-lg sm:text-xl font-semibold rounded-full transition-colors duration-500"
           >
             {finalSection.cta}
