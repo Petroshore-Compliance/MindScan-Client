@@ -19,6 +19,11 @@
         "sitemap": "Mapa do site",
         "rights": "2025 Petroshore. Todos os direitos reservados."
     },
+    "not_found": {
+        "meta_title": "404 - Página não encontrada",
+        "description": "A página que você procura não existe.",
+        "button": "Voltar para a página inicial"
+    },
     "landing": {
         "meta_title": "Landing - MindScan",
         "title": "Seu bem-estar mental, onde e quando você precisar",
@@ -62,8 +67,39 @@
             }
         }
     },
+    "contact": {
+    "meta_title": "Contato - MindScan",
+    "title": "Contate-nos",
+    "description": "Deixe seus dados e entraremos em contato com você o mais breve possível.",
+    "errors": {
+        "name": "O nome não pode estar vazio.",
+        "name_char": "O nome não pode conter caracteres especiais ou números.",
+        "email": "O email não pode estar vazio.",
+        "email_char": "Insira um email válido.",
+        "prefix": "O prefixo não pode estar vazio.",
+        "prefix_char": "O prefixo deve começar com + e conter entre 1 e 4 dígitos.",
+        "phone": "O número de telefone não pode estar vazio.",
+        "phone_char": "O número deve conter entre 6 e 15 dígitos.",
+        "message": "O messagem não pode estar vazio.",
+        "message_char": "A mensagem não pode exceder 600 caracteres."
+    },
+    "form": {
+        "name": "Nome",
+        "email": "Email",
+        "phone": "Telefone",
+        "language": "Idioma",
+        "language_options": {
+            "default": "Selecione um idioma",
+            "english": "Inglês",
+            "spanish": "Espanhol",
+            "portuguese": "Português"
+        },
+        "message": "Motivo do Contato",
+        "submit": "Enviar"
+        }
+    },
     "about": {
-        "meta_title": "Sobre - MindScan",
+        "meta_title": "Sobre nós - MindScan",
         "title": "Sobre nós",
         "text_0": "MindScan é uma ferramenta desenvolvida pela PetroShore Compliance, uma empresa reconhecida internacionalmente por sua especialização em conformidade normativa, governança corporativa e gestão de riscos. Com presença em 18 países e mais de 12.500 casos bem-sucedidos, a PetroShore consolidou sua reputação global na prevenção de crimes corporativos e fraudes ocupacionais.",
         "text_1": "O MindScan reflete o compromisso da PetroShore com a excelência e a inovação, oferecendo uma solução avançada para a análise e compreensão de características psicológicas e emocionais. Esta ferramenta foi projetada para ajudar organizações a explorar aspectos como neuroticismo, estabilidade emocional, extroversão, abertura a novas experiências, amabilidade e responsabilidade.",

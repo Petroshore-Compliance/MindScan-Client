@@ -5,6 +5,7 @@ import NavBar from './components/NavBar.jsx';
 import Footer from './components/Footer.jsx';
 import Landing from './pages/Landing.jsx';
 import About from './pages/About.jsx';
+import Contact from './pages/Contact.jsx';
 import NotFound from './pages/NotFound.jsx';
 import './App.css';
 
@@ -23,6 +24,7 @@ const App = () => {
           <Routes>
             <Route path="/" element={<Landing />} />
             <Route path="/about" element={<About />} />
+            <Route path="/contact" element={<Contact />} />
             <Route path="*" element={<NotFound />} />
           </Routes>
         </div>

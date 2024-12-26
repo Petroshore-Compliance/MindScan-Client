@@ -25,7 +25,7 @@ const Landing = () => {
         </div>
 
         <Link className="bg-indigo-600 bg-opacity-70 lg:hover:bg-opacity-100 text-white py-2 px-4 text-2xl font-semibold rounded-3xl transition-colors duration-500"
-          to="/register"
+          to="/contact"
         >{t('landing.get_started')}</Link>
 
         <div className="mt-10">

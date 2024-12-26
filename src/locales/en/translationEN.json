@@ -19,6 +19,11 @@
         "sitemap": "Sitemap",
         "rights": "2025 Petroshore. All rights reserved."
     },
+    "not_found": {
+        "meta_title": "404 - Page not found",
+        "description": "The page you are looking for does not exist.",
+        "button": "Back to Home"
+    },
     "landing": {
         "meta_title": "Landing - MindScan",
         "title": "Your mental well-being, wherever and whenever you need it",
@@ -60,6 +65,37 @@
                 "text": "Empower your organization with MindScan today. Contact us to get started.",
                 "cta": "Contact Us"
             }
+        }
+    },
+    "contact": {
+    "meta_title": "Contact - MindScan",
+    "title": "Contact Us",
+    "description": "Leave us your details and we will get in touch with you as soon as possible.",
+    "errors": {
+        "name": "Name cannot be empty.",
+        "name_char": "Name cannot contain special characters or numbers.",
+        "email": "Email cannot be empty.",
+        "email_char": "Please enter a valid email.",
+        "prefix": "Prefix cannot be empty.",
+        "prefix_char": "The prefix must start with + and contain between 1 and 4 digits.",
+        "phone": "Phone number cannot be empty.",
+        "phone_char": "The number must contain between 6 and 15 digits.",
+        "message": "Message cannot be empty.",
+        "message_char": "The message cannot exceed 600 characters."
+    },
+    "form": {
+        "name": "Name",
+        "email": "Email",
+        "phone": "Phone",
+        "language": "Language",
+        "language_options": {
+            "default": "Select a language",
+            "english": "English",
+            "spanish": "Spanish",
+            "portuguese": "Portuguese"
+        },
+        "message": "Reason for Contact",
+        "submit": "Submit"
         }
     },
     "about": {
