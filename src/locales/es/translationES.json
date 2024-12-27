@@ -74,6 +74,7 @@
         "errors": {
             "name": "El nombre no puede estar vacío.",
             "name_char": "El nombre no puede contener caracteres especiales o números.",
+            "name_length": "El nombre no puede exceder los 45 caracteres.",
             "email": "El email no puede estar vacío.",
             "email_char": "Introduce un email válido.",
             "prefix": "El prefijo no puede estar vacío.",
@@ -96,6 +97,11 @@
             },
             "message": "Motivo de contacto",
             "submit": "Enviar"
+        },
+        "alert": {
+            "title": "¡Gracias por contactarnos!",
+            "text": "Nos pondremos en contacto contigo lo antes posible.",
+            "button": "Volver al inicio"
         }
     },
     "about": {

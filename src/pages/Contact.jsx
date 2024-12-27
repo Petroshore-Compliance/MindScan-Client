@@ -1,9 +1,16 @@
 import { useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from 'react-i18next';
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
+import { useNavigate } from "react-router-dom";
+import "../styles/alerts.css";
+
+const MySwal = withReactContent(Swal);
 
 const Contact = () => {
   const { t } = useTranslation();
+  const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -29,6 +36,7 @@ const Contact = () => {
   const validateName = (name) => {
     if (!name.trim()) return t('contact.errors.name');
     if (/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/.test(name)) return t('contact.errors.name_char');
+    if (name.length > 45) return t('contact.errors.name_length');
     return "";
   };
 
@@ -85,10 +93,9 @@ const Contact = () => {
     }));
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-  
-    // Eliminar espacios al principio y al final en todos los campos
+
     const trimmedData = {
       name: formData.name.trim(),
       email: formData.email.trim(),
@@ -96,14 +103,14 @@ const Contact = () => {
       phone: phone.phone.trim(),
       message: formData.message.trim(),
     };
-  
-    // Validar todos los campos con los datos "limpios"
+
+    // Validar todos los campos
     const nameError = validateName(trimmedData.name);
     const emailError = validateEmail(trimmedData.email);
     const prefixError = validatePrefix(trimmedData.prefix);
     const phoneError = validatePhone(trimmedData.phone);
     const messageError = validateMessage(trimmedData.message);
-  
+
     if (nameError || emailError || prefixError || phoneError || messageError) {
       setErrors({
         name: nameError,
@@ -112,18 +119,19 @@ const Contact = () => {
         phone: phoneError,
         message: messageError,
       });
-      return; // Evitar el envío si hay errores
-    } else {
-      setFormData({
-        name: trimmedData.name,
-        email: trimmedData.email,
-        phone: trimmedData.prefix + trimmedData.phone,
-        language: trimmedData.language,
-        message: trimmedData.message,
-      })
+      return;
     }
-  
-    console.log("Formulario enviado:", formData);
+
+    // Mostrar la alerta con SweetAlert2
+    await MySwal.fire({
+      title: t("contact.alert.title"),
+      text: t("contact.alert.text"),
+      icon: "success",
+      confirmButtonText: t("contact.alert.button"),
+      buttonsStyling: false, // Evitamos estilos predeterminados
+    });
+
+    navigate("/");
   };
 
   return (
@@ -190,7 +198,7 @@ const Contact = () => {
               value={phone.prefix}
               onChange={handleChange}
               required
-              className="bg-transparent w-16 border-r-[1px] border-gray-200 border-opacity-30 rounded-none focus:outline-none"
+              className="bg-transparent w-16 border-r-[1px] border-gray-600 dark:border-gray-200 border-opacity-30 rounded-none focus:outline-none"
             />
             <input
               type="text"
