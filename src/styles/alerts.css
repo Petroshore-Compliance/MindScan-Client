@@ -1,0 +1,43 @@
+.swal2-popup {
+    background-color: #ffffff; /* Fondo claro */
+    border: 2px solid #a5b4fc; /* Borde azul claro */
+    border-radius: 1.5rem; /* Bordes redondeados */
+    padding: 1.5rem; /* Espaciado interno */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+    color: #1a202c; /* Texto oscuro */
+  }
+  
+  .dark .swal2-popup {
+    background-color: #1a202c; /* Fondo oscuro */
+    border-color: #4c51bf; /* Borde azul oscuro */
+    color: #f7fafc; /* Texto claro */
+  }
+  
+  /* Estilo del título */
+  .swal2-title {
+    font-size: 2.25rem; /* Tamaño del texto */
+    font-weight: 600; /* Negrita */
+    margin-bottom: 0.75rem; /* Separación inferior */
+  }
+  
+  /* Estilo del texto */
+  .swal2-html-container {
+    font-size: 1.125rem; /* Tamaño del texto */
+    line-height: 1.75rem; /* Altura de línea */
+    color: inherit; /* Usa el color actual */
+  }
+  
+  /* Estilo del botón de confirmación */
+  .swal2-confirm {
+    background-color: #4c51bf; /* Fondo azul */
+    color: #ffffff; /* Texto blanco */
+    font-size: 1.125rem; /* Tamaño del texto */
+    font-weight: 600; /* Negrita */
+    border-radius: 1.5rem; /* Bordes redondeados */
+    padding: 0.5rem 1.5rem; /* Espaciado interno */
+    transition: all 0.3s ease; /* Transición */
+  }
+  
+  .swal2-confirm:hover {
+    background-color: #3730a3; /* Fondo azul oscuro */
+  }

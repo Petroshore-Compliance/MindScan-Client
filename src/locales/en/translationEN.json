@@ -68,34 +68,40 @@
         }
     },
     "contact": {
-    "meta_title": "Contact - MindScan",
-    "title": "Contact Us",
-    "description": "Leave us your details and we will get in touch with you as soon as possible.",
-    "errors": {
-        "name": "Name cannot be empty.",
-        "name_char": "Name cannot contain special characters or numbers.",
-        "email": "Email cannot be empty.",
-        "email_char": "Please enter a valid email.",
-        "prefix": "Prefix cannot be empty.",
-        "prefix_char": "The prefix must start with + and contain between 1 and 4 digits.",
-        "phone": "Phone number cannot be empty.",
-        "phone_char": "The number must contain between 6 and 15 digits.",
-        "message": "Message cannot be empty.",
-        "message_char": "The message cannot exceed 600 characters."
-    },
-    "form": {
-        "name": "Name",
-        "email": "Email",
-        "phone": "Phone",
-        "language": "Language",
-        "language_options": {
-            "default": "Select a language",
-            "english": "English",
-            "spanish": "Spanish",
-            "portuguese": "Portuguese"
+        "meta_title": "Contact - MindScan",
+        "title": "Contact Us",
+        "description": "Leave us your details and we will get in touch with you as soon as possible.",
+        "errors": {
+            "name": "Name cannot be empty.",
+            "name_char": "Name cannot contain special characters or numbers.",
+            "name_length": "The name cannot exceed 45 characters.",
+            "email": "Email cannot be empty.",
+            "email_char": "Please enter a valid email.",
+            "prefix": "Prefix cannot be empty.",
+            "prefix_char": "The prefix must start with + and contain between 1 and 4 digits.",
+            "phone": "Phone number cannot be empty.",
+            "phone_char": "The number must contain between 6 and 15 digits.",
+            "message": "Message cannot be empty.",
+            "message_char": "The message cannot exceed 600 characters."
         },
-        "message": "Reason for Contact",
-        "submit": "Submit"
+        "form": {
+            "name": "Name",
+            "email": "Email",
+            "phone": "Phone",
+            "language": "Language",
+            "language_options": {
+                "default": "Select a language",
+                "english": "English",
+                "spanish": "Spanish",
+                "portuguese": "Portuguese"
+            },
+            "message": "Reason for Contact",
+            "submit": "Submit"
+        },
+        "alert": {
+            "title": "Thank you for contacting us!",
+            "text": "We will get back to you as soon as possible.",
+            "button": "Back to Home"
         }
     },
     "about": {
