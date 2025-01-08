@@ -2,13 +2,13 @@ import { useState, useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import { motion, AnimatePresence } from 'framer-motion';
-import { getOptimizedUrl } from "../utils/cloudinary.js";
-import LanguageSelector from "./LanguageSelector.jsx";
-import ThemeSwitch from "./ThemeSwitch.jsx";
-import useTheme from '../hooks/useTheme';
+import { getOptimizedUrl } from "../../utils/cloudinary.js";
+import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
+import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.jsx";
+import useTheme from '../../hooks/useTheme.js';
 
 const NavBar = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("NavBar");
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef();
   const [theme] = useTheme();
@@ -71,7 +71,7 @@ const NavBar = () => {
           {/* Sección derecha */}
           <div className="hidden xl:flex xl:items-center xl:space-x-2 font-semibold">
             <Link to="/login" className="flex items-center xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500">
-              {t('nav_bar.login')}
+              {t('login')}
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-login-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M3 12h13l-3 -3" /><path d="M13 15l3 -3" /></svg>
             </Link>
             <LanguageSelector />
@@ -81,7 +81,7 @@ const NavBar = () => {
           {/* Botón del menú hamburguesa para móviles */}
           <div className="flex items-center space-x-2 xl:hidden">
             <Link to="/login" className="flex items-center text-gray-800 dark:text-white">
-              {t('nav_bar.login')}
+              {t('login')}
               <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-login-2"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 8v-2a2 2 0 0 1 2 -2h7a2 2 0 0 1 2 2v12a2 2 0 0 1 -2 2h-7a2 2 0 0 1 -2 -2v-2" /><path d="M3 12h13l-3 -3" /><path d="M13 15l3 -3" /></svg>
             </Link>
 

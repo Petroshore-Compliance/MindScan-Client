@@ -1,17 +1,17 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from 'react-i18next';
-import NavBar from './components/NavBar.jsx';
-import Footer from './components/Footer.jsx';
-import Landing from './pages/Landing.jsx';
-import About from './pages/About.jsx';
-import Contact from './pages/Contact.jsx';
-import Login from './pages/Login.jsx';
-import NotFound from './pages/NotFound.jsx';
+import NavBar from './components/NavBar/NavBar.jsx';
+import Footer from './components/Footer/Footer.jsx';
+import Landing from './pages/Landing/Landing.jsx';
+import About from './pages/About/About.jsx';
+import Contact from './pages/Contact/Contact.jsx';
+import Login from './pages/Login/Login.jsx';
+import NotFound from './pages/NotFound/NotFound.jsx';
 import './App.css';
 
 const App = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation("common");
 
   return (
     <div className="flex flex-col min-h-screen">

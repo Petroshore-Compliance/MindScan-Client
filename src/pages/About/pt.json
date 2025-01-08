@@ -1,0 +1,25 @@
+{
+    "meta_title": "Sobre nós - MindScan",
+    "title": "Sobre nós",
+    "text_0": "MindScan é uma ferramenta desenvolvida pela PetroShore Compliance, uma empresa reconhecida internacionalmente por sua especialização em conformidade normativa, governança corporativa e gestão de riscos. Com presença em 18 países e mais de 12.500 casos bem-sucedidos, a PetroShore consolidou sua reputação global na prevenção de crimes corporativos e fraudes ocupacionais.",
+    "text_1": "O MindScan reflete o compromisso da PetroShore com a excelência e a inovação, oferecendo uma solução avançada para a análise e compreensão de características psicológicas e emocionais. Esta ferramenta foi projetada para ajudar organizações a explorar aspectos como neuroticismo, estabilidade emocional, extroversão, abertura a novas experiências, amabilidade e responsabilidade.",
+    "text_2": "Ao integrar o MindScan em seu portfólio de serviços, a PetroShore amplia sua missão de fortalecer as competências individuais e coletivas, promovendo uma cultura de conformidade corporativa eficaz e uma melhor compreensão do comportamento humano em ambientes profissionais.",
+    "text_3": "A PetroShore combina consultoria e treinamento para oferecer excelência aos seus clientes, garantindo a aplicação efetiva de programas de conformidade e a proteção contra fraudes e outros crimes corporativos.",
+    "text_4": "A criação do MindScan é um testemunho do compromisso da PetroShore com a inovação e a excelência no desenvolvimento de soluções tecnológicas que apoiam a gestão de programas de conformidade e antifraude, incluindo a gestão de canais de denúncia, a elaboração de perfis comportamentais e a avaliação de fraudes.",
+    "text_5": "Em resumo, o MindScan é uma ferramenta que personifica a experiência e a dedicação da PetroShore Compliance no desenvolvimento de soluções abrangentes para a prevenção e o tratamento de atos ilegais dentro das organizações, contribuindo para o fortalecimento de uma cultura corporativa sólida e ética.",
+    "team": {
+        "title": "Nossa equipe",
+        "members": [
+            {
+                "photo": "MindScan/collaborator-andrei",
+                "name": "Andrei Faur",
+                "role": "Desenvolvedor Front-end"
+            },
+            {
+                "photo": "MindScan/collaborator-roman",
+                "name": "Román De Las Heras",
+                "role": "Desenvolvedor Back-end"
+            }
+        ]
+    }
+}

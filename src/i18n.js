@@ -1,43 +1,132 @@
-// src/i18n.js
 import i18n from 'i18next';
 import { initReactI18next } from 'react-i18next';
-
-// Si usas backend HTTP y detector de idioma
-import HttpApi from 'i18next-http-backend';
 import LanguageDetector from 'i18next-browser-languagedetector';
 
-// Importa tus archivos de traducción si los tienes localmente
-import translationEN from './locales/en/translationEN.json';
-import translationEs from './locales/es/translationES.json';
-import translationPT from './locales/pt/translationPT.json';
+//------------------------------------------------------------------------------ Common
+
+import enCommon from "./common/en.json";
+import esCommon from "./common/es.json";
+import ptCommon from "./common/pt.json";
+
+//------------------------------------------------------------------------------ Components
+
+import enFooter from "./components/Footer/en.json";
+import esFooter from "./components/Footer/es.json";
+import ptFooter from "./components/Footer/pt.json";
+
+import enLanguageSelector from "./components/LanguageSelector/en.json";
+import esLanguageSelector from "./components/LanguageSelector/es.json";
+import ptLanguageSelector from "./components/LanguageSelector/pt.json";
+
+import enMindMap from "./components/MindMap/en.json";
+import esMindMap from "./components/MindMap/es.json";
+import ptMindMap from "./components/MindMap/pt.json";
+
+import enNavBar from "./components/NavBar/en.json";
+import esNavBar from "./components/NavBar/es.json";
+import ptNavBar from "./components/NavBar/pt.json";
+
+import enThemeSwitch from "./components/ThemeSwitch/en.json";
+import esThemeSwitch from "./components/ThemeSwitch/es.json";
+import ptThemeSwitch from "./components/ThemeSwitch/pt.json";
+
+//------------------------------------------------------------------------------ Pages
+
+import enAbout from "./pages/About/en.json";
+import esAbout from "./pages/About/es.json";
+import ptAbout from "./pages/About/pt.json";
+
+import enContact from "./pages/Contact/en.json";
+import esContact from "./pages/Contact/es.json";
+import ptContact from "./pages/Contact/pt.json";
+
+import enLanding from "./pages/Landing/en.json";
+import esLanding from "./pages/Landing/es.json";
+import ptLanding from "./pages/Landing/pt.json";
+
+import enLogin from "./pages/Login/en.json";
+import esLogin from "./pages/Login/es.json";
+import ptLogin from "./pages/Login/pt.json";
+
+import enNotFound from "./pages/NotFound/en.json";
+import esNotFound from "./pages/NotFound/es.json";
+import ptNotFound from "./pages/NotFound/pt.json";
 
 i18n
-  // Usar backend HTTP para cargar archivos JSON de traducciones
-  .use(HttpApi)
-  // Detectar idioma del navegador
   .use(LanguageDetector)
-  // Pasar a instancia de i18n
   .use(initReactI18next)
   .init({
-    // Recursos si usas importación local
-    resources: {
-        en: { translation: translationEN },
-        es: { translation: translationEs },
-        pt: { translation: translationPT },
-    },
-    fallbackLng: 'en',
     supportedLngs: ['en', 'es', 'pt'],
-    interpolation: {
-      escapeValue: false, // React ya hace escape de los valores
+    fallbackLng: 'en',
+    ns: [
+      'common',
+      
+      'Footer',
+      'LanguageSelector',
+      'MindMap',
+      'NavBar',
+      'ThemeSwitch',
+
+      'About',
+      'Contact',
+      'Landing',
+      'Login',
+      'NotFound',
+    ],
+    resources: {
+      en: {
+        common: enCommon,
+        
+        Footer: enFooter,
+        LanguageSelector: enLanguageSelector,
+        MindMap: enMindMap,
+        NavBar: enNavBar,
+        ThemeSwitch: enThemeSwitch,
+
+        About: enAbout,
+        Contact: enContact,
+        Landing: enLanding,
+        Login: enLogin,
+        NotFound: enNotFound,
+      },
+      es: {
+        common: esCommon,
+
+        Footer: esFooter,
+        LanguageSelector: esLanguageSelector,
+        MindMap: esMindMap,
+        NavBar: esNavBar,
+        ThemeSwitch: esThemeSwitch,
+
+        About: esAbout,
+        Contact: esContact,
+        Landing: esLanding,
+        Login: esLogin,
+        NotFound: esNotFound,
+      },
+      pt: {
+        common: ptCommon,
+
+        Footer: ptFooter,
+        LanguageSelector: ptLanguageSelector,
+        MindMap: ptMindMap,
+        NavBar: ptNavBar,
+        ThemeSwitch: ptThemeSwitch,
+
+        About: ptAbout,
+        Contact: ptContact,
+        Landing: ptLanding,
+        Login: ptLogin,
+        NotFound: ptNotFound,
+      },
     },
     detection: {
       // Opciones de detección de idioma
       order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
       caches: ['localStorage', 'cookie'],
     },
-    backend: {
-      // Ruta para cargar los archivos de traducción
-      loadPath: '/locales/{{lng}}/translation.json',
+    interpolation: {
+      escapeValue: false, // React ya hace escape de los valores
     },
   });
 

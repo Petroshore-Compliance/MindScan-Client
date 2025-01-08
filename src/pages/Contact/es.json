@@ -1,0 +1,37 @@
+{
+    "meta_title": "Contacto - MindScan",
+    "title": "Contáctanos",
+    "description": "Déjanos tus datos y nos pondremos en contacto contigo lo antes posible.",
+    "errors": {
+        "name": "El nombre no puede estar vacío.",
+        "name_char": "El nombre no puede contener caracteres especiales o números.",
+        "name_length": "El nombre no puede exceder los 45 caracteres.",
+        "email": "El email no puede estar vacío.",
+        "email_char": "Introduce un email válido.",
+        "prefix": "El prefijo no puede estar vacío.",
+        "prefix_char": "El prefijo debe comenzar con + y contener entre 1 y 4 dígitos.",
+        "phone": "El número de teléfono no puede estar vacío.",
+        "phone_char": "El número debe contener entre 6 y 15 dígitos.",
+        "message": "El mensaje no puede estar vacío.",
+        "message_char": "El mensaje no puede superar los 600 caracteres."
+    },
+    "form": {
+        "name": "Nombre",
+        "email": "Email",
+        "phone": "Teléfono",
+        "language": "Idioma",
+        "language_options": {
+            "default": "Selecciona un idioma",
+            "english": "Inglés",
+            "spanish": "Español",
+            "portuguese": "Portugués"
+        },
+        "message": "Motivo de contacto",
+        "submit": "Enviar"
+    },
+    "alert": {
+        "title": "¡Gracias por contactarnos!",
+        "text": "Nos pondremos en contacto contigo lo antes posible.",
+        "button": "Volver al inicio"
+    }
+}

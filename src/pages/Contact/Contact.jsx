@@ -4,12 +4,12 @@ import { useTranslation } from 'react-i18next';
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
-import "../styles/alerts.css";
+import "../../styles/alerts.css";
 
 const MySwal = withReactContent(Swal);
 
 const Contact = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("Contact");
   const navigate = useNavigate();
   const [formData, setFormData] = useState({
     name: "",
@@ -34,35 +34,35 @@ const Contact = () => {
 
   // Funciones de validación
   const validateName = (name) => {
-    if (!name.trim()) return t('contact.errors.name');
-    if (/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/.test(name)) return t('contact.errors.name_char');
-    if (name.length > 45) return t('contact.errors.name_length');
+    if (!name.trim()) return t('errors.name');
+    if (/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/.test(name)) return t('errors.name_char');
+    if (name.length > 45) return t('errors.name_length');
     return "";
   };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.trim()) return t('contact.errors.email');
-    if (!emailRegex.test(email)) return t('contact.errors.email_char');
+    if (!email.trim()) return t('errors.email');
+    if (!emailRegex.test(email)) return t('errors.email_char');
     return "";
   };
 
   const validatePrefix = (prefix) => {
-    if (!prefix.trim()) return t('contact.errors.prefix');
-    if (!/^\+\d{1,4}$/.test(prefix)) return t('contact.errors.prefix_char');
+    if (!prefix.trim()) return t('errors.prefix');
+    if (!/^\+\d{1,4}$/.test(prefix)) return t('errors.prefix_char');
     return "";
   };
 
   const validatePhone = (phone) => {
     const sanitizedPhone = phone.replace(/\s+/g, '').trim();
-    if (!sanitizedPhone) return t('contact.errors.phone');
-    if (!/^\d{6,15}$/.test(sanitizedPhone)) return t('contact.errors.phone_char');
+    if (!sanitizedPhone) return t('errors.phone');
+    if (!/^\d{6,15}$/.test(sanitizedPhone)) return t('errors.phone_char');
     return "";
   };
 
   const validateMessage = (message) => {
-    if (!message.trim()) return t('contact.errors.message');
-    if (message.length > 600) return t('contact.errors.message_char');
+    if (!message.trim()) return t('errors.message');
+    if (message.length > 600) return t('errors.message_char');
     return "";
   };
 
@@ -124,10 +124,10 @@ const Contact = () => {
 
     // Mostrar la alerta con SweetAlert2
     await MySwal.fire({
-      title: t("contact.alert.title"),
-      text: t("contact.alert.text"),
+      title: t("alert.title"),
+      text: t("alert.text"),
       icon: "success",
-      confirmButtonText: t("contact.alert.button"),
+      confirmButtonText: t("alert.button"),
       buttonsStyling: false, // Evitamos estilos predeterminados
     });
 
@@ -137,13 +137,13 @@ const Contact = () => {
   return (
     <div className="w-full flex flex-col items-center mx-auto p-8 text-zinc-800 dark:text-zinc-200">
       <Helmet>
-        <title>{t('contact.meta_title')}</title>
+        <title>{t('meta_title')}</title>
       </Helmet>
 
       <div className="text-center mb-8">
-        <h2 className="text-4xl lg:text-5xl font-semibold mb-4">{t('contact.title')}</h2>
+        <h2 className="text-4xl lg:text-5xl font-semibold mb-4">{t('title')}</h2>
         <p className="text-xl lg:text-2xl text-zinc-700 dark:text-zinc-300 max-w-xl mx-auto">
-          {t('contact.description')}
+          {t('description')}
         </p>
       </div>
 
@@ -153,7 +153,7 @@ const Contact = () => {
         {/* Nombre */}
         <div>
           <label htmlFor="name" className="block text-lg font-medium">
-            {t('contact.form.name')}
+            {t('form.name')}
           </label>
           <input
             type="text"
@@ -170,7 +170,7 @@ const Contact = () => {
         {/* Email */}
         <div>
           <label htmlFor="email" className="block text-lg font-medium">
-            {t('contact.form.email')}
+            {t('form.email')}
           </label>
           <input
             type="email"
@@ -187,7 +187,7 @@ const Contact = () => {
         {/* Teléfono */}
         <div>
           <label htmlFor="phone" className="block text-lg font-medium">
-            {t('contact.form.phone')}
+            {t('form.phone')}
           </label>
           <div className="flex flex-row mt-2 w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500">
             <input
@@ -216,7 +216,7 @@ const Contact = () => {
         {/* Idioma */}
         <div>
           <label htmlFor="language" className="block text-lg font-medium">
-            {t('contact.form.language')}
+            {t('form.language')}
           </label>
           <select
             id="language"
@@ -226,17 +226,17 @@ const Contact = () => {
             required
             className="mt-2 text-lg block w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500"
           >
-            <option value="">{t('contact.form.language_options.default')}</option>
-            <option value="en">{t('contact.form.language_options.english')}</option>
-            <option value="es">{t('contact.form.language_options.spanish')}</option>
-            <option value="pt">{t('contact.form.language_options.portuguese')}</option>
+            <option value="">{t('form.language_options.default')}</option>
+            <option value="en">{t('form.language_options.english')}</option>
+            <option value="es">{t('form.language_options.spanish')}</option>
+            <option value="pt">{t('form.language_options.portuguese')}</option>
           </select>
         </div>
 
         {/* Mensaje */}
         <div>
           <label htmlFor="message" className="block text-lg font-medium">
-            {t('contact.form.message')}
+            {t('form.message')}
           </label>
           <textarea
             id="message"
@@ -255,7 +255,7 @@ const Contact = () => {
           <button
             type="submit"
             className="px-6 py-2 bg-indigo-600 bg-opacity-70 xl:hover:bg-opacity-100 text-white text-lg font-semibold rounded-full transition-colors duration-500"
-          >{t('contact.form.submit')}</button>
+          >{t('form.submit')}</button>
         </div>
       </form>
     </div>
