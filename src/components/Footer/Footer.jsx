@@ -1,10 +1,10 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { getOptimizedUrl } from "../utils/cloudinary.js";
-import useTheme from '../hooks/useTheme';
+import { getOptimizedUrl } from "../../utils/cloudinary.js";
+import useTheme from '../../hooks/useTheme.js';
 
 const Footer = () => {
-    const { t } = useTranslation();
+    const { t } = useTranslation("Footer");
     const [theme] = useTheme();
 
     const logoLight = getOptimizedUrl("MindScan/Petroshore-Logo");
@@ -39,18 +39,18 @@ const Footer = () => {
                 </div>
 
                 <div className="flex flex-col underline font-semibold">
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/about">{t('footer.about')}</Link>
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/sitemap">{t('footer.sitemap')}</Link>
+                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/about">{t('about')}</Link>
+                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/sitemap">{t('sitemap')}</Link>
                 </div>
 
                 <div className="flex flex-col underline font-semibold">
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/terms-of-use">{t('footer.terms-of-use')}</Link>
-                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/privacy-policy">{t('footer.privacy-policy')}</Link>
+                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/terms-of-use">{t('terms-of-use')}</Link>
+                    <Link className="xl:hover:bg-slate-300 xl:hover:bg-opacity-30 py-1 px-3 rounded-3xl transition-colors duration-500" to="/privacy-policy">{t('privacy-policy')}</Link>
                 </div>
             </div>
 
             <div className="flex flex-col items-center">
-                <p>&copy; {t('footer.rights')}</p>
+                <p>&copy; {t('rights')}</p>
             </div>
         </footer>
     );

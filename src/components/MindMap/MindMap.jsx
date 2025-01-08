@@ -3,11 +3,11 @@ import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
 const MindMap = () => {
-  const { t } = useTranslation();
+  const { t } = useTranslation("MindMap");
 
-  const steps = t("landing.mind_map.steps", { returnObjects: true });
-  const header = t("landing.mind_map.header", { returnObjects: true });
-  const finalSection = t("landing.mind_map.final_section", { returnObjects: true });
+  const steps = t("steps", { returnObjects: true });
+  const header = t("header", { returnObjects: true });
+  const finalSection = t("final_section", { returnObjects: true });
 
   return (
     <div className="w-full max-w-4xl mx-auto p-4 sm:p-8 text-zinc-800 dark:text-zinc-200">

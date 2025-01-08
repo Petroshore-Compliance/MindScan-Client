@@ -1,9 +1,9 @@
-import useTheme from '../hooks/useTheme.js';
+import useTheme from '../../hooks/useTheme.js';
 import { useTranslation } from "react-i18next";
 
 const ThemeSwitch = () => {
   const [theme, setTheme] = useTheme();
-  const { t } = useTranslation();
+  const { t } = useTranslation("ThemeSwitch");
 
   const toggleTheme = () => {
     setTheme(theme === 'light' ? 'dark' : 'light');
@@ -17,11 +17,11 @@ const ThemeSwitch = () => {
     >
       {theme === 'light' ? (
         <span aria-hidden="true">
-          {t('theme_switch.dark')} ☾
+          {t('dark')} ☾
         </span>
       ) : (
         <span aria-hidden="true">
-          {t('theme_switch.light')} ☀
+          {t('light')} ☀
         </span>
       )}
     </button>

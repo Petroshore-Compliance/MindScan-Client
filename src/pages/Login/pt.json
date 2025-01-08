@@ -1,0 +1,11 @@
+{
+    "meta_title": "Iniciar sessão - MindScan",
+    "title": "Iniciar sessão",
+    "description": "Insira suas credenciais para acessar sua conta.",
+    "error": "E-mail ou senha inválidos",
+    "form": {
+        "email": "E-mail",
+        "password": "Senha",
+        "submit": "Iniciar sessão"
+    }
+}

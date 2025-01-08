@@ -1,0 +1,11 @@
+{
+    "meta_title": "Login - MindScan",
+    "title": "Login",
+    "description": "Enter your credentials to access your account.",
+    "error": "Invalid email or password.",
+    "form": {
+        "email": "Email",
+        "password": "Password",
+        "submit": "Login"
+    }
+}

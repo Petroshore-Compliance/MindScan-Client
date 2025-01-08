@@ -3,7 +3,7 @@ import { useTranslation } from 'react-i18next';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const LanguageSelector = () => {
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation("LanguageSelector");
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef();
 
@@ -17,9 +17,9 @@ const LanguageSelector = () => {
   };
 
   const languages = {
-    en: { nativeName: t('language_selector.english'), flag: '🇬🇧' },
-    es: { nativeName: t('language_selector.spanish'), flag: '🇪🇸' },
-    pt: { nativeName: t('language_selector.portuguese'), flag: '🇵🇹' },
+    en: { nativeName: t('english'), flag: '🇬🇧' },
+    es: { nativeName: t('spanish'), flag: '🇪🇸' },
+    pt: { nativeName: t('portuguese'), flag: '🇵🇹' },
   };
 
   // Cerrar el desplegable al hacer clic fuera

@@ -1,0 +1,36 @@
+{
+    "header": {
+        "title": "Descubre cómo funciona MindScan",
+        "subtitle": "Sigue estos pasos para entender cómo tu organización puede beneficiarse de nuestra herramienta."
+    },
+    "steps": [
+        {
+            "title": "Contáctanos",
+            "description": "Rellena nuestro formulario para solicitar una demostración y obtener más información sobre cómo funciona MindScan."
+        },
+        {
+            "title": "Demo y compra de licencias",
+            "description": "Experimenta la herramienta de primera mano y adquiere licencias para empezar."
+        },
+        {
+            "title": "Configuración de cuenta y empresa",
+            "description": "Creamos tu cuenta de administrador y configuramos tu empresa en la plataforma."
+        },
+        {
+            "title": "Invitar usuarios",
+            "description": "El administrador puede invitar a miembros del equipo a unirse a la empresa y acceder a los diagnósticos."
+        },
+        {
+            "title": "Completa diagnósticos",
+            "description": "Cada usuario completa su diagnóstico, consumiendo una licencia por sesión."
+        },
+        {
+            "title": "Accede a los resultados",
+            "description": "Tanto los usuarios como los administradores pueden acceder a informes detallados generados después de cada diagnóstico."
+        }
+    ],
+    "final_section": {
+        "text": "Empodera a tu organización con MindScan hoy mismo. Contáctanos para comenzar.",
+        "cta": "Contáctanos"
+    }
+}
