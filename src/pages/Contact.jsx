@@ -149,8 +149,7 @@ const Contact = () => {
 
       <form
         className="w-full max-w-xl space-y-6 bg-white dark:bg-zinc-800 p-6 rounded-3xl shadow-2xl border-2 border-indigo-300 dark:border-indigo-900"
-        onSubmit={handleSubmit}
-      >
+        onSubmit={handleSubmit}>
         {/* Nombre */}
         <div>
           <label htmlFor="name" className="block text-lg font-medium">
