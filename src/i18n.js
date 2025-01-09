@@ -36,6 +36,10 @@ import enAbout from "./pages/About/en.json";
 import esAbout from "./pages/About/es.json";
 import ptAbout from "./pages/About/pt.json";
 
+import enAdminLogin from "./pages/AdminLogin/en.json";
+import esAdminLogin from "./pages/AdminLogin/es.json";
+import ptAdminLogin from "./pages/AdminLogin/pt.json";
+
 import enContact from "./pages/Contact/en.json";
 import esContact from "./pages/Contact/es.json";
 import ptContact from "./pages/Contact/pt.json";
@@ -68,6 +72,7 @@ i18n
       'ThemeSwitch',
 
       'About',
+      'AdminLogin',
       'Contact',
       'Landing',
       'Login',
@@ -84,6 +89,7 @@ i18n
         ThemeSwitch: enThemeSwitch,
 
         About: enAbout,
+        AdminLogin: enAdminLogin,
         Contact: enContact,
         Landing: enLanding,
         Login: enLogin,
@@ -99,6 +105,7 @@ i18n
         ThemeSwitch: esThemeSwitch,
 
         About: esAbout,
+        AdminLogin: esAdminLogin,
         Contact: esContact,
         Landing: esLanding,
         Login: esLogin,
@@ -114,6 +121,7 @@ i18n
         ThemeSwitch: ptThemeSwitch,
 
         About: ptAbout,
+        AdminLogin: ptAdminLogin,
         Contact: ptContact,
         Landing: ptLanding,
         Login: ptLogin,
