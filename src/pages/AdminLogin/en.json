@@ -1,7 +1,7 @@
 {
-    "meta_title": "Sign In - MindScan",
-    "title": "Sign In",
-    "description": "Enter your credentials to access your account.",
+    "meta_title": "Admin Panel - MindScan",
+    "title": "Admin Panel",
+    "description": "Enter your credentials to access the Admin Panel.",
     "error": "Invalid email or password",
     "form": {
         "email": "Email Address",

@@ -1,0 +1,11 @@
+{
+    "meta_title": "Painel de Administrador - MindScan",
+    "title": "Painel de Administrador",
+    "description": "Insira suas credenciais para acessar o Painel de Administrador.",
+    "error": "E-mail ou senha inválidos",
+    "form": {
+        "email": "E-mail",
+        "password": "Senha",
+        "submit": "Entrar"
+    }
+}
