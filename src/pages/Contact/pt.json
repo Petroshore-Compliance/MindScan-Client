@@ -27,11 +27,24 @@
             "portuguese": "Português"
         },
         "message": "Motivo do Contato",
+        "submit_loading": "Enviando...",
         "submit": "Enviar"
     },
     "alert": {
-        "title": "Obrigado por entrar em contato conosco!",
-        "text": "Entraremos em contato com você o mais breve possível.",
-        "button": "Voltar para a página inicial"
+        "success": {
+            "title": "Obrigado por entrar em contato!",
+            "text": "Recebemos sua mensagem e entraremos em contato assim que possível.",
+            "button": "Voltar ao início"
+        },
+        "error": {
+            "title": "Ocorreu um problema",
+            "text": "Não foi possível enviar sua mensagem no momento. Por favor, tente novamente mais tarde.",
+            "button": "Tentar novamente"
+        },
+        "validation": {
+            "title": "Verifique seus dados",
+            "text": "Alguns campos obrigatórios estão vazios ou contêm erros. Por favor, corrija-os antes de continuar.",
+            "button": "Corrigir"
+        }
     }
 }
