@@ -1,9 +1,11 @@
 import { useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet-async";
 import { useTranslation } from 'react-i18next';
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
+import { sendContactForm } from "../../features/contact/contactSlice";
 import "../../styles/alerts.css";
 
 const MySwal = withReactContent(Swal);
@@ -11,6 +13,10 @@ const MySwal = withReactContent(Swal);
 const Contact = () => {
   const { t } = useTranslation("Contact");
   const navigate = useNavigate();
+  const dispatch = useDispatch();
+
+  const { isLoading } = useSelector((state) => state.contact);
+
   const [formData, setFormData] = useState({
     name: "",
     email: "",
@@ -69,7 +75,6 @@ const Contact = () => {
   const handleChange = (e) => {
     const { name, value } = e.target;
   
-    // Validar cada campo en tiempo real (sin eliminar espacios aún)
     let error = "";
     if (name === "name") error = validateName(value);
     if (name === "email") error = validateEmail(value);
@@ -82,15 +87,18 @@ const Contact = () => {
       [name]: error,
     }));
   
-    setFormData((prevData) => ({
-      ...prevData,
-      [name]: value, // No usamos trim aquí
-    }));
-
-    setPhone((prevData) => ({
-      ...prevData,
-      [name]: value, // No usamos trim aquí
-    }));
+    if (["name", "email", "phone", "language", "message"].includes(name)) {
+      setFormData((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
+    if (["prefix", "phone"].includes(name)) {
+      setPhone((prevData) => ({
+        ...prevData,
+        [name]: value,
+      }));
+    }
   };
 
   const handleSubmit = async (e) => {
@@ -104,7 +112,6 @@ const Contact = () => {
       message: formData.message.trim(),
     };
 
-    // Validar todos los campos
     const nameError = validateName(trimmedData.name);
     const emailError = validateEmail(trimmedData.email);
     const prefixError = validatePrefix(trimmedData.prefix);
@@ -122,16 +129,45 @@ const Contact = () => {
       return;
     }
 
-    // Mostrar la alerta con SweetAlert2
-    await MySwal.fire({
-      title: t("alert.title"),
-      text: t("alert.text"),
-      icon: "success",
-      confirmButtonText: t("alert.button"),
-      buttonsStyling: false, // Evitamos estilos predeterminados
-    });
+    const combinedPhone = phone.prefix.trim() + phone.phone.trim();
+    
+    const finalFormData = {
+      ...formData,
+      phone: combinedPhone, 
+    };
 
-    navigate("/");
+    try {
+      const resultAction = await dispatch(sendContactForm(finalFormData));
+
+      if (sendContactForm.fulfilled.match(resultAction)) {
+        await MySwal.fire({
+          title: t("alert.success.title"),
+          text: t("alert.success.text"),
+          icon: "success",
+          confirmButtonText: t("alert.success.button"),
+          buttonsStyling: false, // Evitamos estilos predeterminados
+        });
+        navigate("/");
+      } else {
+        MySwal.fire({
+          title: t("alert.error.title"),
+          text: resultAction.error?.message || t("alert.error.text"),
+          icon: "error",
+          confirmButtonText: t("alert.error.button"),
+        }).then(() => {
+          window.location.reload();
+        });
+      }
+    } catch {
+      MySwal.fire({
+        title: t("alert.validation.title"),
+        text: t("alert.validation.text"),
+        icon: "error",
+        confirmButtonText: t("alert.validation.button"),
+      }).then(() => {
+        window.location.reload();
+      });
+    }
   };
 
   return (
@@ -255,7 +291,7 @@ const Contact = () => {
           <button
             type="submit"
             className="px-6 py-2 bg-indigo-600 bg-opacity-70 xl:hover:bg-opacity-100 text-white text-lg font-semibold rounded-full transition-colors duration-500"
-          >{t('form.submit')}</button>
+          >{isLoading ? t('form.submit_loading') : t('form.submit')}</button>
         </div>
       </form>
     </div>

@@ -12,6 +12,7 @@
   "dependencies": {
     "@cloudinary/react": "^1.13.1",
     "@cloudinary/url-gen": "^1.21.0",
+    "@reduxjs/toolkit": "^2.5.0",
     "axios": "^1.7.7",
     "i18next": "^23.16.5",
     "i18next-browser-languagedetector": "^8.0.0",
@@ -22,6 +23,7 @@
     "react-helmet-async": "^2.0.5",
     "react-i18next": "^15.1.1",
     "react-query": "^3.39.3",
+    "react-redux": "^9.2.0",
     "react-router-dom": "^6.27.0",
     "sweetalert2": "^11.15.3",
     "sweetalert2-react-content": "^5.1.0"

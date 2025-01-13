@@ -27,11 +27,24 @@
             "portuguese": "Portuguese"
         },
         "message": "Reason for Contact",
+        "submit_loading": "Sending...",
         "submit": "Submit"
     },
     "alert": {
-        "title": "Thank you for contacting us!",
-        "text": "We will get back to you as soon as possible.",
-        "button": "Back to Home"
+        "success": {
+            "title": "Thank you for contacting us!",
+            "text": "We have received your message and will get in touch with you as soon as possible.",
+            "button": "Return to home"
+        },
+        "error": {
+            "title": "An error occurred",
+            "text": "We could not send your message at this time. Please try again later.",
+            "button": "Retry"
+        },
+        "validation": {
+            "title": "Check your data",
+            "text": "Some required fields are empty or contain errors. Please correct them before continuing.",
+            "button": "Correct"
+        }
     }
 }
