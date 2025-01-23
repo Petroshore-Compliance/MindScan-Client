@@ -6,6 +6,9 @@
     "form": {
         "email": "Correo Electrónico",
         "password": "Contraseña",
+        "forgot_password": "¿Has olvidado tu contraseña?",
+        "remember": "Mantener la sesión iniciada",
+        "loading": "Cargando...",
         "submit": "Iniciar Sesión"
     }
 }

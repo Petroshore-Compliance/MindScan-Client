@@ -1,3 +1,11 @@
 {
-    "login": "Iniciar sesión"
+    "login": "Iniciar sesión",
+    "Hello": "Hola",
+    "User": "Usuario",
+    "UserMenu": {
+        "Diagnostic": "Diagnóstico",
+        "MyProfile": "Mi perfil",
+        "CompanyPanel": "Panel de empresa",
+        "Logout": "Cerrar sesión"
+    }
 }

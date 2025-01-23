@@ -1,3 +1,11 @@
 {
-    "login": "Login"
+    "login": "Login",
+    "Hello": "Hello",
+    "User": "User",
+    "UserMenu": {
+        "Diagnostic": "Diagnostic",
+        "MyProfile": "My Profile",
+        "CompanyPanel": "Company Panel",
+        "Logout": "Logout"
+    }
 }
