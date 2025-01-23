@@ -40,7 +40,7 @@ const LanguageSelector = () => {
       {/* Botón principal */}
       <button
         onClick={toggleDropdown}
-        className="inline-flex justify-center items-center w-full text-gray-800 dark:text-white bg-transparent lg:hover:bg-slate-300 lg:hover:bg-opacity-20 lg:py-1 lg:px-2 rounded-3xl transition-colors duration-500"
+        className="inline-flex justify-center items-center w-full text-gray-800 dark:text-white bg-transparent lg:hover:bg-slate-300 lg:hover:bg-opacity-20 lg:py-2 lg:px-4 rounded-3xl transition-colors duration-500"
         aria-expanded={isOpen}
         aria-haspopup="true"
       >
@@ -69,7 +69,7 @@ const LanguageSelector = () => {
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 0.95 }}
             transition={{ duration: 0.2 }}
-            className="absolute left-0 lg:right-0 w-40 mt-2 bg-white bg-opacity-80 border border-gray-200 rounded-xl shadow-lg"
+            className="absolute lg:right-0 -right-20 top-9 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg"
             role="menu"
             aria-orientation="vertical"
             aria-labelledby="language-menu"
@@ -79,7 +79,7 @@ const LanguageSelector = () => {
                 <button
                   key={lng}
                   onClick={() => changeLanguage(lng)}
-                  className="flex items-center w-full px-2 py-2 text-gray-700 lg:hover:bg-opacity-30 lg:hover:bg-gray-600 rounded-lg"
+                  className="flex items-center w-full px-2 py-2 text-gray-700 lg:hover:bg-opacity-30 lg:hover:bg-gray-600 rounded-xl dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600"
                 >
                   {languages[lng].nativeName} {languages[lng].flag}
                 </button>

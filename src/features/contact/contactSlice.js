@@ -4,11 +4,9 @@ export const sendContactForm = createAsyncThunk(
     "contact/sendContactForm",
     async (FormData, thunkAPI) => {
         try {
-            const response = await fetch("http://localhost:3001/form/create-form", {
+            const response = await fetch("http://localhost:3001/contact/create", {
                 method: "POST",
-                headers: {
-                    "Content-Type": "application/json",
-                },
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(FormData),
             });
 

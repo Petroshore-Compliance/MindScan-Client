@@ -1,3 +1,11 @@
 {
-    "login": "Conecte-se"
+    "login": "Conecte-se",
+    "Hello": "Olá",
+    "User": "Usuário",
+    "UserMenu": {
+        "Diagnostic": "Diagnóstico",
+        "MyProfile": "Meu perfil",
+        "CompanyPanel": "Painel da empresa",
+        "Logout": "Sair"
+    }
 }

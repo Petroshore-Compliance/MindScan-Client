@@ -6,6 +6,9 @@
     "form": {
         "email": "E-mail",
         "password": "Senha",
+        "forgot_password": "Esqueceu sua senha?",
+        "remember": "Manter a sessão iniciada",
+        "loading": "Carregando...",
         "submit": "Entrar"
     }
 }
