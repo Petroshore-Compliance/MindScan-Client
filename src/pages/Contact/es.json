@@ -36,15 +36,26 @@
             "text": "Hemos recibido tu mensaje y nos pondremos en contacto contigo lo antes posible.",
             "button": "Volver al inicio"
         },
+        "406":{
+            "title": "Estamos revisando su solicitud de contacto",
+            "text": "Le contactaremos lo antes posible."
+        },
+        "409":{
+            "title": "Solicitud de contacto pendiente",
+            "text": "Actualmente ya tenemos una solicitud suya pendiente, la revisaremos lo antes posible."
+        },
+        "423":{
+            "title": "Contacto ya establecido",
+            "text": "Nos hemos puesto en contacto con usted, revise su email o su registro de llamadas."
+        },
         "error": {
             "title": "Ha ocurrido un problema",
-            "text": "No hemos podido enviar tu mensaje en este momento. Por favor, inténtalo de nuevo más tarde.",
-            "button": "Reintentar"
+            "text": "No hemos podido enviar tu mensaje en este momento. Por favor, inténtalo de nuevo más tarde."
         },
         "validation": {
             "title": "Verifica tus datos",
             "text": "Algunos campos obligatorios no están completos o contienen errores. Por favor, corrígelos antes de continuar.",
-            "button": "Corregir"
+            "button": "Reintentar"
         }
     }
 }

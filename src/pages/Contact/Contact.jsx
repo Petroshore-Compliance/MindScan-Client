@@ -149,13 +149,28 @@ const Contact = () => {
         });
         navigate("/");
       } else {
+        const errorStatus = resultAction.payload?.error;
+        let alertTitle = t("alert.error.title");
+        let alertText = resultAction.payload?.message || t("alert.error.text");
+
+        if (errorStatus === 406) {
+          alertTitle = t("alert.406.title");
+          alertText = t("alert.406.text");
+        } else if (errorStatus === 409) {
+          alertTitle = t("alert.409.title");
+          alertText = t("alert.409.text");
+        } else if (errorStatus === 423) {
+          alertTitle = t("alert.423.title");
+          alertText = t("alert.423.text");
+        }
+
         MySwal.fire({
-          title: t("alert.error.title"),
-          text: resultAction.error?.message || t("alert.error.text"),
-          icon: "error",
-          confirmButtonText: t("alert.error.button"),
+          title: alertTitle,
+          text: alertText,
+          icon: "warning",
+          confirmButtonText: t("alert.success.button"),
         }).then(() => {
-          window.location.reload();
+          navigate("/");
         });
       }
     } catch {

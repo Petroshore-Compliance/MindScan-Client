@@ -36,15 +36,26 @@
             "text": "We have received your message and will get in touch with you as soon as possible.",
             "button": "Return to home"
         },
+        "406":{
+            "title": "We are reviewing your contact request",
+            "text": "We will contact you as soon as possible."
+        },
+        "409":{
+            "title": "Pending contact request",
+            "text": "We currently have a pending request from you, we will review it as soon as possible."
+        },
+        "423":{
+            "title": "Contact already established",
+            "text": "We have contacted you, check your email or call log."
+        },
         "error": {
             "title": "An error occurred",
-            "text": "We could not send your message at this time. Please try again later.",
-            "button": "Retry"
+            "text": "We could not send your message at this time. Please try again later."
         },
         "validation": {
             "title": "Check your data",
             "text": "Some required fields are empty or contain errors. Please correct them before continuing.",
-            "button": "Correct"
+            "button": "Retry"
         }
     }
 }
