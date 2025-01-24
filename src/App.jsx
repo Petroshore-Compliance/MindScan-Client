@@ -79,7 +79,7 @@ const App = () => {
               }/>
             
               <Route path="/company-panel" element={
-                <ProtectedRoute>
+                <ProtectedRoute requiredRole={["admin", "manager"]}>
                   {"<CompanyPanel />"}
                 </ProtectedRoute>
               }/>
