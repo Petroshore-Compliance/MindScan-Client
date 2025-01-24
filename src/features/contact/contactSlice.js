@@ -10,11 +10,15 @@ export const sendContactForm = createAsyncThunk(
                 body: JSON.stringify(FormData),
             });
 
+            const data = await response.json();
+            
             if (!response.ok) {
-                throw new Error("Error sending form");
+                return thunkAPI.rejectWithValue({
+                    error: response.status,
+                    message: data.message,
+                });
             }
 
-            const data = await response.json();
             return data;
         } catch (error) {
             return thunkAPI.rejectWithValue({ error: error.message });
