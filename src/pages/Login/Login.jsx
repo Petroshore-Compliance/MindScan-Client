@@ -106,6 +106,7 @@ const Login = () => {
                             type="email"
                             id="email"
                             name="email"
+                            autoComplete="email"
                             value={user.email}
                             onChange={handleChange}
                             required
@@ -120,6 +121,7 @@ const Login = () => {
                             type={showPassword ? "text" : "password"}
                             id="password"
                             name="password"
+                            autoComplete="current-password"
                             value={user.password}
                             onChange={handleChange}
                             required

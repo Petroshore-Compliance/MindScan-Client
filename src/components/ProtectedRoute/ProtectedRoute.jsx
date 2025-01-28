@@ -7,12 +7,12 @@ export default function ProtectedRoute({ children, requiredRole }) {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { token } = useSelector((state) => state.loginUser);
+  const { userToken } = useSelector((state) => state.loginUser);
 
   useEffect(() => {
-    const localToken = token || localStorage.getItem("token") || sessionStorage.getItem("token");
+    const localUserToken = userToken || localStorage.getItem("userToken") || sessionStorage.getItem("userToken");
 
-    if (!localToken) {
+    if (!localUserToken) {
       navigate("/login");
       return;
     }
@@ -21,17 +21,17 @@ export default function ProtectedRoute({ children, requiredRole }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localToken}`,
+        "Authorization": `Bearer ${localUserToken}`,
       },
     })
       .then(async (res) => {
         if (!res.ok) {
-          throw new Error("Invalid token");
+          throw new Error("Invalid User Token");
         }
         return res.json();
       })
       .then((data) => {
-        dispatch(setUserFromToken({ user: data.user, token: localToken }));
+        dispatch(setUserFromToken({ user: data.user, userToken: localUserToken }));
 
         if (Array.isArray(requiredRole)) {
           if (!requiredRole.includes(data.user.role)) {
@@ -44,21 +44,21 @@ export default function ProtectedRoute({ children, requiredRole }) {
       .catch((error) => {
         console.error(error);
 
-        if (error.message === "Invalid token") {
-          localStorage.removeItem("token");
-          sessionStorage.removeItem("token");
+        if (error.message === "Invalid User Token") {
+          localStorage.removeItem("userToken");
+          sessionStorage.removeItem("userToken");
           dispatch(logoutUser());
           navigate("/login");
         } else if (error.message === "Unauthorized Role") {
           navigate("/");
         } else {
-          localStorage.removeItem("token");
-          sessionStorage.removeItem("token");
+          localStorage.removeItem("userToken");
+          sessionStorage.removeItem("userToken");
           dispatch(logoutUser());
           navigate("/");
         }
       });
-  }, [dispatch, navigate, token, requiredRole]);
+  }, [dispatch, navigate, userToken, requiredRole]);
 
   return children;
 }

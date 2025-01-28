@@ -1,11 +1,16 @@
 {
     "login": "Iniciar sesión",
+    "Logout": "Cerrar sesión",
     "Hello": "Hola",
     "User": "Usuario",
+    "AdminMenu": {
+        "Dashboard": "Panel de Administrador",
+        "Users": "Usuarios",
+        "Companies": "Empresas"
+    },
     "UserMenu": {
         "Diagnostic": "Diagnóstico",
         "MyProfile": "Mi perfil",
-        "CompanyPanel": "Panel de empresa",
-        "Logout": "Cerrar sesión"
+        "CompanyPanel": "Panel de empresa"
     }
 }

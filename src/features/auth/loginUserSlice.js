@@ -30,23 +30,26 @@ const loginUserSlice = createSlice({
     name: "loginUser",
     initialState: {
         user: null,
-        token: null,
+        userToken: null,
         status: "idle",
         error: null,
     },
     reducers: {
         logoutUser(state) {
             state.user = null;
-            state.token = null;
+            state.userToken = null;
             state.status = "idle";
             state.error = null;
 
-            localStorage.removeItem("token");
-            sessionStorage.removeItem("token");
+            localStorage.removeItem("user");
+            sessionStorage.removeItem("user");
+            
+            localStorage.removeItem("userToken");
+            sessionStorage.removeItem("userToken");
         },
         setUserFromToken(state, action) {
             state.user = action.payload.user;
-            state.token = action.payload.token;
+            state.userToken = action.payload.userToken;
             state.status = "succeeded";
             state.error = null;
         }
@@ -65,13 +68,13 @@ const loginUserSlice = createSlice({
                 if (action.meta.arg.rememberMe === true) {
                     localStorage.setItem("user", JSON.stringify(action.payload.user));
                     sessionStorage.removeItem("user");
-                    localStorage.setItem("token", action.payload.token);
-                    sessionStorage.removeItem("token");
+                    localStorage.setItem("userToken", action.payload.token);
+                    sessionStorage.removeItem("userToken");
                 } else {
                     sessionStorage.setItem("user", JSON.stringify(action.payload.user));
                     localStorage.removeItem("user");
-                    sessionStorage.setItem("token", action.payload.token);
-                    localStorage.removeItem("token");
+                    sessionStorage.setItem("userToken", action.payload.token);
+                    localStorage.removeItem("userToken");
                 }
             })
             .addCase(loginUser.rejected, (state, action) => {

@@ -210,6 +210,7 @@ const Contact = () => {
             type="text"
             id="name"
             name="name"
+            autoComplete="name"
             value={formData.name}
             onChange={handleChange}
             required
@@ -227,6 +228,7 @@ const Contact = () => {
             type="email"
             id="email"
             name="email"
+            autoComplete="email"
             value={formData.email}
             onChange={handleChange}
             required
@@ -254,6 +256,7 @@ const Contact = () => {
               type="text"
               id="phone"
               name="phone"
+              autoComplete="tel"
               value={phone.phone}
               onChange={handleChange}
               required
