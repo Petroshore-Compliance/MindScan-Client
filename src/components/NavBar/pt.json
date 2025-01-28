@@ -1,11 +1,16 @@
 {
     "login": "Conecte-se",
+    "Logout": "Sair",
     "Hello": "Olá",
     "User": "Usuário",
+    "AdminMenu": {
+        "Dashboard": "Painel de controle",
+        "Users": "Usuários",
+        "Companies": "Empresas"
+    },
     "UserMenu": {
         "Diagnostic": "Diagnóstico",
         "MyProfile": "Meu perfil",
-        "CompanyPanel": "Painel da empresa",
-        "Logout": "Sair"
+        "CompanyPanel": "Painel da empresa"
     }
 }

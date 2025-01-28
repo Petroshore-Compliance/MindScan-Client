@@ -12,6 +12,7 @@ import Login from './pages/Login/Login.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import AdminLogin from './pages/AdminLogin/AdminLogin.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
+import { setAdminFromToken, logoutAdmin } from './features/admin/loginAdminSlice.js';
 import { setUserFromToken, logoutUser } from './features/auth/loginUserSlice.js';
 import './App.css';
 
@@ -20,27 +21,51 @@ const App = () => {
   const { i18n, t } = useTranslation("common");
 
   useEffect(() => {
-    // 1) Leer el token de localStorage o sessionStorage
-    const localToken = localStorage.getItem("token");
-    const sessionToken = sessionStorage.getItem("token");
-    const tokenToUse = localToken ?? sessionToken;
+    const admin = JSON.parse(sessionStorage.getItem("admin"));
+    const localAdminToken = localStorage.getItem("adminToken");
+    const sessionAdminToken = sessionStorage.getItem("adminToken");
+    const adminTokenToUse = localAdminToken ?? sessionAdminToken;
 
-    // 3) Si hay token, verificar en el backend
-    if (tokenToUse) {
-      fetch("http://localhost:3001/auth/verify-user", {
+    const localUserToken = localStorage.getItem("userToken");
+    const sessionUserToken = sessionStorage.getItem("userToken");
+    const userTokenToUse = localUserToken ?? sessionUserToken;
+
+    if (adminTokenToUse) {
+      fetch("http://localhost:3001/admin/verify-admin", {
         method: "POST",
-        headers: { Authorization: `Bearer ${tokenToUse}` }
+        headers: { 
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${adminTokenToUse}`
+        },
+        body: JSON.stringify({ email: admin.email }),
       })
         .then(res => {
-          if (!res.ok) throw new Error("Token inválido");
+          if (!res.ok) throw new Error("Invalid Admin Token");
           return res.json();
         })
         .then(data => {
-          // 4) Si ok, guardamos user y token en Redux
-          dispatch(setUserFromToken({ user: data.user, token: tokenToUse }));
+          dispatch(setAdminFromToken({ admin: data.admin, adminToken: adminTokenToUse }));
         })
-        .catch(err => {
-          console.error(err);
+        .catch(error => {
+          console.error(error);
+          dispatch(logoutAdmin());
+        });
+    }
+
+    if (userTokenToUse) {
+      fetch("http://localhost:3001/auth/verify-user", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${userTokenToUse}` }
+      })
+        .then(res => {
+          if (!res.ok) throw new Error("Invalid User Token");
+          return res.json();
+        })
+        .then(data => {
+          dispatch(setUserFromToken({ user: data.user, userToken: userTokenToUse }));
+        })
+        .catch(error => {
+          console.error(error);
           dispatch(logoutUser());
         });
     }
@@ -64,6 +89,9 @@ const App = () => {
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
               <Route path="*" element={<NotFound />} />
+
+              {/* Rutas protegidas por AdminRoute (el Administrador debe estar loggeado). */}
+              <Route path="/dashboard" element={"<Dashboard />"} />
             
               {/* Rutas protegidas por ProtectedRoute (el usuario debe estar loggeado). */}
               <Route path="/diagnostic" element={

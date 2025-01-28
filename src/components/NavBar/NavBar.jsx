@@ -7,11 +7,13 @@ import { getOptimizedUrl } from "../../utils/cloudinary.js";
 import LanguageSelector from "../LanguageSelector/LanguageSelector.jsx";
 import ThemeSwitch from "../ThemeSwitch/ThemeSwitch.jsx";
 import useTheme from '../../hooks/useTheme.js';
+import { logoutAdmin, setAdminFromToken } from "../../features/admin/loginAdminSlice.js";
 import { logoutUser, setUserFromToken } from "../../features/auth/loginUserSlice.js";
 
 const NavBar = () => {
   const { t } = useTranslation("NavBar");
   const [isOpen, setIsOpen] = useState(false);
+  const [adminMenuOpen, setAdminMenuOpen] = useState(false);
   const [userMenuOpen, setUserMenuOpen] = useState(false);
   const ref = useRef();
   const [theme] = useTheme();
@@ -19,14 +21,17 @@ const NavBar = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-  const { token } = useSelector((state) => state.loginUser);
+  const { adminToken } = useSelector((state) => state.loginAdmin);
+  const { userToken } = useSelector((state) => state.loginUser);
 
+  const admin = JSON.parse(localStorage.getItem("admin")) || JSON.parse(sessionStorage.getItem("admin"));
   const user = JSON.parse(localStorage.getItem("user")) || JSON.parse(sessionStorage.getItem("user"));
 
   // Seleccionar el logo según el tema
   const logo = theme === 'light'
     ? getOptimizedUrl("MindScan/Petroshore-Logo")
     : getOptimizedUrl("MindScan/Petroshore-White-Logo");
+
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
@@ -36,8 +41,9 @@ const NavBar = () => {
   useEffect(() => {
     const handleClickOutside = (event) => {
       if (ref.current && !ref.current.contains(event.target)) {
+        setAdminMenuOpen(false);
+        setUserMenuOpen(false);
         setIsOpen(false);
-        setUserMenuOpen(false); // NUEVO
       }
     };
     document.addEventListener('mousedown', handleClickOutside);
@@ -46,19 +52,45 @@ const NavBar = () => {
     };
   }, []);
 
-  // Verificar token (opcional)
+  // Verificar adminToken (opcional)
   useEffect(() => {
-    if (token) {
-      fetch("http://localhost:3001/auth/verify-user", {
+    if (adminToken) {
+      fetch("http://localhost:3001/admin/verify-admin", {
         method: "POST",
-        headers: { Authorization: `Bearer ${token}` },
+        headers: { 
+          "Content-Type": "application/json",
+          Authorization: `Bearer ${adminToken}`
+        },
+        body: JSON.stringify({ email: admin.email }),
       })
         .then(res => {
-          if (!res.ok) throw new Error("Token inválido");
+          if (!res.ok) throw new Error("Invalid Admin Token");
           return res.json();
         })
         .then(data => {
-          dispatch(setUserFromToken({ user: data.user, token }));
+          dispatch(setAdminFromToken({ admin: data.admin, adminToken: adminToken }));
+        })
+        .catch(error => {
+          console.error(error);
+          dispatch(logoutAdmin());
+          navigate("/admin");
+        });
+    }
+  }, [adminToken, admin, dispatch, navigate]);
+
+  // Verificar userToken (opcional)
+  useEffect(() => {
+    if (userToken) {
+      fetch("http://localhost:3001/auth/verify-user", {
+        method: "POST",
+        headers: { Authorization: `Bearer ${userToken}` },
+      })
+        .then(res => {
+          if (!res.ok) throw new Error("Invalid User Token");
+          return res.json();
+        })
+        .then(data => {
+          dispatch(setUserFromToken({ user: data.user, userToken: userToken }));
         })
         .catch(error => {
           console.error(error);
@@ -66,9 +98,14 @@ const NavBar = () => {
           navigate("/login");
         });
     }
-  }, [token, dispatch, navigate]);
+  }, [userToken, dispatch, navigate]);
 
-  const handleLogout = () => {
+  const handleLogoutAdmin = () => {
+    dispatch(logoutAdmin());
+    navigate("/admin");
+  };
+
+  const handleLogoutUser = () => {
     dispatch(logoutUser());
     navigate("/login");
   };
@@ -113,10 +150,13 @@ const NavBar = () => {
             <LanguageSelector />
             <ThemeSwitch />
             
-            {token ? (
+            {userToken ? (
               <div className="relative flex">
                 <button
-                  onClick={() => setUserMenuOpen(!userMenuOpen)}
+                  onClick={() => {
+                    setUserMenuOpen(!userMenuOpen)
+                    setAdminMenuOpen(false)
+                  }}
                   className="flex px-4 py-2 bg-indigo-600 rounded-3xl text-white shadow
                              hover:bg-indigo-500 transition-colors duration-300"
                 >
@@ -125,7 +165,7 @@ const NavBar = () => {
                 </button>
 
                 {/* MENÚ DESPLEGABLE DE USUARIO (solo si userMenuOpen = true) */}
-                {userMenuOpen && (
+                {userMenuOpen ? (
                   <div className="p-1 absolute right-0 top-10 mt-2 w-48 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-2xl shadow-lg">
                     <Link
                       to="/diagnostic"
@@ -143,21 +183,21 @@ const NavBar = () => {
 
                     {user?.role === "admin" || user?.role === "manager" ? (
                       <div className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
-                      <Link
-                        to="/company-panel"
-                      >{t('UserMenu.CompanyPanel')}</Link>
-                      <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-users-group ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
-                    </div>
+                        <Link
+                          to="/company-panel"
+                        >{t('UserMenu.CompanyPanel')}</Link>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="icon icon-tabler icons-tabler-outline icon-tabler-users-group ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none" /><path d="M10 13a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M8 21v-1a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v1" /><path d="M15 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M17 10h2a2 2 0 0 1 2 2v1" /><path d="M5 5a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /><path d="M3 13v-1a2 2 0 0 1 2 -2h2" /></svg>
+                      </div>
                     ) : null}
 
                     <button
-                      onClick={handleLogout}
+                      onClick={handleLogoutUser}
                       className="flex w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
-                      {t('UserMenu.Logout')}
+                      {t('Logout')}
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-logout ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
                     </button>
                   </div>
-                )}
+                ) : null}
               </div>
             ) : (
               <Link
@@ -184,12 +224,58 @@ const NavBar = () => {
                 </svg>
               </Link>
             )}
+
+            {adminToken ? (
+              <div className="relative flex">
+                <button
+                  onClick={() => {
+                    setAdminMenuOpen(!adminMenuOpen)
+                    setUserMenuOpen(false)
+                  }}
+                  className="flex px-2 py-2 bg-indigo-600 rounded-3xl text-white shadow hover:bg-indigo-500 transition-colors duration-300">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="22"  height="22"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-user-shield"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 21v-2a4 4 0 0 1 4 -4h2" /><path d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5z" /><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /></svg>
+                </button>
+
+                {adminMenuOpen && (
+                  <div className="p-1 absolute right-0 top-10 mt-2 w-48 bg-white dark:bg-gray-800 border border-indigo-600 border-opacity-60 rounded-2xl shadow-lg">
+                    <div className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
+                      <Link
+                        to="/dashboard">
+                        {t('AdminMenu.Dashboard')}
+                      </Link>
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-shield"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" /></svg>
+                    </div>
+
+                    <Link
+                      to="/dashboard"
+                      className="flex px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
+                      {t('AdminMenu.Users')}
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-users ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+                    </Link>
+
+                    <Link
+                      to="/dashboard"
+                      className="flex px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
+                      {t('AdminMenu.Companies')}
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-briefcase ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
+                    </Link>
+
+                    <button
+                      onClick={handleLogoutAdmin}
+                      className="flex w-full text-left px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
+                      {t('Logout')}
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-logout ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
+                    </button>
+                  </div>
+                )}
+              </div>
+            ): null}
           </div>
 
           {/* Sección derecha MOBILE (lg:hidden) */}
           <div className="flex items-center space-x-2 lg:hidden">
-            {/* Si token => un menú simplificado o el mismo dropdown */}
-            {token ? (
+            {/* Si userToken => un menú simplificado o el mismo dropdown */}
+            {userToken ? (
               <div className="relative">
                 <button
                   onClick={toggleMenu}
@@ -222,13 +308,23 @@ const NavBar = () => {
               </Link>
             )}
 
+            {adminToken ? (
+              <div className="relative">
+                <button
+                  onClick={toggleMenu}
+                  className="flex px-1.5 py-1.5 rounded-3xl bg-indigo-600 text-white transition-colors duration-300">
+                    <svg  xmlns="http://www.w3.org/2000/svg"  width="20"  height="20"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-user-shield"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M6 21v-2a4 4 0 0 1 4 -4h2" /><path d="M22 16c0 4 -2.5 6 -3.5 6s-3.5 -2 -3.5 -6c1 0 2.5 -.5 3.5 -1.5c1 1 2.5 1.5 3.5 1.5z" /><path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" /></svg>
+                </button>
+              </div>
+            ) : null}
+
             {/* Botón hamburguesa */}
             <button
               onClick={toggleMenu}
               type="button"
               className="focus:outline-none focus:text-white"
               aria-label="Toggle menu"
-              aria-expanded={isOpen}
+              aria-expanded={toggleMenu}
             >
               <motion.svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -267,16 +363,50 @@ const NavBar = () => {
 
       {/* Menú desplegable para móviles con animación */}
       <AnimatePresence>
-        {isOpen && (
+        {isOpen ? (
           <motion.div
             initial={{ height: 0, opacity: 0 }}
             animate={{ height: 'auto', opacity: 1 }}
             exit={{ height: 0, opacity: 0 }}
             transition={{ duration: 0.2 }}
-            className="lg:hidden py-2 border-y-[1px] border-slate-300 border-opacity-20"
-          >
-            {token ? (
-              <div>
+            className="lg:hidden py-2 border-y-[1px] border-slate-300 border-opacity-20">
+
+            {adminToken ? (
+              <div className="border-2 m-2 p-2 rounded-2xl border-indigo-600 border-opacity-60">
+                <p className="font-bold text-indigo-600 ml-2">Administrador</p>
+                <Link
+                      to="/dashboard"
+                      className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
+                      {t('AdminMenu.Dashboard')}
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-shield ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" /></svg>
+                </Link>
+
+                <Link
+                      to="/dashboard"
+                      className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
+                      {t('AdminMenu.Users')}
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-users ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
+                </Link>
+
+                <Link
+                      to="/dashboard"
+                      className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
+                      {t('AdminMenu.Companies')}
+                      <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-briefcase ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
+                </Link>
+
+                <button
+                  onClick={handleLogoutAdmin}
+                  className="flex w-full text-left px-4 py-1 text-gray-700 dark:text-gray-200">
+                  {t('Logout')}
+                  <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-logout ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
+                </button>
+              </div>
+            ) : null}
+
+            {userToken ? (
+              <div className="border-2 m-2 p-2 rounded-2xl border-gray-200 dark:border-gray-700">
+                <p className="font-bold text-indigo-600 ml-2">Usuario</p>
                 <Link
                       to="/diagnostic"
                       className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
@@ -303,9 +433,9 @@ const NavBar = () => {
                 ) : null}
                 
                 <button
-                  onClick={handleLogout}
+                  onClick={handleLogoutUser}
                   className="flex w-full text-left px-4 py-1 text-gray-700 dark:text-gray-200">
-                  {t('UserMenu.Logout')}
+                  {t('Logout')}
                   <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-logout ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M14 8v-2a2 2 0 0 0 -2 -2h-7a2 2 0 0 0 -2 2v12a2 2 0 0 0 2 2h7a2 2 0 0 0 2 -2v-2" /><path d="M9 12h12l-3 -3" /><path d="M18 15l3 -3" /></svg>
                 </button>
               </div>
@@ -316,7 +446,7 @@ const NavBar = () => {
               <ThemeSwitch />
             </div>
           </motion.div>
-        )}
+        ) : null}
       </AnimatePresence>
     </nav>
   );

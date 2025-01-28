@@ -1,11 +1,13 @@
 {
-    "meta_title": "Panel de Administrador - MindScan",
-    "title": "Panel de Administrador",
+    "meta_title": "Inicio de Sesión Administrador - MindScan",
+    "title": "Inicio de Sesión Administrador",
     "description": "Ingrese sus credenciales para acceder al panel de Administrador.",
     "error": "Correo electrónico o contraseña inválidos",
     "form": {
         "email": "Correo Electrónico",
         "password": "Contraseña",
+        "forgot_password": "¿Has olvidado tu contraseña?",
+        "loading": "Cargando...",
         "submit": "Iniciar Sesión"
     }
 }
