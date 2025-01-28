@@ -73,7 +73,7 @@ const NavBar = () => {
         .catch(error => {
           console.error(error);
           dispatch(logoutAdmin());
-          navigate("/admin");
+          navigate("/");
         });
     }
   }, [adminToken, admin, dispatch, navigate]);
@@ -102,12 +102,12 @@ const NavBar = () => {
 
   const handleLogoutAdmin = () => {
     dispatch(logoutAdmin());
-    navigate("/admin");
+    navigate("/");
   };
 
   const handleLogoutUser = () => {
     dispatch(logoutUser());
-    navigate("/login");
+    navigate("/");
   };
 
   // Variantes para animar el ícono del menú Hamburguesa
@@ -240,21 +240,21 @@ const NavBar = () => {
                   <div className="p-1 absolute right-0 top-10 mt-2 w-48 bg-white dark:bg-gray-800 border border-indigo-600 border-opacity-60 rounded-2xl shadow-lg">
                     <div className="flex items-center px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
                       <Link
-                        to="/dashboard">
+                        to="/admin/dashboard">
                         {t('AdminMenu.Dashboard')}
                       </Link>
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-shield"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" /></svg>
                     </div>
 
                     <Link
-                      to="/dashboard"
+                      to="/admin/dashboard"
                       className="flex px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
                       {t('AdminMenu.Users')}
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-users ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
                     </Link>
 
                     <Link
-                      to="/dashboard"
+                      to="/admin/dashboard"
                       className="flex px-4 py-2 text-gray-700 dark:text-gray-200 hover:bg-gray-100 dark:hover:bg-gray-600 rounded-xl">
                       {t('AdminMenu.Companies')}
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-briefcase ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
@@ -375,21 +375,21 @@ const NavBar = () => {
               <div className="border-2 m-2 p-2 rounded-2xl border-indigo-600 border-opacity-60">
                 <p className="font-bold text-indigo-600 ml-2">Administrador</p>
                 <Link
-                      to="/dashboard"
+                      to="/admin/dashboard"
                       className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
                       {t('AdminMenu.Dashboard')}
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-shield ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M12 3a12 12 0 0 0 8.5 3a12 12 0 0 1 -8.5 15a12 12 0 0 1 -8.5 -15a12 12 0 0 0 8.5 -3" /></svg>
                 </Link>
 
                 <Link
-                      to="/dashboard"
+                      to="/admin/dashboard"
                       className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
                       {t('AdminMenu.Users')}
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-users ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M9 7m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /><path d="M3 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" /><path d="M16 3.13a4 4 0 0 1 0 7.75" /><path d="M21 21v-2a4 4 0 0 0 -3 -3.85" /></svg>
                 </Link>
 
                 <Link
-                      to="/dashboard"
+                      to="/admin/dashboard"
                       className="flex px-4 py-1 text-gray-700 dark:text-gray-200">
                       {t('AdminMenu.Companies')}
                       <svg  xmlns="http://www.w3.org/2000/svg"  width="24"  height="24"  viewBox="0 0 24 24"  fill="none"  stroke="currentColor"  strokeWidth="2"  strokeLinecap="round"  strokeLinejoin="round"  className="icon icon-tabler icons-tabler-outline icon-tabler-briefcase ml-1"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M3 7m0 2a2 2 0 0 1 2 -2h14a2 2 0 0 1 2 2v9a2 2 0 0 1 -2 2h-14a2 2 0 0 1 -2 -2z" /><path d="M8 7v-2a2 2 0 0 1 2 -2h4a2 2 0 0 1 2 2v2" /><path d="M12 12l0 .01" /><path d="M3 13a20 20 0 0 0 18 0" /></svg>
