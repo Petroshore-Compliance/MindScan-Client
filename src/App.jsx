@@ -11,6 +11,7 @@ import Contact from './pages/Contact/Contact.jsx';
 import Login from './pages/Login/Login.jsx';
 import NotFound from './pages/NotFound/NotFound.jsx';
 import AdminLogin from './pages/AdminLogin/AdminLogin.jsx';
+import AdminRoute from './components/AdminRoute/AdminRoute.jsx';
 import ProtectedRoute from './components/ProtectedRoute/ProtectedRoute.jsx';
 import { setAdminFromToken, logoutAdmin } from './features/admin/loginAdminSlice.js';
 import { setUserFromToken, logoutUser } from './features/auth/loginUserSlice.js';
@@ -22,20 +23,18 @@ const App = () => {
 
   useEffect(() => {
     const admin = JSON.parse(sessionStorage.getItem("admin"));
-    const localAdminToken = localStorage.getItem("adminToken");
-    const sessionAdminToken = sessionStorage.getItem("adminToken");
-    const adminTokenToUse = localAdminToken ?? sessionAdminToken;
+    const adminToken = sessionStorage.getItem("adminToken");
 
     const localUserToken = localStorage.getItem("userToken");
     const sessionUserToken = sessionStorage.getItem("userToken");
     const userTokenToUse = localUserToken ?? sessionUserToken;
 
-    if (adminTokenToUse) {
+    if (adminToken) {
       fetch("http://localhost:3001/admin/verify-admin", {
         method: "POST",
         headers: { 
           "Content-Type": "application/json",
-          Authorization: `Bearer ${adminTokenToUse}`
+          Authorization: `Bearer ${adminToken}`
         },
         body: JSON.stringify({ email: admin.email }),
       })
@@ -44,7 +43,7 @@ const App = () => {
           return res.json();
         })
         .then(data => {
-          dispatch(setAdminFromToken({ admin: data.admin, adminToken: adminTokenToUse }));
+          dispatch(setAdminFromToken({ admin: data.admin, adminToken: adminToken }));
         })
         .catch(error => {
           console.error(error);
@@ -91,7 +90,11 @@ const App = () => {
               <Route path="*" element={<NotFound />} />
 
               {/* Rutas protegidas por AdminRoute (el Administrador debe estar loggeado). */}
-              <Route path="/dashboard" element={"<Dashboard />"} />
+              <Route path="/admin/dashboard" element={
+                <AdminRoute>
+                  {"<Dashboard />"}
+                </AdminRoute>
+              }/>
             
               {/* Rutas protegidas por ProtectedRoute (el usuario debe estar loggeado). */}
               <Route path="/diagnostic" element={
