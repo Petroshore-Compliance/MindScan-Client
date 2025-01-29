@@ -1,14 +1,14 @@
 {
-    "meta_title": "Sign In - MindScan",
-    "title": "Sign In",
-    "description": "Enter your credentials to access your account.",
-    "error": "Invalid email or password",
-    "form": {
-        "email": "Email",
-        "password": "Password",
-        "forgot_password": "Forgot password?",
-        "remember": "Stay logged in",
-        "loading": "Loading...",
-        "submit": "Sign In"
-    }
+  "meta_title": "Sign In - MindScan",
+  "title": "Sign In",
+  "description": "Enter your credentials to access your account.",
+  "error": "Invalid email or password",
+  "form": {
+    "email": "Email",
+    "password": "Password",
+    "forgot_password": "Forgot password?",
+    "remember": "Stay logged in",
+    "loading": "Loading...",
+    "submit": "Sign In"
+  }
 }

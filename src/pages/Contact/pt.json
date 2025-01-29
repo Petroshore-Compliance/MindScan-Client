@@ -1,61 +1,61 @@
 {
-    "meta_title": "Contato - MindScan",
-    "title": "Contate-nos",
-    "description": "Deixe seus dados e entraremos em contato com você o mais breve possível.",
-    "errors": {
-        "name": "O nome não pode estar vazio.",
-        "name_char": "O nome não pode conter caracteres especiais ou números.",
-        "name_length": "O nome não pode exceder 45 caracteres.",
-        "email": "O email não pode estar vazio.",
-        "email_char": "Insira um email válido.",
-        "prefix": "O prefixo não pode estar vazio.",
-        "prefix_char": "O prefixo deve começar com + e conter entre 1 e 4 dígitos.",
-        "phone": "O número de telefone não pode estar vazio.",
-        "phone_char": "O número deve conter entre 6 e 15 dígitos.",
-        "message": "O messagem não pode estar vazio.",
-        "message_char": "A mensagem não pode exceder 600 caracteres."
+  "meta_title": "Contato - MindScan",
+  "title": "Contate-nos",
+  "description": "Deixe seus dados e entraremos em contato com você o mais breve possível.",
+  "errors": {
+    "name": "O nome não pode estar vazio.",
+    "name_char": "O nome não pode conter caracteres especiais ou números.",
+    "name_length": "O nome não pode exceder 45 caracteres.",
+    "email": "O email não pode estar vazio.",
+    "email_char": "Insira um email válido.",
+    "prefix": "O prefixo não pode estar vazio.",
+    "prefix_char": "O prefixo deve começar com + e conter entre 1 e 4 dígitos.",
+    "phone": "O número de telefone não pode estar vazio.",
+    "phone_char": "O número deve conter entre 6 e 15 dígitos.",
+    "message": "O messagem não pode estar vazio.",
+    "message_char": "A mensagem não pode exceder 600 caracteres."
+  },
+  "form": {
+    "name": "Nome",
+    "email": "Email",
+    "phone": "Telefone",
+    "language": "Idioma",
+    "language_options": {
+      "default": "Selecione um idioma",
+      "english": "Inglês",
+      "spanish": "Espanhol",
+      "portuguese": "Português"
     },
-    "form": {
-        "name": "Nome",
-        "email": "Email",
-        "phone": "Telefone",
-        "language": "Idioma",
-        "language_options": {
-            "default": "Selecione um idioma",
-            "english": "Inglês",
-            "spanish": "Espanhol",
-            "portuguese": "Português"
-        },
-        "message": "Motivo do Contato",
-        "submit_loading": "Enviando...",
-        "submit": "Enviar"
+    "message": "Motivo do Contato",
+    "submit_loading": "Enviando...",
+    "submit": "Enviar"
+  },
+  "alert": {
+    "success": {
+      "title": "Obrigado por entrar em contato!",
+      "text": "Recebemos sua mensagem e entraremos em contato assim que possível.",
+      "button": "Voltar ao início"
     },
-    "alert": {
-        "success": {
-            "title": "Obrigado por entrar em contato!",
-            "text": "Recebemos sua mensagem e entraremos em contato assim que possível.",
-            "button": "Voltar ao início"
-        },
-        "406":{
-            "title": "Estamos revisando sua solicitação de contato",
-            "text": "Entraremos em contato o mais breve possível."
-        },
-        "409":{
-            "title": "Solicitação de contato pendente",
-            "text": "Atualmente temos uma solicitação pendente sua, a revisaremos o mais breve possível."
-        },
-        "423":{
-            "title": "Contato já estabelecido",
-            "text": "Entramos em contato com você, verifique seu email ou registro de chamadas."
-        },
-        "error": {
-            "title": "Ocorreu um problema",
-            "text": "Não foi possível enviar sua mensagem no momento. Por favor, tente novamente mais tarde."
-        },
-        "validation": {
-            "title": "Verifique seus dados",
-            "text": "Alguns campos obrigatórios estão vazios ou contêm erros. Por favor, corrija-os antes de continuar.",
-            "button": "Tentar novamente"
-        }
+    "406": {
+      "title": "Estamos revisando sua solicitação de contato",
+      "text": "Entraremos em contato o mais breve possível."
+    },
+    "409": {
+      "title": "Solicitação de contato pendente",
+      "text": "Atualmente temos uma solicitação pendente sua, a revisaremos o mais breve possível."
+    },
+    "423": {
+      "title": "Contato já estabelecido",
+      "text": "Entramos em contato com você, verifique seu email ou registro de chamadas."
+    },
+    "error": {
+      "title": "Ocorreu um problema",
+      "text": "Não foi possível enviar sua mensagem no momento. Por favor, tente novamente mais tarde."
+    },
+    "validation": {
+      "title": "Verifique seus dados",
+      "text": "Alguns campos obrigatórios estão vazios ou contêm erros. Por favor, corrija-os antes de continuar.",
+      "button": "Tentar novamente"
     }
+  }
 }

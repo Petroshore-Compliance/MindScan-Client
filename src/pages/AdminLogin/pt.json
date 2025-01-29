@@ -1,13 +1,13 @@
 {
-    "meta_title": "Iniciar Sessão de Administrador - MindScan",
-    "title": "Iniciar Sessão de Administrador",
-    "description": "Insira suas credenciais para acessar o Painel de Administrador.",
-    "error": "E-mail ou senha inválidos",
-    "form": {
-        "email": "E-mail",
-        "password": "Senha",
-        "forgot_password": "Esqueceu sua senha?",
-        "loading": "Carregando...",
-        "submit": "Entrar"
-    }
+  "meta_title": "Iniciar Sessão de Administrador - MindScan",
+  "title": "Iniciar Sessão de Administrador",
+  "description": "Insira suas credenciais para acessar o Painel de Administrador.",
+  "error": "E-mail ou senha inválidos",
+  "form": {
+    "email": "E-mail",
+    "password": "Senha",
+    "forgot_password": "Esqueceu sua senha?",
+    "loading": "Carregando...",
+    "submit": "Entrar"
+  }
 }

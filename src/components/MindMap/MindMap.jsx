@@ -17,9 +17,7 @@ const MindMap = () => {
         animate={{ opacity: 1, y: 0 }}
         className="text-center mb-8 sm:mb-12"
       >
-        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">
-          {header.title}
-        </h2>
+        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-semibold mb-4">{header.title}</h2>
         <p className="text-lg sm:text-xl lg:text-2xl text-zinc-700 dark:text-zinc-300 max-w-2xl mx-auto">
           {header.subtitle}
         </p>
@@ -41,9 +39,7 @@ const MindMap = () => {
                   <h3 className="text-2xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">
                     {step.title}
                   </h3>
-                  <p className="text-zinc-700 dark:text-zinc-300">
-                    {step.description}
-                  </p>
+                  <p className="text-zinc-700 dark:text-zinc-300">{step.description}</p>
                 </div>
               </div>
               <div className="w-4 h-4 bg-indigo-600 rounded-full relative z-10" />
@@ -70,9 +66,7 @@ const MindMap = () => {
                   <h3 className="text-xl font-semibold mb-2 text-indigo-600 dark:text-indigo-400">
                     {step.title}
                   </h3>
-                  <p className="text-sm text-zinc-700 dark:text-zinc-300">
-                    {step.description}
-                  </p>
+                  <p className="text-sm text-zinc-700 dark:text-zinc-300">{step.description}</p>
                 </div>
               </motion.div>
             ))}

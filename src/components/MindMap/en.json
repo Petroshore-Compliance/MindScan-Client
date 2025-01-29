@@ -1,36 +1,36 @@
 {
-    "header": {
-        "title": "Discover How MindScan Works",
-        "subtitle": "Follow these steps to understand how your organization can benefit from our tool."
+  "header": {
+    "title": "Discover How MindScan Works",
+    "subtitle": "Follow these steps to understand how your organization can benefit from our tool."
+  },
+  "steps": [
+    {
+      "title": "Contact Us",
+      "description": "Fill out our form to request a demo and learn more about how MindScan works."
     },
-    "steps": [
-        {
-            "title": "Contact Us",
-            "description": "Fill out our form to request a demo and learn more about how MindScan works."
-        },
-        {
-            "title": "Demo and License Purchase",
-            "description": "Experience the tool firsthand and purchase licenses to get started."
-        },
-        {
-            "title": "Account and Company Setup",
-            "description": "We create your admin account and configure your company in the platform."
-        },
-        {
-            "title": "Invite Users",
-            "description": "The admin can invite team members to join the company and access diagnostics."
-        },
-        {
-            "title": "Complete Diagnoses",
-            "description": "Each user completes their diagnosis, consuming one license per session."
-        },
-        {
-            "title": "Access Results",
-            "description": "Both users and admins can access detailed reports generated after each diagnosis."
-        }
-    ],
-    "final_section": {
-        "text": "Empower your organization with MindScan today. Contact us to get started.",
-        "cta": "Contact Us"
+    {
+      "title": "Demo and License Purchase",
+      "description": "Experience the tool firsthand and purchase licenses to get started."
+    },
+    {
+      "title": "Account and Company Setup",
+      "description": "We create your admin account and configure your company in the platform."
+    },
+    {
+      "title": "Invite Users",
+      "description": "The admin can invite team members to join the company and access diagnostics."
+    },
+    {
+      "title": "Complete Diagnoses",
+      "description": "Each user completes their diagnosis, consuming one license per session."
+    },
+    {
+      "title": "Access Results",
+      "description": "Both users and admins can access detailed reports generated after each diagnosis."
     }
+  ],
+  "final_section": {
+    "text": "Empower your organization with MindScan today. Contact us to get started.",
+    "cta": "Contact Us"
+  }
 }

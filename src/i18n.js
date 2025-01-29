@@ -1,6 +1,6 @@
-import i18n from 'i18next';
-import { initReactI18next } from 'react-i18next';
-import LanguageDetector from 'i18next-browser-languagedetector';
+import i18n from "i18next";
+import { initReactI18next } from "react-i18next";
+import LanguageDetector from "i18next-browser-languagedetector";
 
 //------------------------------------------------------------------------------ Common
 
@@ -60,28 +60,28 @@ i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
-    supportedLngs: ['en', 'es', 'pt'],
-    fallbackLng: 'en',
+    supportedLngs: ["en", "es", "pt"],
+    fallbackLng: "en",
     ns: [
-      'common',
-      
-      'Footer',
-      'LanguageSelector',
-      'MindMap',
-      'NavBar',
-      'ThemeSwitch',
+      "common",
 
-      'About',
-      'AdminLogin',
-      'Contact',
-      'Landing',
-      'Login',
-      'NotFound',
+      "Footer",
+      "LanguageSelector",
+      "MindMap",
+      "NavBar",
+      "ThemeSwitch",
+
+      "About",
+      "AdminLogin",
+      "Contact",
+      "Landing",
+      "Login",
+      "NotFound",
     ],
     resources: {
       en: {
         common: enCommon,
-        
+
         Footer: enFooter,
         LanguageSelector: enLanguageSelector,
         MindMap: enMindMap,
@@ -130,8 +130,8 @@ i18n
     },
     detection: {
       // Opciones de detección de idioma
-      order: ['querystring', 'cookie', 'localStorage', 'navigator', 'htmlTag', 'path', 'subdomain'],
-      caches: ['localStorage', 'cookie'],
+      order: ["querystring", "cookie", "localStorage", "navigator", "htmlTag", "path", "subdomain"],
+      caches: ["localStorage", "cookie"],
     },
     interpolation: {
       escapeValue: false, // React ya hace escape de los valores

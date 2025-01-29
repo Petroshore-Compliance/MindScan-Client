@@ -1,25 +1,25 @@
 {
-    "meta_title": "Sobre nosotros - MindScan",
-    "title": "Sobre nosotros",
-    "text_0": "MindScan es una herramienta desarrollada por PetroShore Compliance, una empresa internacionalmente reconocida por su especialización en cumplimiento normativo, gobierno corporativo y gestión de riesgos. Con presencia en 18 países y más de 12.500 casos exitosos, PetroShore ha consolidado su reputación global en la prevención de delitos corporativos y fraudes ocupacionales.",
-    "text_1": "MindScan refleja el compromiso de PetroShore con la excelencia y la innovación, ofreciendo una solución avanzada para el análisis y comprensión de características psicológicas y emocionales. Esta herramienta está diseñada para ayudar a organizaciones a explorar aspectos como el neuroticismo, la estabilidad emocional, la extraversión, la apertura a nuevas experiencias, la amabilidad y la responsabilidad.",
-    "text_2": "Al integrar MindScan en su portafolio de servicios, PetroShore amplía su misión de fortalecer las competencias individuales y grupales, promoviendo una cultura de cumplimiento corporativo eficaz y una mejor comprensión del comportamiento humano en entornos profesionales.",
-    "text_3": "PetroShore combina consultoría y formación para ofrecer experiencias de excelencia a sus clientes, asegurando la aplicación efectiva de programas de cumplimiento y la protección contra fraudes y otros delitos corporativos.",
-    "text_4": "La creación de MindScan es un testimonio del compromiso de PetroShore con la innovación y la excelencia en el desarrollo de soluciones tecnológicas que apoyan la gestión de programas de cumplimiento y antifraude, incluyendo la gestión de canales de denuncia, la elaboración de perfiles de comportamiento y la evaluación de fraudes.",
-    "text_5": "En resumen, MindScan es una herramienta que encarna la experiencia y dedicación de PetroShore Compliance en el desarrollo de soluciones integrales para la prevención y tratamiento de actos ilegales dentro de las organizaciones, contribuyendo al fortalecimiento de una cultura corporativa sólida y ética.",
-    "team": {
-        "title": "Nuestro equipo",
-        "members": [
-            {
-                "photo": "MindScan/collaborator-andrei",
-                "name": "Andrei Faur",
-                "role": "Desarrollador Front-end"
-            },
-            {
-                "photo": "MindScan/collaborator-roman",
-                "name": "Román De Las Heras",
-                "role": "Desarrollador Back-end"
-            }
-        ]
-    }
+  "meta_title": "Sobre nosotros - MindScan",
+  "title": "Sobre nosotros",
+  "text_0": "MindScan es una herramienta desarrollada por PetroShore Compliance, una empresa internacionalmente reconocida por su especialización en cumplimiento normativo, gobierno corporativo y gestión de riesgos. Con presencia en 18 países y más de 12.500 casos exitosos, PetroShore ha consolidado su reputación global en la prevención de delitos corporativos y fraudes ocupacionales.",
+  "text_1": "MindScan refleja el compromiso de PetroShore con la excelencia y la innovación, ofreciendo una solución avanzada para el análisis y comprensión de características psicológicas y emocionales. Esta herramienta está diseñada para ayudar a organizaciones a explorar aspectos como el neuroticismo, la estabilidad emocional, la extraversión, la apertura a nuevas experiencias, la amabilidad y la responsabilidad.",
+  "text_2": "Al integrar MindScan en su portafolio de servicios, PetroShore amplía su misión de fortalecer las competencias individuales y grupales, promoviendo una cultura de cumplimiento corporativo eficaz y una mejor comprensión del comportamiento humano en entornos profesionales.",
+  "text_3": "PetroShore combina consultoría y formación para ofrecer experiencias de excelencia a sus clientes, asegurando la aplicación efectiva de programas de cumplimiento y la protección contra fraudes y otros delitos corporativos.",
+  "text_4": "La creación de MindScan es un testimonio del compromiso de PetroShore con la innovación y la excelencia en el desarrollo de soluciones tecnológicas que apoyan la gestión de programas de cumplimiento y antifraude, incluyendo la gestión de canales de denuncia, la elaboración de perfiles de comportamiento y la evaluación de fraudes.",
+  "text_5": "En resumen, MindScan es una herramienta que encarna la experiencia y dedicación de PetroShore Compliance en el desarrollo de soluciones integrales para la prevención y tratamiento de actos ilegales dentro de las organizaciones, contribuyendo al fortalecimiento de una cultura corporativa sólida y ética.",
+  "team": {
+    "title": "Nuestro equipo",
+    "members": [
+      {
+        "photo": "MindScan/collaborator-andrei",
+        "name": "Andrei Faur",
+        "role": "Desarrollador Front-end"
+      },
+      {
+        "photo": "MindScan/collaborator-roman",
+        "name": "Román De Las Heras",
+        "role": "Desarrollador Back-end"
+      }
+    ]
+  }
 }

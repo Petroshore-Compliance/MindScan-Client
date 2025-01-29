@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Helmet } from "react-helmet-async";
-import { useTranslation } from 'react-i18next';
+import { useTranslation } from "react-i18next";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
 import { useNavigate } from "react-router-dom";
@@ -40,53 +40,53 @@ const Contact = () => {
 
   // Funciones de validación
   const validateName = (name) => {
-    if (!name.trim()) return t('errors.name');
-    if (/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/.test(name)) return t('errors.name_char');
-    if (name.length > 45) return t('errors.name_length');
+    if (!name.trim()) return t("errors.name");
+    if (/[^a-zA-ZáéíóúÁÉÍÓÚñÑ\s]/.test(name)) return t("errors.name_char");
+    if (name.length > 45) return t("errors.name_length");
     return "";
   };
 
   const validateEmail = (email) => {
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!email.trim()) return t('errors.email');
-    if (!emailRegex.test(email)) return t('errors.email_char');
+    if (!email.trim()) return t("errors.email");
+    if (!emailRegex.test(email)) return t("errors.email_char");
     return "";
   };
 
   const validatePrefix = (prefix) => {
-    if (!prefix.trim()) return t('errors.prefix');
-    if (!/^\+\d{1,4}$/.test(prefix)) return t('errors.prefix_char');
+    if (!prefix.trim()) return t("errors.prefix");
+    if (!/^\+\d{1,4}$/.test(prefix)) return t("errors.prefix_char");
     return "";
   };
 
   const validatePhone = (phone) => {
-    const sanitizedPhone = phone.replace(/\s+/g, '').trim();
-    if (!sanitizedPhone) return t('errors.phone');
-    if (!/^\d{6,15}$/.test(sanitizedPhone)) return t('errors.phone_char');
+    const sanitizedPhone = phone.replace(/\s+/g, "").trim();
+    if (!sanitizedPhone) return t("errors.phone");
+    if (!/^\d{6,15}$/.test(sanitizedPhone)) return t("errors.phone_char");
     return "";
   };
 
   const validateMessage = (message) => {
-    if (!message.trim()) return t('errors.message');
-    if (message.length > 600) return t('errors.message_char');
+    if (!message.trim()) return t("errors.message");
+    if (message.length > 600) return t("errors.message_char");
     return "";
   };
 
   const handleChange = (e) => {
     const { name, value } = e.target;
-  
+
     let error = "";
     if (name === "name") error = validateName(value);
     if (name === "email") error = validateEmail(value);
     if (name === "prefix") error = validatePrefix(value);
     if (name === "phone") error = validatePhone(value);
     if (name === "message") error = validateMessage(value);
-  
+
     setErrors((prevErrors) => ({
       ...prevErrors,
       [name]: error,
     }));
-  
+
     if (["name", "email", "phone", "language", "message"].includes(name)) {
       setFormData((prevData) => ({
         ...prevData,
@@ -130,10 +130,10 @@ const Contact = () => {
     }
 
     const combinedPhone = phone.prefix.trim() + phone.phone.trim();
-    
+
     const finalFormData = {
       ...formData,
-      phone: combinedPhone, 
+      phone: combinedPhone,
     };
 
     try {
@@ -188,23 +188,24 @@ const Contact = () => {
   return (
     <div className="w-full flex flex-col items-center mx-auto p-8 text-zinc-800 dark:text-zinc-200">
       <Helmet>
-        <title>{t('meta_title')}</title>
+        <title>{t("meta_title")}</title>
       </Helmet>
 
       <div className="text-center mb-8">
-        <h2 className="text-4xl lg:text-5xl font-semibold mb-4">{t('title')}</h2>
+        <h2 className="text-4xl lg:text-5xl font-semibold mb-4">{t("title")}</h2>
         <p className="text-xl lg:text-2xl text-zinc-700 dark:text-zinc-300 max-w-xl mx-auto">
-          {t('description')}
+          {t("description")}
         </p>
       </div>
 
       <form
         className="w-full max-w-xl space-y-6 bg-white dark:bg-zinc-800 p-6 rounded-3xl shadow-2xl border-2 border-indigo-300 dark:border-indigo-900"
-        onSubmit={handleSubmit}>
+        onSubmit={handleSubmit}
+      >
         {/* Nombre */}
         <div>
           <label htmlFor="name" className="block text-lg font-medium">
-            {t('form.name')}
+            {t("form.name")}
           </label>
           <input
             type="text"
@@ -222,7 +223,7 @@ const Contact = () => {
         {/* Email */}
         <div>
           <label htmlFor="email" className="block text-lg font-medium">
-            {t('form.email')}
+            {t("form.email")}
           </label>
           <input
             type="email"
@@ -240,7 +241,7 @@ const Contact = () => {
         {/* Teléfono */}
         <div>
           <label htmlFor="phone" className="block text-lg font-medium">
-            {t('form.phone')}
+            {t("form.phone")}
           </label>
           <div className="flex flex-row mt-2 w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500">
             <input
@@ -270,7 +271,7 @@ const Contact = () => {
         {/* Idioma */}
         <div>
           <label htmlFor="language" className="block text-lg font-medium">
-            {t('form.language')}
+            {t("form.language")}
           </label>
           <select
             id="language"
@@ -280,17 +281,17 @@ const Contact = () => {
             required
             className="mt-2 text-lg block w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500"
           >
-            <option value="">{t('form.language_options.default')}</option>
-            <option value="en">{t('form.language_options.english')}</option>
-            <option value="es">{t('form.language_options.spanish')}</option>
-            <option value="pt">{t('form.language_options.portuguese')}</option>
+            <option value="">{t("form.language_options.default")}</option>
+            <option value="en">{t("form.language_options.english")}</option>
+            <option value="es">{t("form.language_options.spanish")}</option>
+            <option value="pt">{t("form.language_options.portuguese")}</option>
           </select>
         </div>
 
         {/* Mensaje */}
         <div>
           <label htmlFor="message" className="block text-lg font-medium">
-            {t('form.message')}
+            {t("form.message")}
           </label>
           <textarea
             id="message"
@@ -309,7 +310,9 @@ const Contact = () => {
           <button
             type="submit"
             className="px-6 py-2 bg-indigo-600 bg-opacity-70 xl:hover:bg-opacity-100 text-white text-lg font-semibold rounded-full transition-colors duration-500"
-          >{isLoading ? t('form.submit_loading') : t('form.submit')}</button>
+          >
+            {isLoading ? t("form.submit_loading") : t("form.submit")}
+          </button>
         </div>
       </form>
     </div>

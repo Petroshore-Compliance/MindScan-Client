@@ -1,16 +1,16 @@
 {
-    "login": "Login",
-    "Logout": "Logout",
-    "Hello": "Hello",
-    "User": "User",
-    "AdminMenu": {
-        "Dashboard": "Dashboard",
-        "Users": "Users",
-        "Companies": "Companies"
-    },
-    "UserMenu": {
-        "Diagnostic": "Diagnostic",
-        "MyProfile": "My Profile",
-        "CompanyPanel": "Company Panel"
-    }
+  "login": "Login",
+  "Logout": "Logout",
+  "Hello": "Hello",
+  "User": "User",
+  "AdminMenu": {
+    "Dashboard": "Dashboard",
+    "Users": "Users",
+    "Companies": "Companies"
+  },
+  "UserMenu": {
+    "Diagnostic": "Diagnostic",
+    "MyProfile": "My Profile",
+    "CompanyPanel": "Company Panel"
+  }
 }

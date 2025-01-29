@@ -10,7 +10,8 @@ export default function ProtectedRoute({ children, requiredRole }) {
   const { userToken } = useSelector((state) => state.loginUser);
 
   useEffect(() => {
-    const localUserToken = userToken || localStorage.getItem("userToken") || sessionStorage.getItem("userToken");
+    const localUserToken =
+      userToken || localStorage.getItem("userToken") || sessionStorage.getItem("userToken");
 
     if (!localUserToken) {
       navigate("/login");
@@ -21,7 +22,7 @@ export default function ProtectedRoute({ children, requiredRole }) {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
-        "Authorization": `Bearer ${localUserToken}`,
+        Authorization: `Bearer ${localUserToken}`,
       },
     })
       .then(async (res) => {
