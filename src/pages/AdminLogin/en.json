@@ -1,13 +1,13 @@
 {
-    "meta_title": "Admin Sing In - MindScan",
-    "title": "Admin Sing In",
-    "description": "Enter your credentials to access the Admin Panel.",
-    "error": "Invalid email or password",
-    "form": {
-        "email": "Email Address",
-        "password": "Password",
-        "forgot_password": "Forgot password?",
-        "loading": "Loading...",
-        "submit": "Sign In"
-    }
+  "meta_title": "Admin Sing In - MindScan",
+  "title": "Admin Sing In",
+  "description": "Enter your credentials to access the Admin Panel.",
+  "error": "Invalid email or password",
+  "form": {
+    "email": "Email Address",
+    "password": "Password",
+    "forgot_password": "Forgot password?",
+    "loading": "Loading...",
+    "submit": "Sign In"
+  }
 }

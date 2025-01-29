@@ -1,25 +1,25 @@
 {
-    "meta_title": "About - MindScan",
-    "title": "About us",
-    "text_0": "MindScan is a tool developed by PetroShore Compliance, an internationally recognized company specializing in regulatory compliance, corporate governance, and risk management. With a presence in 18 countries and over 12,500 successful cases, PetroShore has established its global reputation in preventing corporate crimes and occupational fraud.",
-    "text_1": "MindScan reflects PetroShore’s commitment to excellence and innovation, offering an advanced solution for analyzing and understanding psychological and emotional traits. This tool is designed to help organizations explore aspects such as neuroticism, emotional stability, extraversion, openness to new experiences, agreeableness, and conscientiousness.",
-    "text_2": "By integrating MindScan into its portfolio of services, PetroShore expands its mission to strengthen individual and group competencies, promoting a culture of effective corporate compliance and a deeper understanding of human behavior in professional environments.",
-    "text_3": "PetroShore combines consulting and training to deliver excellence to its clients, ensuring the effective implementation of compliance programs and protection against fraud and other corporate crimes.",
-    "text_4": "The creation of MindScan is a testament to PetroShore’s commitment to innovation and excellence in developing technological solutions that support the management of compliance and anti-fraud programs, including whistleblowing channel management, behavioral profiling, and fraud assessment.",
-    "text_5": "In summary, MindScan is a tool that embodies the expertise and dedication of PetroShore Compliance in developing comprehensive solutions for the prevention and management of illegal acts within organizations, contributing to the strengthening of a solid and ethical corporate culture.",
-    "team": {
-        "title": "Our Team",
-        "members": [
-            {
-                "photo": "MindScan/collaborator-andrei",
-                "name": "Andrei Faur",
-                "role": "Front-end Developer"
-            },
-            {
-                "photo": "MindScan/collaborator-roman",
-                "name": "Román De Las Heras",
-                "role": "Back-end Developer"
-            }
-        ]
-    }
+  "meta_title": "About - MindScan",
+  "title": "About us",
+  "text_0": "MindScan is a tool developed by PetroShore Compliance, an internationally recognized company specializing in regulatory compliance, corporate governance, and risk management. With a presence in 18 countries and over 12,500 successful cases, PetroShore has established its global reputation in preventing corporate crimes and occupational fraud.",
+  "text_1": "MindScan reflects PetroShore’s commitment to excellence and innovation, offering an advanced solution for analyzing and understanding psychological and emotional traits. This tool is designed to help organizations explore aspects such as neuroticism, emotional stability, extraversion, openness to new experiences, agreeableness, and conscientiousness.",
+  "text_2": "By integrating MindScan into its portfolio of services, PetroShore expands its mission to strengthen individual and group competencies, promoting a culture of effective corporate compliance and a deeper understanding of human behavior in professional environments.",
+  "text_3": "PetroShore combines consulting and training to deliver excellence to its clients, ensuring the effective implementation of compliance programs and protection against fraud and other corporate crimes.",
+  "text_4": "The creation of MindScan is a testament to PetroShore’s commitment to innovation and excellence in developing technological solutions that support the management of compliance and anti-fraud programs, including whistleblowing channel management, behavioral profiling, and fraud assessment.",
+  "text_5": "In summary, MindScan is a tool that embodies the expertise and dedication of PetroShore Compliance in developing comprehensive solutions for the prevention and management of illegal acts within organizations, contributing to the strengthening of a solid and ethical corporate culture.",
+  "team": {
+    "title": "Our Team",
+    "members": [
+      {
+        "photo": "MindScan/collaborator-andrei",
+        "name": "Andrei Faur",
+        "role": "Front-end Developer"
+      },
+      {
+        "photo": "MindScan/collaborator-roman",
+        "name": "Román De Las Heras",
+        "role": "Back-end Developer"
+      }
+    ]
+  }
 }

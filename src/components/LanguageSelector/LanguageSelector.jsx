@@ -1,6 +1,6 @@
-import { useState, useRef, useEffect } from 'react';
-import { useTranslation } from 'react-i18next';
-import { motion, AnimatePresence } from 'framer-motion';
+import { useState, useRef, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { motion, AnimatePresence } from "framer-motion";
 
 const LanguageSelector = () => {
   const { i18n, t } = useTranslation("LanguageSelector");
@@ -17,9 +17,9 @@ const LanguageSelector = () => {
   };
 
   const languages = {
-    en: { nativeName: t('english'), flag: '🇬🇧' },
-    es: { nativeName: t('spanish'), flag: '🇪🇸' },
-    pt: { nativeName: t('portuguese'), flag: '🇵🇹' },
+    en: { nativeName: t("english"), flag: "🇬🇧" },
+    es: { nativeName: t("spanish"), flag: "🇪🇸" },
+    pt: { nativeName: t("portuguese"), flag: "🇵🇹" },
   };
 
   // Cerrar el desplegable al hacer clic fuera
@@ -29,9 +29,9 @@ const LanguageSelector = () => {
         setIsOpen(false);
       }
     };
-    document.addEventListener('mousedown', handleClickOutside);
+    document.addEventListener("mousedown", handleClickOutside);
     return () => {
-      document.removeEventListener('mousedown', handleClickOutside);
+      document.removeEventListener("mousedown", handleClickOutside);
     };
   }, []);
 

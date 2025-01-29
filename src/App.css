@@ -1,7 +1,9 @@
 /* App.css */
 
 /* Estilos globales */
-html, body, #root {
+html,
+body,
+#root {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -12,8 +14,8 @@ html, body, #root {
 /* Clase para centrar contenido horizontal y verticalmente */
 .centered {
   justify-content: center; /* Centra horizontalmente */
-  align-items: center;     /* Centra verticalmente */
-  height: 100%;            /* Asegura que el contenedor ocupe toda la altura */
+  align-items: center; /* Centra verticalmente */
+  height: 100%; /* Asegura que el contenedor ocupe toda la altura */
 }
 
 /* Clase para centrar contenido horizontalmente */

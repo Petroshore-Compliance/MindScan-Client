@@ -1,14 +1,14 @@
 {
-    "meta_title": "Iniciar Sessão - MindScan",
-    "title": "Iniciar Sessão",
-    "description": "Insira suas credenciais para acessar sua conta.",
-    "error": "E-mail ou senha inválidos",
-    "form": {
-        "email": "E-mail",
-        "password": "Senha",
-        "forgot_password": "Esqueceu sua senha?",
-        "remember": "Manter a sessão iniciada",
-        "loading": "Carregando...",
-        "submit": "Entrar"
-    }
+  "meta_title": "Iniciar Sessão - MindScan",
+  "title": "Iniciar Sessão",
+  "description": "Insira suas credenciais para acessar sua conta.",
+  "error": "E-mail ou senha inválidos",
+  "form": {
+    "email": "E-mail",
+    "password": "Senha",
+    "forgot_password": "Esqueceu sua senha?",
+    "remember": "Manter a sessão iniciada",
+    "loading": "Carregando...",
+    "submit": "Entrar"
+  }
 }
