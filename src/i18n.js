@@ -52,6 +52,14 @@ import enLogin from "./pages/Login/en.json";
 import esLogin from "./pages/Login/es.json";
 import ptLogin from "./pages/Login/pt.json";
 
+import enForgotPassword from "./pages/ForgotPassword/en.json";
+import esForgotPassword from "./pages/ForgotPassword/es.json";
+import ptForgotPassword from "./pages/ForgotPassword/pt.json";
+
+import enSetPassword from "./pages/SetPassword/en.json";
+import esSetPassword from "./pages/SetPassword/es.json";
+import ptSetPassword from "./pages/SetPassword/pt.json";
+
 import enNotFound from "./pages/NotFound/en.json";
 import esNotFound from "./pages/NotFound/es.json";
 import ptNotFound from "./pages/NotFound/pt.json";
@@ -76,6 +84,8 @@ i18n
       "Contact",
       "Landing",
       "Login",
+      "ForgotPassword",
+      "SetPassword",
       "NotFound",
     ],
     resources: {
@@ -93,6 +103,8 @@ i18n
         Contact: enContact,
         Landing: enLanding,
         Login: enLogin,
+        ForgotPassword: enForgotPassword,
+        SetPassword: enSetPassword,
         NotFound: enNotFound,
       },
       es: {
@@ -109,6 +121,8 @@ i18n
         Contact: esContact,
         Landing: esLanding,
         Login: esLogin,
+        ForgotPassword: esForgotPassword,
+        SetPassword: esSetPassword,
         NotFound: esNotFound,
       },
       pt: {
@@ -125,6 +139,8 @@ i18n
         Contact: ptContact,
         Landing: ptLanding,
         Login: ptLogin,
+        ForgotPassword: ptForgotPassword,
+        SetPassword: ptSetPassword,
         NotFound: ptNotFound,
       },
     },

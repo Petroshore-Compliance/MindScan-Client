@@ -1,0 +1,28 @@
+{
+  "meta_title": "Redefinir palavra-passe - MindScan",
+  "title": "Esqueceu a sua palavra-passe?",
+  "description": "Insira o seu email e enviaremos um link para redefinir a sua palavra-passe.",
+  "error": "Email inválido.",
+  "form": {
+    "email": "Email",
+    "loading": "Loading...",
+    "submit": "Enviar"
+  },
+  "alert": {
+    "success": {
+      "title": "Email enviado",
+      "text": "Enviamos-lhe um email com um link para redefinir a sua palavra-passe.",
+      "button": "Voltar ao login"
+    },
+    "invalidCredentials": {
+      "title": "Utilizador não encontrado",
+      "text": "Não existe nenhum utilizador com esse email.",
+      "button": "Entendido"
+    },
+    "error": {
+      "title": "Erro",
+      "text": "Ocorreu um erro. Por favor, tente novamente.",
+      "button": "Tentar novamente"
+    }
+  }
+}
