@@ -1,0 +1,28 @@
+{
+  "meta_title": "Reset password - MindScan",
+  "title": "Forgot your password?",
+  "description": "Enter your email and we'll send you a link to reset your password.",
+  "error": "Invalid email.",
+  "form": {
+    "email": "Email",
+    "loading": "Loading...",
+    "submit": "Send"
+  },
+  "alert": {
+    "success": {
+      "title": "Email sent",
+      "text": "We've sent you an email with a link to reset your password.",
+      "button": "Back to login"
+    },
+    "invalidCredentials": {
+      "title": "User not found",
+      "text": "There is no user with that email.",
+      "button": "Understood"
+    },
+    "error": {
+      "title": "Error",
+      "text": "An error occurred. Please try again.",
+      "button": "Retry"
+    }
+  }
+}

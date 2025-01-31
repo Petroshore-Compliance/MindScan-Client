@@ -1,0 +1,33 @@
+{
+  "meta_title": "Restablecer contraseña",
+  "title": "Establecer nueva contraseña",
+  "description": "Introduce tu nueva contraseña para completar el proceso.",
+
+  "form": {
+    "password": "Nueva contraseña",
+    "password2": "Confirmar contraseña",
+    "submit": "Restablecer contraseña",
+    "loading": "Procesando..."
+  },
+
+  "alert": {
+    "error": {
+      "title": "Error",
+      "passwordMismatch": "Las contraseñas no coinciden.",
+      "passwordRegexError": "La contraseña debe tener al menos 8 caracteres, incluir una mayúscula, una minúscula y un número.",
+      "userNotFound": "Usuario no encontrado.",
+      "invalidToken": "El enlace de restablecimiento de contraseña no es válido o ha expirado.",
+      "text": "Ocurrió un error inesperado. Inténtalo de nuevo.",
+      "button": "Aceptar"
+    },
+    "success": {
+      "title": "Éxito",
+      "text": "Tu contraseña ha sido restablecida correctamente.",
+      "button": "Iniciar sesión"
+    },
+    "invalidCredentials": {
+      "title": "Credenciales no válidas",
+      "text": "El usuario no existe o el enlace es incorrecto."
+    }
+  }
+}

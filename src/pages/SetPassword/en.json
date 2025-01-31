@@ -1,0 +1,33 @@
+{
+  "meta_title": "Reset Password",
+  "title": "Set New Password",
+  "description": "Enter your new password to complete the process.",
+
+  "form": {
+    "password": "New Password",
+    "password2": "Confirm Password",
+    "submit": "Reset Password",
+    "loading": "Processing..."
+  },
+
+  "alert": {
+    "error": {
+      "title": "Error",
+      "passwordMismatch": "Passwords do not match.",
+      "passwordRegexError": "The password must be at least 8 characters long, including one uppercase letter, one lowercase letter, and a number.",
+      "userNotFound": "User not found.",
+      "invalidToken": "The password reset link is invalid or has expired.",
+      "text": "An unexpected error occurred. Please try again.",
+      "button": "OK"
+    },
+    "success": {
+      "title": "Success",
+      "text": "Your password has been reset successfully.",
+      "button": "Log in"
+    },
+    "invalidCredentials": {
+      "title": "Invalid Credentials",
+      "text": "The user does not exist or the link is incorrect."
+    }
+  }
+}

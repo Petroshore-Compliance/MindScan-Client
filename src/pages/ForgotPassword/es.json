@@ -1,0 +1,28 @@
+{
+  "meta_title": "Reestablecer contraseña - MindScan",
+  "title": "¿Has olvidado tu contraseña?",
+  "description": "Ingresa tu correo electrónico y te enviaremos un enlace para restablecer tu contraseña.",
+  "error": "Correo electrónico inválido.",
+  "form": {
+    "email": "Email",
+    "loading": "Loading...",
+    "submit": "Enviar"
+  },
+  "alert": {
+    "success": {
+      "title": "Correo electrónico enviado",
+      "text": "Te hemos enviado un correo electrónico con un enlace para restablecer tu contraseña.",
+      "button": "Volver al login"
+    },
+    "invalidCredentials": {
+      "title": "Usuario no encontrado",
+      "text": "No existe un usuario con ese correo.",
+      "button": "Entendido"
+    },
+    "error": {
+      "title": "Error",
+      "text": "Ha ocurrido un error. Por favor, inténtalo de nuevo.",
+      "button": "Volver a intentar"
+    }
+  }
+}

@@ -185,8 +185,8 @@ const Login = () => {
 
         <div className="flex flex-col items-start">
           <Link
-            to="/password-recovery"
-            className="font-bold xl:hover:underline xl:hover:bg-blue-600 xl:hover:bg-opacity-30 p-2 rounded-3xl text-[#0B66C2] transition-all duration-500"
+            to="/forgot-password"
+            className="font-bold xl:hover:underline xl:hover:bg-blue-600 xl:hover:bg-opacity-30 px-4 py-2 my-1 rounded-3xl text-[#0B66C2] transition-all duration-500"
           >
             {t("form.forgot_password")}
           </Link>
@@ -197,7 +197,7 @@ const Login = () => {
               name="rememberMe"
               checked={rememberMe}
               onChange={handleRememberMeChange}
-              className="h-5 w-5 text-indigo-600 border-2 border-zinc-300 dark:border-zinc-700 rounded mr-2"
+              className="h-5 w-5 text-indigo-600 border-2 border-zinc-300 dark:border-zinc-700 mr-2"
             />
 
             <label htmlFor="rememberMe" className="text-lg font-medium">

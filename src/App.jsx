@@ -15,6 +15,8 @@ import AdminRoute from "./components/AdminRoute/AdminRoute.jsx";
 import ProtectedRoute from "./components/ProtectedRoute/ProtectedRoute.jsx";
 import { setAdminFromToken, logoutAdmin } from "./features/admin/loginAdminSlice.js";
 import { setUserFromToken, logoutUser } from "./features/auth/loginUserSlice.js";
+import ForgotPassword from "./pages/ForgotPassword/ForgotPassword.jsx";
+import SetPassword from "./pages/SetPassword/SetPassword.jsx";
 import "./App.css";
 
 const App = () => {
@@ -87,6 +89,8 @@ const App = () => {
               <Route path="/admin" element={<AdminLogin />} />
               <Route path="/contact" element={<Contact />} />
               <Route path="/login" element={<Login />} />
+              <Route path="/forgot-password" element={<ForgotPassword />} />
+              <Route path="/set-password" element={<SetPassword />} />
               <Route path="*" element={<NotFound />} />
 
               {/* Rutas protegidas por AdminRoute (el Administrador debe estar loggeado). */}

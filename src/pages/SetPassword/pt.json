@@ -1,0 +1,33 @@
+{
+  "meta_title": "Redefinir senha",
+  "title": "Definir nova senha",
+  "description": "Digite sua nova senha para concluir o processo.",
+
+  "form": {
+    "password": "Nova senha",
+    "password2": "Confirmar senha",
+    "submit": "Redefinir senha",
+    "loading": "Processando..."
+  },
+
+  "alert": {
+    "error": {
+      "title": "Erro",
+      "passwordMismatch": "As senhas não coincidem.",
+      "passwordRegexError": "A senha deve ter pelo menos 8 caracteres, incluindo uma letra maiúscula, uma letra minúscula e um número.",
+      "userNotFound": "Usuário não encontrado.",
+      "invalidToken": "O link para redefinir a senha é inválido ou expirou.",
+      "text": "Ocorreu um erro inesperado. Tente novamente.",
+      "button": "OK"
+    },
+    "success": {
+      "title": "Sucesso",
+      "text": "Sua senha foi redefinida com sucesso.",
+      "button": "Entrar"
+    },
+    "invalidCredentials": {
+      "title": "Credenciais inválidas",
+      "text": "O usuário não existe ou o link está incorreto."
+    }
+  }
+}
