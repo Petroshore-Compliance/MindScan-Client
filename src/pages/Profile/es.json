@@ -1,0 +1,18 @@
+{
+  "meta_title": "Perfil - MindScan",
+  "title": "Perfil",
+  "profile": {
+    "title": "Tu Perfil",
+    "name": "Nombre",
+    "email": "Email",
+    "role": "Rol",
+    "company": "Empresa",
+    "save": "Guardar Cambios"
+  },
+  "error": {
+    "name": "Nombre es requerido",
+    "nameFormat": "Formato de nombre inválido",
+    "email": "Email es requerido",
+    "emailFormat": "Formato de email inválido"
+  }
+}

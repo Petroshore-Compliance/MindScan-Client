@@ -64,6 +64,11 @@ import enNotFound from "./pages/NotFound/en.json";
 import esNotFound from "./pages/NotFound/es.json";
 import ptNotFound from "./pages/NotFound/pt.json";
 
+import enProfile from "./pages/Profile/en.json";
+import esProfile from "./pages/Profile/es.json";
+import ptProfile from "./pages/Profile/pt.json";
+import Profile from "./pages/Profile/Profile";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -87,6 +92,7 @@ i18n
       "ForgotPassword",
       "SetPassword",
       "NotFound",
+      "Profile",
     ],
     resources: {
       en: {
@@ -106,6 +112,7 @@ i18n
         ForgotPassword: enForgotPassword,
         SetPassword: enSetPassword,
         NotFound: enNotFound,
+        Profile: enProfile,
       },
       es: {
         common: esCommon,
@@ -124,6 +131,7 @@ i18n
         ForgotPassword: esForgotPassword,
         SetPassword: esSetPassword,
         NotFound: esNotFound,
+        Profile: esProfile,
       },
       pt: {
         common: ptCommon,
@@ -142,6 +150,7 @@ i18n
         ForgotPassword: ptForgotPassword,
         SetPassword: ptSetPassword,
         NotFound: ptNotFound,
+        Profile: ptProfile,
       },
     },
     detection: {

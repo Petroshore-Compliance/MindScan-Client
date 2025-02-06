@@ -3,6 +3,7 @@ import forgotPasswordReducer from "./features/auth/forgotPasswordSlice.js";
 import loginUserReducer from "./features/auth/loginUserSlice.js";
 import loginAdminReducer from "./features/admin/loginAdminSlice.js";
 import contactReducer from "./features/contact/contactSlice.js";
+import userProfileReducer from "./features/user/UserProfileSlice.js";
 
 export const store = configureStore({
   reducer: {
@@ -10,6 +11,7 @@ export const store = configureStore({
     loginUser: loginUserReducer,
     loginAdmin: loginAdminReducer,
     contact: contactReducer,
+    userProfile: userProfileReducer,
     // ...
   },
 });

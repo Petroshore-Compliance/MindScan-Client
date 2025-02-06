@@ -17,6 +17,7 @@ import { setAdminFromToken, logoutAdmin } from "./features/admin/loginAdminSlice
 import { setUserFromToken, logoutUser } from "./features/auth/loginUserSlice.js";
 import ForgotPassword from "./pages/ForgotPassword/ForgotPassword.jsx";
 import SetPassword from "./pages/SetPassword/SetPassword.jsx";
+import Profile from "./pages/Profile/Profile.jsx";
 import "./App.css";
 
 const App = () => {
@@ -102,7 +103,7 @@ const App = () => {
                 element={<ProtectedRoute>{"<Diagnostic />"}</ProtectedRoute>}
               />
 
-              <Route path="/profile" element={<ProtectedRoute>{"<Profile />"}</ProtectedRoute>} />
+              <Route path="/profile" element={<ProtectedRoute>{<Profile />}</ProtectedRoute>} />
 
               <Route
                 path="/company-panel"
