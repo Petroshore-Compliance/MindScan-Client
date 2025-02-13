@@ -64,7 +64,6 @@ function SetPassword() {
 
     try {
       const resultAction = await dispatch(setNewPassword({ token, password }));
-      console.log(resultAction);
 
       if (setNewPassword.fulfilled.match(resultAction)) {
         await MySwal.fire({
@@ -95,7 +94,6 @@ function SetPassword() {
         }
       }
     } catch (error) {
-      console.error(error);
       MySwal.fire({
         title: t("alert.error.title"),
         text: t("alert.error.text"),

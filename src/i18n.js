@@ -67,7 +67,6 @@ import ptNotFound from "./pages/NotFound/pt.json";
 import enProfile from "./pages/Profile/en.json";
 import esProfile from "./pages/Profile/es.json";
 import ptProfile from "./pages/Profile/pt.json";
-import Profile from "./pages/Profile/Profile";
 
 i18n
   .use(LanguageDetector)

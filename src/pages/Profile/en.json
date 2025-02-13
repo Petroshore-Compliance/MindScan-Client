@@ -9,10 +9,42 @@
     "company": "Company",
     "save": "Save Changes"
   },
+  "changePassword": {
+    "title": "Change Password",
+    "cancel": "Cancel",
+    "currentPassword": "Current Password",
+    "newPassword": "New Password",
+    "confirmPassword": "Confirm Password",
+    "save": "Save Changes"
+  },
   "error": {
     "name": "Name is required",
-    "nameFormat": "Invalid name format",
-    "email": "Email is required",
-    "emailFormat": "Invalid email format"
+    "nameFormat": "Invalid name format"
+  },
+  "alert": {
+    "doNotMatch": {
+      "title": "Wait!",
+      "text": "The passwords do not match."
+    },
+    "success": {
+      "title": "Success!",
+      "text": "Password changed successfully."
+    },
+    "invalidFormat": {
+      "title": "Invalid format!",
+      "text": "The password must have at least 8 characters, one uppercase letter, one lowercase letter, and one number."
+    },
+    "oldPassword": {
+      "title": "Wait!",
+      "text": "The current password is incorrect."
+    },
+    "samePassword": {
+      "title": "Wait!",
+      "text": "The new password must be different from the current password."
+    },
+    "error": {
+      "title": "Error!",
+      "text": "An error occurred while changing the password."
+    }
   }
 }

@@ -9,10 +9,42 @@
     "company": "Empresa",
     "save": "Guardar Cambios"
   },
+  "changePassword": {
+    "title": "Cambiar Contraseña",
+    "cancel": "Cancelar",
+    "currentPassword": "Contraseña Actual",
+    "newPassword": "Nueva Contraseña",
+    "confirmPassword": "Confirmar Contraseña",
+    "save": "Guardar Cambios"
+  },
   "error": {
     "name": "Nombre es requerido",
-    "nameFormat": "Formato de nombre inválido",
-    "email": "Email es requerido",
-    "emailFormat": "Formato de email inválido"
+    "nameFormat": "Formato de nombre inválido"
+  },
+  "alert": {
+    "doNotMatch": {
+      "title": "Espera!",
+      "text": "Las contraseñas no coinciden."
+    },
+    "success": {
+      "title": "Éxito!",
+      "text": "Contraseña cambiada con éxito."
+    },
+    "invalidFormat": {
+      "title": "Formato inválido",
+      "text": "La contraseña debe tener al menos 8 caracteres, una letra mayúscula, una letra minúscula y un número."
+    },
+    "oldPassword": {
+      "title": "Espera!",
+      "text": "La contraseña actual es incorrecta."
+    },
+    "samePassword": {
+      "title": "Espera!",
+      "text": "La nueva contraseña debe ser diferente de la actual."
+    },
+    "error": {
+      "title": "Error!",
+      "text": "Ocurrió un error al cambiar la contraseña."
+    }
   }
 }
