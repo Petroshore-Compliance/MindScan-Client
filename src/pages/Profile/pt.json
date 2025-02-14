@@ -9,10 +9,42 @@
     "company": "Empresa",
     "save": "Salvar Alterações"
   },
+  "changePassword": {
+    "title": "Alterar Senha",
+    "cancel": "Cancelar",
+    "currentPassword": "Senha Atual",
+    "newPassword": "Nova Senha",
+    "confirmPassword": "Confirmar Senha",
+    "save": "Salvar Alterações"
+  },
   "error": {
     "name": "Nome é obrigatório",
-    "nameFormat": "Formato de nome inválido",
-    "email": "Email é obrigatório",
-    "emailFormat": "Formato de email inválido"
+    "nameFormat": "Formato de nome inválido"
+  },
+  "alert": {
+    "doNotMatch": {
+      "title": "Espera!",
+      "text": "As senhas não coincidem."
+    },
+    "success": {
+      "title": "Sucesso!",
+      "text": "Senha alterada com sucesso."
+    },
+    "invalidFormat": {
+      "title": "Formato inválido!",
+      "text": "A senha deve ter pelo menos 8 caracteres, uma letra maiúscula, uma letra minúscula e um número."
+    },
+    "oldPassword": {
+      "title": "Espera!",
+      "text": "A senha atual está incorreta."
+    },
+    "samePassword": {
+      "title": "Espera!",
+      "text": "A nova senha deve ser diferente da atual."
+    },
+    "error": {
+      "title": "Erro!",
+      "text": "Ocorreu um erro ao alterar a senha."
+    }
   }
 }

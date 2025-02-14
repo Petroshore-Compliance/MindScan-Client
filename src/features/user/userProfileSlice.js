@@ -11,6 +11,7 @@ export const userProfile = createAsyncThunk("user/userProfile", async (userToken
 
     if (!response.ok) {
       const data = await response.json().catch(() => ({}));
+      console.log(data);
       return thunkAPI.rejectWithValue(data.message || "Error getting user profile.");
     }
 
