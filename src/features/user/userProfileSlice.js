@@ -35,12 +35,14 @@ export const updateProfile = createAsyncThunk(
         body: JSON.stringify(userData),
       });
 
+      const data = await response.json();
+
       if (!response.ok) {
-        const data = await response.json().catch(() => ({}));
-        return thunkAPI.rejectWithValue(data.message || "Error updating user profile.");
+        return thunkAPI.rejectWithValue(
+          data.errors || data.message || "Error updating user profile."
+        );
       }
 
-      const data = await response.json();
       return data;
     } catch (error) {
       return thunkAPI.rejectWithValue({ error: error.message });

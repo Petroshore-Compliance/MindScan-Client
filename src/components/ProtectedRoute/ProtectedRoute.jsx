@@ -10,39 +10,45 @@ export default function ProtectedRoute({ children, requiredRole }) {
   const { userToken } = useSelector((state) => state.loginUser);
 
   useEffect(() => {
-    const localUserToken =
-      userToken || localStorage.getItem("userToken") || sessionStorage.getItem("userToken");
+    async function checkAuthorization() {
+      const localUserToken =
+        userToken || localStorage.getItem("userToken") || sessionStorage.getItem("userToken");
 
-    if (!localUserToken) {
-      navigate("/login");
-      return;
-    }
+      if (!localUserToken) {
+        navigate("/login");
+        return;
+      }
 
-    fetch("http://localhost:3001/auth/verify-user", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        Authorization: `Bearer ${localUserToken}`,
-      },
-    })
-      .then(async (res) => {
-        if (!res.ok) {
+      try {
+        let resUser = await fetch("http://localhost:3001/auth/verify-user", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+            Authorization: `Bearer ${localUserToken}`,
+          },
+        });
+
+        if (!resUser.ok) {
           throw new Error("Invalid User Token");
         }
-        return res.json();
-      })
-      .then((data) => {
-        dispatch(setUserFromToken({ user: data.user, userToken: localUserToken }));
 
-        if (Array.isArray(requiredRole)) {
-          if (!requiredRole.includes(data.user.role)) {
+        dispatch(setUserFromToken({ userToken: localUserToken }));
+
+        if (requiredRole) {
+          const queryParam = Array.isArray(requiredRole) ? requiredRole[0] : requiredRole;
+
+          let resRole = await fetch(`http://localhost:3001/auth/verify-role?role=${queryParam}`, {
+            method: "POST",
+            headers: {
+              Authorization: `Bearer ${localUserToken}`,
+            },
+          });
+
+          if (!resRole.ok) {
             throw new Error("Unauthorized Role");
           }
-        } else if (requiredRole && data.user.role !== requiredRole) {
-          throw new Error("Unauthorized Role");
         }
-      })
-      .catch((error) => {
+      } catch (error) {
         console.error(error);
 
         if (error.message === "Invalid User Token") {
@@ -58,7 +64,10 @@ export default function ProtectedRoute({ children, requiredRole }) {
           dispatch(logoutUser());
           navigate("/");
         }
-      });
+      }
+    }
+
+    checkAuthorization();
   }, [dispatch, navigate, userToken, requiredRole]);
 
   return children;

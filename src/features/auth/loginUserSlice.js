@@ -11,12 +11,12 @@ export const loginUser = createAsyncThunk("auth/loginUser", async (credentials, 
       }),
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const data = await response.json().catch(() => ({}));
-      throw new Error(data.message || "Invalid credentials");
+      throw new Error(data.errors || data.message || "Invalid credentials");
     }
 
-    const data = await response.json();
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue({ error: error.message });

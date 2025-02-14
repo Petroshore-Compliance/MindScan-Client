@@ -42,9 +42,10 @@ function ForgotPassword() {
         });
         navigate("/login");
       } else if (forgotPassword.rejected.match(resultAction)) {
-        const errorMsg = resultAction.payload || "Error desconocido";
+        const errorString = resultAction.payload;
+        const errorMsg = errorString.split(",");
 
-        if (errorMsg.includes("Email not found")) {
+        if (errorMsg.some((item) => item === "Email not found")) {
           await MySwal.fire({
             title: t("alert.invalidCredentials.title"),
             text: t("alert.invalidCredentials.text"),

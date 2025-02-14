@@ -14,7 +14,7 @@ export const loginAdmin = createAsyncThunk("admin/loginAdmin", async (credential
     const data = await response.json();
 
     if (!response.ok) {
-      throw new Error(data.message || "Error logging in");
+      throw new Error(data.errors || data.message || "Error logging in");
     }
 
     return data;

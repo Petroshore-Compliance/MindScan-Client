@@ -21,8 +21,6 @@ export default function ChangePassword() {
 
   const [hasChanges, setHasChanges] = useState(false);
 
-  const { error, message } = useSelector((state) => state.changePassword);
-
   const toggleShowCurrentPassword = () => {
     setShowCurrentPassword((prev) => !prev);
   };
@@ -60,8 +58,6 @@ export default function ChangePassword() {
       const response = await dispatch(changePassword({ token, password, newPassword }));
       const errorString = response.payload;
       const errorMsg = errorString.split(",");
-
-      console.log(errorMsg);
 
       if (changePassword.fulfilled.match(response)) {
         await MySwal.fire({
