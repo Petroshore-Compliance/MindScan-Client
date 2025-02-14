@@ -19,6 +19,7 @@ import ForgotPassword from "./pages/ForgotPassword/ForgotPassword.jsx";
 import SetPassword from "./pages/SetPassword/SetPassword.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import "./App.css";
+import CompanyPanel from "./pages/CompanyPanel/CompanyPanel.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -109,7 +110,7 @@ const App = () => {
                 path="/company-panel"
                 element={
                   <ProtectedRoute requiredRole={["admin", "manager"]}>
-                    {"<CompanyPanel />"}
+                    <CompanyPanel />
                   </ProtectedRoute>
                 }
               />

@@ -67,7 +67,10 @@ import ptNotFound from "./pages/NotFound/pt.json";
 import enProfile from "./pages/Profile/en.json";
 import esProfile from "./pages/Profile/es.json";
 import ptProfile from "./pages/Profile/pt.json";
-import Profile from "./pages/Profile/Profile";
+
+import enCompanyPanel from "./pages/CompanyPanel/en.json";
+import esCompanyPanel from "./pages/CompanyPanel/es.json";
+import ptCompanyPanel from "./pages/CompanyPanel/pt.json";
 
 i18n
   .use(LanguageDetector)
@@ -93,6 +96,7 @@ i18n
       "SetPassword",
       "NotFound",
       "Profile",
+      "CompanyPanel",
     ],
     resources: {
       en: {
@@ -113,6 +117,7 @@ i18n
         SetPassword: enSetPassword,
         NotFound: enNotFound,
         Profile: enProfile,
+        CompanyPanel: enCompanyPanel,
       },
       es: {
         common: esCommon,
@@ -132,6 +137,7 @@ i18n
         SetPassword: esSetPassword,
         NotFound: esNotFound,
         Profile: esProfile,
+        CompanyPanel: esCompanyPanel,
       },
       pt: {
         common: ptCommon,
@@ -151,6 +157,7 @@ i18n
         SetPassword: ptSetPassword,
         NotFound: ptNotFound,
         Profile: ptProfile,
+        CompanyPanel: ptCompanyPanel,
       },
     },
     detection: {
