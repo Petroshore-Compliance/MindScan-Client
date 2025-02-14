@@ -64,6 +64,8 @@ function SetPassword() {
 
     try {
       const resultAction = await dispatch(setNewPassword({ token, password }));
+      const errorString = resultAction.payload;
+      const errorMsg = errorString.split(",");
 
       if (setNewPassword.fulfilled.match(resultAction)) {
         await MySwal.fire({
@@ -75,9 +77,7 @@ function SetPassword() {
         });
         navigate("/login");
       } else if (setNewPassword.rejected.match(resultAction)) {
-        const errorMsg = resultAction.payload || "Error desconocido";
-
-        if (errorMsg.includes("User not found")) {
+        if (errorMsg.some((item) => item === "User not found")) {
           await MySwal.fire({
             title: t("alert.invalidCredentials.title"),
             text: t("alert.invalidCredentials.text"),
