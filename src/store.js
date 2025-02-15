@@ -6,6 +6,8 @@ import contactReducer from "./features/contact/contactSlice.js";
 import userProfileReducer from "./features/user/UserProfileSlice.js";
 import companyPanelReducer from "./features/company/companyPanelSlice.js";
 import changePasswordReducer from "./features/auth/changePasswordSlice.js";
+import diagnosticReducer from "./features/diagnoses/getDiagnosticSlice.js";
+import resultsReducer from "./features/diagnoses/submitResultsSlice.js";
 
 export const store = configureStore({
   reducer: {
@@ -16,6 +18,8 @@ export const store = configureStore({
     userProfile: userProfileReducer,
     companyPanel: companyPanelReducer,
     changePassword: changePasswordReducer,
+    diagnostic: diagnosticReducer,
+    results: resultsReducer,
     // ...
   },
 });

@@ -13,7 +13,7 @@ export const sendContactForm = createAsyncThunk(
       const data = await response.json();
 
       if (!response.ok) {
-        return thunkAPI.rejectWithValue(data.errors || data.message || "Error sending form.");
+        throw new Error(data.errors || data.message || "Error sending form.");
       }
 
       return data;
