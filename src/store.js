@@ -3,7 +3,7 @@ import forgotPasswordReducer from "./features/auth/forgotPasswordSlice.js";
 import loginUserReducer from "./features/auth/loginUserSlice.js";
 import loginAdminReducer from "./features/admin/loginAdminSlice.js";
 import contactReducer from "./features/contact/contactSlice.js";
-import userProfileReducer from "./features/user/UserProfileSlice.js";
+import userProfileReducer from "./features/user/userProfileSlice.js";
 import companyPanelReducer from "./features/company/companyPanelSlice.js";
 import changePasswordReducer from "./features/auth/changePasswordSlice.js";
 

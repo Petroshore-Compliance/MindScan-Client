@@ -3,6 +3,7 @@ import { Helmet } from "react-helmet-async";
 import { useTranslation } from "react-i18next";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchCompany } from "../../features/company/companyPanelSlice.js";
+import EmployeesPanel from "../../components/EmployeesPanel/EmployeesPanel.jsx";
 
 const CompanyPanel = () => {
   const { t } = useTranslation("CompanyPanel");
@@ -13,43 +14,56 @@ const CompanyPanel = () => {
     dispatch(fetchCompany());
   }, [dispatch]);
 
-  if (isLoading) return <p>Cargando...</p>;
-  if (error) return <p>Error: {error}</p>;
+  if (isLoading) return <p className="text-center text-gray-500 text-lg">{t("Cargando...")}</p>;
+  if (error) return <p className="text-center text-red-500 text-lg">{t("Error")}: {error}</p>;
 
   const companyAdmin = company?.users?.find((user) => user.role === "admin");
 
   return (
-    <div className="w-3/4 mx-auto flex flex-col items-center p-8">
+    <div className="w-full max-w-screen-xl mx-auto flex flex-col items-center p-6 sm:p-10">
       <Helmet>
         <title>{t("Panel de empresa")}</title>
       </Helmet>
-      <div className="w-full max-w-3xl bg-white dark:bg-gray-800 shadow-md rounded-2xl p-8 border border-gray-300">
+
+      {/* Contenedor de la empresa */}
+      <div className="w-full max-w-4xl bg-white dark:bg-gray-800 shadow-md rounded-2xl p-6 sm:p-10 border border-gray-300 text-center">
         <div className="text-center mb-6">
-          <h2 className="text-2xl lg:text-4xl font-semibold">{company?.name || "—"}</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-gray-900 dark:text-gray-200">
+            {company?.name || "—"}
+          </h2>
         </div>
 
         {company ? (
-          <div className="grid grid-cols-2 gap-y-4 gap-x-6">
-            <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 text-left">
-              {t("Email")}
-            </h3>
-            <p className="text-gray-900 dark:text-gray-200 text-right">{company.email || "—"}</p>
+          <div className="flex flex-col sm:grid sm:grid-cols-2 gap-y-5 gap-x-6">
+            <div className="sm:text-left">
+              <h3 className="text-xl font-medium text-gray-700 dark:text-gray-300">{t("Email")}</h3>
+            </div>
+            <div className="sm:text-right">
+              <p className="text-lg text-gray-900 dark:text-gray-200 font-semibold">{company.email || "—"}</p>
+            </div>
 
-            <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 text-left">
-              {t("Administrador")}
-            </h3>
-            <p className="text-gray-900 dark:text-gray-200 text-right">
-              {companyAdmin?.email || "—"}
-            </p>
+            <div className="sm:text-left">
+              <h3 className="text-xl font-medium text-gray-700 dark:text-gray-300">{t("Administrador")}</h3>
+            </div>
+            <div className="sm:text-right">
+              <p className="text-lg text-gray-900 dark:text-gray-200 font-semibold">{companyAdmin?.email || "—"}</p>
+            </div>
 
-            <h3 className="text-lg font-medium text-gray-700 dark:text-gray-300 text-left">
-              {t("Licencias disponibles")}
-            </h3>
-            <p className="text-gray-900 dark:text-gray-200 text-right">{company.licenses || "—"}</p>
+            <div className="sm:text-left">
+              <h3 className="text-xl font-medium text-gray-700 dark:text-gray-300">{t("Licencias disponibles")}</h3>
+            </div>
+            <div className="sm:text-right">
+              <p className="text-lg text-gray-900 dark:text-gray-200 font-semibold">{company.licenses || "—"}</p>
+            </div>
           </div>
         ) : (
-          <p className="text-gray-500 text-center mt-4">{t("noData")}</p>
+          <p className="text-gray-500 text-center mt-4 text-lg">{t("noData")}</p>
         )}
+      </div>
+
+      {/* Panel de empleados */}
+      <div className="mt-10 w-full">
+        <EmployeesPanel />
       </div>
     </div>
   );
