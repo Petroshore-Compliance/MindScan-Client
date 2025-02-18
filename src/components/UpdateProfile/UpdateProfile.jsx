@@ -157,7 +157,7 @@ export default function UpdateProfile() {
           id="company"
           name="company"
           autoComplete="company"
-          value={userData.company}
+          value={userData.company.name}
           disabled
           required
           className="mt-2 block w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 disabled:text-gray-500 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500"
