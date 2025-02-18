@@ -5,6 +5,7 @@ import { fetchEmployees, inviteEmployee } from "../../features/company/companyPa
 import { updateProfile } from "../../features/user/userProfileSlice.js";
 import Swal from "sweetalert2";
 import withReactContent from "sweetalert2-react-content";
+import { Link } from "react-router-dom";
 
 const MySwal = withReactContent(Swal);
 
@@ -40,7 +41,7 @@ const EmployeesPanel = () => {
         cancelButton: "rounded-lg px-4 py-2",
       },
     });
-  
+
     if (result.isConfirmed) {
       try {
         await dispatch(
@@ -49,7 +50,7 @@ const EmployeesPanel = () => {
             userData: { id: employeeId, role: null, company_id: null },
           })
         ).unwrap();
-  
+
         MySwal.fire({
           title: t("Eliminado"),
           text: t("El empleado ha sido eliminado correctamente."),
@@ -66,46 +67,80 @@ const EmployeesPanel = () => {
       }
     }
   };
-  
+
   const handleInviteEmployee = async () => {
     try {
       await dispatch(inviteEmployee({ email, role })).unwrap();
-  
+
       MySwal.fire({
         title: t("Invitación enviada"),
         text: t("El usuario ha sido invitado exitosamente"),
         icon: "success",
         confirmButtonText: t("Aceptar"),
       });
-  
-      setEmail(""); 
+
+      setEmail("");
     } catch (error) {
       MySwal.fire({
         title: t("Error"),
-        text: error.message || t("No se pudo enviar la invitación, comprueba si el usuario ya ha sido invitado."),
+        text:
+          error.message ||
+          t("No se pudo enviar la invitación, comprueba si el usuario ya ha sido invitado."),
         icon: "error",
         confirmButtonText: t("Aceptar"),
       });
     }
   };
-  
 
   return (
     <div className="mt-8 w-full max-w-screen-xl mx-auto bg-white dark:bg-gray-800 shadow-xl rounded-2xl p-6 sm:p-10 border border-gray-300 text-center">
-      {/* Tabs */}
-      <div className="flex justify-center border-b border-gray-300 dark:border-gray-700 mb-6">
-        <button
-          className={`px-4 py-2 ${activeTab === "employees" ? "border-b-2 border-indigo-600 font-bold text-2xl" : "text-gray-500 text-2xl"}`}
-          onClick={() => setActiveTab("employees")}
-        >
-          {t("Empleados")}
-        </button>
-        <button
-          className={`px-4 py-2 ${activeTab === "invites" ? "border-b-2 border-indigo-600 font-bold text-2xl" : "text-gray-500 text-2xl"}`}
-          onClick={() => setActiveTab("invites")}
-        >
-          {t("Invitaciones")}
-        </button>
+      {/* Contenedor de pestañas y botón de soporte */}
+      <div className="flex justify-between items-center mb-6">
+        <div className="flex justify-center">
+          <button
+            className={`px-4 py-2 ${activeTab === "employees" ? "border-b-2 border-indigo-600 font-bold text-2xl" : "text-gray-500 text-2xl"}`}
+            onClick={() => setActiveTab("employees")}
+          >
+            {t("Empleados")}
+          </button>
+          <button
+            className={`px-4 py-2 ${activeTab === "invites" ? "border-b-2 border-indigo-600 font-bold text-2xl" : "text-gray-500 text-2xl"}`}
+            onClick={() => setActiveTab("invites")}
+          >
+            {t("Invitaciones")}
+          </button>
+        </div>
+        <div>
+          <Link
+            to="/contact"
+            className="hidden sm:block bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+          >
+            {t("Soporte")}
+          </Link>
+          <Link
+            to="/contact"
+            className="block sm:hidden bg-blue-500 text-white px-6 py-2 rounded-lg hover:bg-green-600 transition"
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2"
+              stroke-linecap="round"
+              stroke-linejoin="round"
+              class="icon icon-tabler icons-tabler-outline icon-tabler-user-plus"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
+              <path d="M16 19h6" />
+              <path d="M19 16v6" />
+              <path d="M6 21v-2a4 4 0 0 1 4 -4h4" />
+            </svg>
+          </Link>
+        </div>
       </div>
 
       {/* Contenido de la pestaña seleccionada */}
@@ -129,7 +164,25 @@ const EmployeesPanel = () => {
                       onClick={() => handleDeleteEmployee(employee.id)}
                       className="mt-3 bg-red-500 text-white px-4 py-2 rounded-lg hover:bg-red-600 transition text-lg"
                     >
-                      {t("Eliminar")}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        stroke-width="2"
+                        stroke-linecap="round"
+                        stroke-linejoin="round"
+                        class="icon icon-tabler icons-tabler-outline icon-tabler-trash"
+                      >
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                        <path d="M4 7l16 0" />
+                        <path d="M10 11l0 6" />
+                        <path d="M14 11l0 6" />
+                        <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                        <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                      </svg>
                     </button>
                   </div>
                 ))}
@@ -160,10 +213,28 @@ const EmployeesPanel = () => {
                       <td className="py-4 px-6 text-lg text-center">{t(employee.role)}</td>
                       <td className="py-4 px-6 text-center rounded-r-2xl">
                         <button
-                          onClick={() => handleDeleteEmployee(employee.id)}
+                          // onClick={() => handleDeleteEmployee(employee.id)}
                           className="bg-red-500 text-white px-2 py-2 rounded-lg hover:bg-red-600 transition text-lg"
                         >
-                          {t("Eliminar")}
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="24"
+                            height="24"
+                            viewBox="0 0 24 24"
+                            fill="none"
+                            stroke="currentColor"
+                            stroke-width="2"
+                            stroke-linecap="round"
+                            stroke-linejoin="round"
+                            class="icon icon-tabler icons-tabler-outline icon-tabler-trash"
+                          >
+                            <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                            <path d="M4 7l16 0" />
+                            <path d="M10 11l0 6" />
+                            <path d="M14 11l0 6" />
+                            <path d="M5 7l1 12a2 2 0 0 0 2 2h8a2 2 0 0 0 2 -2l1 -12" />
+                            <path d="M9 7v-3a1 1 0 0 1 1 -1h4a1 1 0 0 1 1 1v3" />
+                          </svg>
                         </button>
                       </td>
                     </tr>
@@ -198,7 +269,7 @@ const EmployeesPanel = () => {
           </select>
 
           <button
-            onClick={handleInviteEmployee} 
+            onClick={handleInviteEmployee}
             className="bg-indigo-600 text-white px-4 py-2 rounded-lg hover:bg-blue-600 transition mt-4"
           >
             {t("Enviar Invitación")}
