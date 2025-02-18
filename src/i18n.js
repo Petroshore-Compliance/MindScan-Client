@@ -30,6 +30,10 @@ import enThemeSwitch from "./components/ThemeSwitch/en.json";
 import esThemeSwitch from "./components/ThemeSwitch/es.json";
 import ptThemeSwitch from "./components/ThemeSwitch/pt.json";
 
+import enEmployeesPanel from "./components/EmployeesPanel/en.json";
+import esEmployeesPanel from "./components/EmployeesPanel/es.json";
+import ptEmployeesPanel from "./components/EmployeesPanel/pt.json";
+
 //------------------------------------------------------------------------------ Pages
 
 import enAbout from "./pages/About/en.json";
@@ -71,6 +75,7 @@ import ptProfile from "./pages/Profile/pt.json";
 import enCompanyPanel from "./pages/CompanyPanel/en.json";
 import esCompanyPanel from "./pages/CompanyPanel/es.json";
 import ptCompanyPanel from "./pages/CompanyPanel/pt.json";
+import EmployeesPanel from "./components/EmployeesPanel/EmployeesPanel";
 
 i18n
   .use(LanguageDetector)
@@ -86,6 +91,7 @@ i18n
       "MindMap",
       "NavBar",
       "ThemeSwitch",
+      "EmployeesPanel",
 
       "About",
       "AdminLogin",
@@ -107,6 +113,7 @@ i18n
         MindMap: enMindMap,
         NavBar: enNavBar,
         ThemeSwitch: enThemeSwitch,
+        EmployeesPanel: enEmployeesPanel,
 
         About: enAbout,
         AdminLogin: enAdminLogin,
@@ -127,6 +134,7 @@ i18n
         MindMap: esMindMap,
         NavBar: esNavBar,
         ThemeSwitch: esThemeSwitch,
+        EmployeesPanel: esEmployeesPanel,
 
         About: esAbout,
         AdminLogin: esAdminLogin,
@@ -147,6 +155,7 @@ i18n
         MindMap: ptMindMap,
         NavBar: ptNavBar,
         ThemeSwitch: ptThemeSwitch,
+        EmployeesPanel: ptEmployeesPanel,
 
         About: ptAbout,
         AdminLogin: ptAdminLogin,
