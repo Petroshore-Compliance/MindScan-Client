@@ -1,0 +1,53 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* La clase general del slider */
+.rangeProgress {
+  @apply w-full appearance-none bg-transparent outline-none cursor-pointer;
+  -webkit-appearance: none; /* Para que respete tus estilos en Chrome/Safari */
+  transition: background 0.3s ease; /* Opcional: anima cambios de background */
+}
+
+/* ----- Chrome / Safari (WebKit) ----- */
+.rangeProgress::-webkit-slider-runnable-track {
+  @apply h-3 rounded-full;
+
+  /* Gradiente con 3 stops: rojo → blanco → verde */
+  background: linear-gradient(
+    to right,
+    #f87171 0%,
+    /* rojo en el extremo izquierdo */ #ffffff 50%,
+    /* blanco al centro */ #34d399 100% /* verde en el extremo derecho */
+  );
+
+  /* Transición para ver un ligero efecto si el valor cambia de golpe (teclas flecha, etc.) */
+  transition: background 0.5s ease;
+}
+
+/* El "pulgar" (thumb) */
+.rangeProgress::-webkit-slider-thumb {
+  @apply w-6 h-6 bg-indigo-600 rounded-full 
+           border-2 border-indigo-500 shadow;
+  -webkit-appearance: none;
+  margin-top: -6px; /* Ajusta según el grosor de la pista (h-2) para centrarlo verticalmente */
+  transition: transform 0.2s ease; /* Suaviza el hover */
+}
+
+.rangeProgress::-webkit-slider-thumb:hover {
+  transform: scale(1.25); /* Efecto al pasar el mouse por encima */
+}
+
+/* ----- Firefox (Moz) ----- */
+.rangeProgress::-moz-range-track {
+  @apply h-3 rounded-full;
+  background: linear-gradient(to right, #f87171 0%, #ffffff 50%, #34d399 100%);
+  transition: background 0.5s ease;
+}
+.rangeProgress::-moz-range-thumb {
+  @apply w-6 h-6 bg-indigo-600 rounded-full 
+           border-2 border-indigo-500 shadow;
+}
+
+/* ----- Edge/IE (MS) ----- */
+/* Si necesitas compatibilidad, aplica reglas similares para ::-ms-track, ::-ms-thumb, etc. */

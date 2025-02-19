@@ -1,0 +1,32 @@
+{
+  "meta_title": "Diagnostic - MindScan",
+  "title": "Diagnostic",
+  "description": {
+    "0": "This diagnostic consists of ",
+    "1": "240 questions",
+    "2": ". Each question has ",
+    "3": "5 possible answers.",
+    "4": "Please note that completing all questions may take some time."
+  },
+  "start_button": "Start diagnostic",
+  "page": "Page",
+  "alert": {
+    "finished": {
+      "title": "Diagnostic completed",
+      "text": "You have completed the diagnostic."
+    },
+    "error": {
+      "title": "An error occurred",
+      "text": "An unexpected error occurred. Please try again later."
+    }
+  },
+  "answers": {
+    "strongly_disagree": "Strongly disagree",
+    "disagree": "Disagree",
+    "neutral": "Neutral",
+    "agree": "Agree",
+    "strongly_agree": "Strongly agree"
+  },
+  "finish_button": "Finish",
+  "continue_button": "Continue"
+}

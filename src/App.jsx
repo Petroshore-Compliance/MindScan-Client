@@ -20,6 +20,7 @@ import SetPassword from "./pages/SetPassword/SetPassword.jsx";
 import Profile from "./pages/Profile/Profile.jsx";
 import "./App.css";
 import CompanyPanel from "./pages/CompanyPanel/CompanyPanel.jsx";
+import Diagnostic from "./pages/Diagnostic/Diagnostic.jsx";
 
 const App = () => {
   const dispatch = useDispatch();
@@ -101,7 +102,7 @@ const App = () => {
               {/* Rutas protegidas por ProtectedRoute (el usuario debe estar loggeado). */}
               <Route
                 path="/diagnostic"
-                element={<ProtectedRoute>{"<Diagnostic />"}</ProtectedRoute>}
+                element={<ProtectedRoute>{<Diagnostic />}</ProtectedRoute>}
               />
 
               <Route path="/profile" element={<ProtectedRoute>{<Profile />}</ProtectedRoute>} />

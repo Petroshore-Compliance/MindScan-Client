@@ -2,15 +2,15 @@ import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 
 export const submitResults = createAsyncThunk(
   "diagnoses/submitResults",
-  async ({ token, results }, thunkAPI) => {
+  async ({ token, responses }, thunkAPI) => {
     try {
       const response = await fetch("http://localhost:3001/diagnoses/submit", {
-        method: "POST",
+        method: "PATCH",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${token}`,
         },
-        body: JSON.stringify({ results }),
+        body: JSON.stringify({ responses }),
       });
 
       const data = await response.json();
@@ -19,7 +19,10 @@ export const submitResults = createAsyncThunk(
         throw new Error(data.errors || data.message || "Error submitting results.");
       }
 
-      return data;
+      return {
+        ...data,
+        httpCode: response.status,
+      };
     } catch (error) {
       return thunkAPI.rejectWithValue(error.message);
     }
@@ -49,10 +52,12 @@ const resultsSlice = createSlice({
         state.error = null;
         state.status = "loading";
       })
-      .addCase(submitResults.fulfilled, (state) => {
+      .addCase(submitResults.fulfilled, (state, action) => {
+        const { httpCode } = action.payload;
         state.loading = false;
         state.status = "succeeded";
         state.success = true;
+        state.code = httpCode;
       })
       .addCase(submitResults.rejected, (state, action) => {
         state.loading = false;

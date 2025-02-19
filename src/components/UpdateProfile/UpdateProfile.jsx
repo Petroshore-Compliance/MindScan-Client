@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { userProfile, updateProfile } from "../../features/user/UserProfileSlice.js";
+import { userProfile, updateProfile } from "../../features/user/userProfileSlice.js";
 import { useTranslation } from "react-i18next";
 
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
