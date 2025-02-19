@@ -1,0 +1,32 @@
+{
+  "meta_title": "Diagnóstico - MindScan",
+  "title": "Diagnóstico",
+  "description": {
+    "0": "Este diagnóstico consta de ",
+    "1": "240 preguntas",
+    "2": ". Cada pregunta tiene ",
+    "3": "5 posibles respuestas.",
+    "4": "Ten en cuenta que completar todas las preguntas puede llevar un tiempo."
+  },
+  "start_button": "Comenzar diagnóstico",
+  "page": "Página",
+  "alert": {
+    "finished": {
+      "title": "Diagnóstico completado",
+      "text": "Has completado el diagnóstico."
+    },
+    "error": {
+      "title": "Ha ocurrido un error",
+      "text": "Ha ocurrido un error inesperado. Por favor, inténtalo de nuevo más tarde."
+    }
+  },
+  "answers": {
+    "strongly_disagree": "Totalmente en desacuerdo",
+    "disagree": "En desacuerdo",
+    "neutral": "Neutral",
+    "agree": "De acuerdo",
+    "strongly_agree": "Totalmente de acuerdo"
+  },
+  "finish_button": "Finalizar",
+  "continue_button": "Continuar"
+}

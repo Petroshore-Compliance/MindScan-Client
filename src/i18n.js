@@ -77,6 +77,10 @@ import esCompanyPanel from "./pages/CompanyPanel/es.json";
 import ptCompanyPanel from "./pages/CompanyPanel/pt.json";
 import EmployeesPanel from "./components/EmployeesPanel/EmployeesPanel";
 
+import enDiagnostic from "./pages/Diagnostic/en.json";
+import esDiagnostic from "./pages/Diagnostic/es.json";
+import ptDiagnostic from "./pages/Diagnostic/pt.json";
+
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
@@ -103,6 +107,7 @@ i18n
       "NotFound",
       "Profile",
       "CompanyPanel",
+      "Diagnostic",
     ],
     resources: {
       en: {
@@ -125,6 +130,7 @@ i18n
         NotFound: enNotFound,
         Profile: enProfile,
         CompanyPanel: enCompanyPanel,
+        Diagnostic: enDiagnostic,
       },
       es: {
         common: esCommon,
@@ -146,6 +152,7 @@ i18n
         NotFound: esNotFound,
         Profile: esProfile,
         CompanyPanel: esCompanyPanel,
+        Diagnostic: esDiagnostic,
       },
       pt: {
         common: ptCommon,
@@ -167,6 +174,7 @@ i18n
         NotFound: ptNotFound,
         Profile: ptProfile,
         CompanyPanel: ptCompanyPanel,
+        Diagnostic: ptDiagnostic,
       },
     },
     detection: {
