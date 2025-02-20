@@ -9,13 +9,12 @@ export const userProfile = createAsyncThunk("user/userProfile", async (userToken
       },
     });
 
+    const data = await response.json();
+
     if (!response.ok) {
-      const data = await response.json().catch(() => ({}));
-      console.log(data);
-      return thunkAPI.rejectWithValue(data.message || "Error getting user profile.");
+      return thunkAPI.rejectWithValue(data.errors || data.message || "Error getting user profile.");
     }
 
-    const data = await response.json();
     return data;
   } catch (error) {
     return thunkAPI.rejectWithValue({ error: error.message });
@@ -49,6 +48,27 @@ export const updateProfile = createAsyncThunk(
     }
   }
 );
+
+export const leaveCompany = createAsyncThunk("user/leave-company", async (userToken, thunkAPI) => {
+  try {
+    const response = await fetch("http://localhost:3001/user/leave-company", {
+      method: "PATCH",
+      headers: {
+        Authorization: `Bearer ${userToken}`,
+      },
+    });
+
+    const data = await response.json();
+
+    if (!response.ok) {
+      return thunkAPI.rejectWithValue(data.errors || data.message || "Error leaving company.");
+    }
+
+    return data;
+  } catch (error) {
+    return thunkAPI.rejectWithValue({ error: error.message });
+  }
+});
 
 const userProfileSlice = createSlice({
   name: "userProfile",

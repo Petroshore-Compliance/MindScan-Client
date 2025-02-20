@@ -41,3 +41,18 @@
 .swal2-confirm:hover {
   background-color: #3730a3; /* Fondo azul oscuro */
 }
+
+/* Estilo del botón de cancelación */
+.swal2-cancel {
+  background-color: #4c51bf; /* Fondo azul */
+  color: #ffffff; /* Texto blanco */
+  font-size: 1.125rem; /* Tamaño del texto */
+  font-weight: 600; /* Negrita */
+  border-radius: 1.5rem; /* Bordes redondeados */
+  padding: 0.5rem 1.5rem; /* Espaciado interno */
+  transition: all 0.3s ease; /* Transición */
+}
+
+.swal2-cancel:hover {
+  background-color: #3730a3; /* Fondo azul oscuro */
+}
