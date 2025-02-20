@@ -128,10 +128,10 @@ const EmployeesPanel = () => {
               viewBox="0 0 24 24"
               fill="none"
               stroke="currentColor"
-              stroke-width="2"
-              stroke-linecap="round"
-              stroke-linejoin="round"
-              class="icon icon-tabler icons-tabler-outline icon-tabler-user-plus"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="icon icon-tabler icons-tabler-outline icon-tabler-user-plus"
             >
               <path stroke="none" d="M0 0h24v24H0z" fill="none" />
               <path d="M8 7a4 4 0 1 0 8 0a4 4 0 0 0 -8 0" />
@@ -152,7 +152,7 @@ const EmployeesPanel = () => {
               <div className="grid gap-5">
                 {employees.map((employee) => (
                   <div
-                    key={employee.id}
+                    key={`mobile-${employee.id}`}
                     className="bg-gray-100 dark:bg-gray-900 p-4 rounded-xl shadow-md border border-gray-300 dark:border-gray-700"
                   >
                     <h3 className="text-lg font-semibold text-gray-900 dark:text-gray-200">
@@ -171,10 +171,10 @@ const EmployeesPanel = () => {
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
-                        stroke-width="2"
-                        stroke-linecap="round"
-                        stroke-linejoin="round"
-                        class="icon icon-tabler icons-tabler-outline icon-tabler-trash"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="icon icon-tabler icons-tabler-outline icon-tabler-trash"
                       >
                         <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                         <path d="M4 7l16 0" />
@@ -199,7 +199,7 @@ const EmployeesPanel = () => {
                 <tbody>
                   {employees.map((employee, index) => (
                     <tr
-                      key={employee.id}
+                      key={`desktop-${employee.id}`}
                       className={`${
                         index % 2 === 0
                           ? "bg-gray-50 dark:bg-gray-900"
@@ -223,10 +223,10 @@ const EmployeesPanel = () => {
                             viewBox="0 0 24 24"
                             fill="none"
                             stroke="currentColor"
-                            stroke-width="2"
-                            stroke-linecap="round"
-                            stroke-linejoin="round"
-                            class="icon icon-tabler icons-tabler-outline icon-tabler-trash"
+                            strokeWidth="2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                            className="icon icon-tabler icons-tabler-outline icon-tabler-trash"
                           >
                             <path stroke="none" d="M0 0h24v24H0z" fill="none" />
                             <path d="M4 7l16 0" />
