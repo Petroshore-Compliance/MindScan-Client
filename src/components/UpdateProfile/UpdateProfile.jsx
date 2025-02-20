@@ -1,8 +1,11 @@
 import { useState, useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
-import { userProfile, updateProfile } from "../../features/user/userProfileSlice.js";
+import { userProfile, updateProfile, leaveCompany } from "../../features/user/userProfileSlice.js";
 import { useTranslation } from "react-i18next";
+import Swal from "sweetalert2";
+import withReactContent from "sweetalert2-react-content";
 
+const MySwal = withReactContent(Swal);
 const nameRegex = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]+$/;
 
 function validateName(value) {
@@ -74,6 +77,24 @@ export default function UpdateProfile() {
 
     const token = sessionStorage.getItem("userToken") ?? localStorage.getItem("userToken");
     dispatch(updateProfile({ token, userData: { name: userData.name } }));
+  };
+
+  const handleLeaveCompany = () => {
+    MySwal.fire({
+      title: t("alert.leave.title"), // Ej. "¿Salir de la empresa?"
+      text: t("alert.leave.text"), // Ej. "Esta acción no se puede deshacer."
+      icon: "warning",
+      showCancelButton: true,
+      confirmButtonColor: "#d33",
+      cancelButtonColor: "#4c51bf",
+      confirmButtonText: t("alert.leave.confirmBtn"), // Ej. "Sí, salir"
+      cancelButtonText: t("alert.leave.cancelBtn"), // Ej. "Cancelar"
+    }).then((result) => {
+      if (result.isConfirmed) {
+        const token = sessionStorage.getItem("userToken") ?? localStorage.getItem("userToken");
+        dispatch(leaveCompany(token));
+      }
+    });
   };
 
   return (
@@ -152,16 +173,42 @@ export default function UpdateProfile() {
         <label htmlFor="company" className="block text-lg font-medium">
           {t("profile.company")}
         </label>
-        <input
-          type="text"
-          id="company"
-          name="company"
-          autoComplete="company"
-          value={userData.company.name ?? ""}
-          disabled
-          required
-          className="mt-2 block w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 disabled:text-gray-500 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500"
-        />
+        <div className="flex flex-row space-x-2 items-center align-middle justify-between p-2">
+          <input
+            type="text"
+            id="company"
+            name="company"
+            autoComplete="company"
+            value={userData.company.name ?? ""}
+            disabled
+            required
+            className="block w-full px-4 py-2 rounded-3xl border-2 border-zinc-300 dark:border-zinc-700 bg-zinc-50 disabled:text-gray-500 dark:bg-zinc-900 xl:hover:outline-none xl:hover:ring-2 xl:hover:ring-indigo-600 xl:dark:hover:ring-indigo-500 focus:outline-none focus:ring-2 focus:ring-indigo-600 dark:focus:ring-indigo-400 transition-all duration-500"
+          />
+          <button
+            disabled={!userData.company.name}
+            onClick={handleLeaveCompany}
+            className={`p-2 rounded-full transition-all duration-500 disabled:bg-gray-400 bg-red-500 bg-opacity-70 lg:hover:bg-opacity-100`}
+          >
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="icon icon-tabler icons-tabler-outline icon-tabler-door-exit"
+            >
+              <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+              <path d="M13 12v.01" />
+              <path d="M3 21h18" />
+              <path d="M5 21v-16a2 2 0 0 1 2 -2h7.5m2.5 10.5v7.5" />
+              <path d="M14 7h7m-3 -3l3 3l-3 3" />
+            </svg>
+          </button>
+        </div>
       </div>
 
       <button

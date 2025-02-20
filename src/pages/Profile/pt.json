@@ -45,6 +45,12 @@
     "error": {
       "title": "Erro!",
       "text": "Ocorreu um erro ao alterar a senha."
+    },
+    "leave": {
+      "title": "Atenção!",
+      "text": "Tem certeza de que deseja sair desta empresa?",
+      "confirmBtn": "Sim, sair",
+      "cancelBtn": "Cancelar"
     }
   }
 }

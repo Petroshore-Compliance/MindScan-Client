@@ -45,6 +45,12 @@
     "error": {
       "title": "Error!",
       "text": "Ocurrió un error al cambiar la contraseña."
+    },
+    "leave": {
+      "title": "Atención!",
+      "text": "Seguro que quieres salir de esta empresa?",
+      "confirmBtn": "Sí, salir",
+      "cancelBtn": "Cancelar"
     }
   }
 }
